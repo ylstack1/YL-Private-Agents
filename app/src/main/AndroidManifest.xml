@@ -82,7 +82,7 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:enableOnBackInvokedCallback="true"
-        android:theme="@style/Theme.AndroidHarness">
+        android:theme="@style/Theme.YLPrivateAgents">
 
         <service android:name=".data.transfer.FtpShareService" android:exported="false" android:foregroundServiceType="dataSync" />
 
@@ -126,7 +126,7 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="androidharness" android:host="mcp" />
+                <data android:scheme="ylprivateagents" android:host="mcp" />
             </intent-filter>
         </activity>
 

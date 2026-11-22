@@ -92,7 +92,7 @@
       "outcome": "설명을 보려면 채팅을 선택하고 실제 프로젝트에 대한 변경 사항을 보려면 코드를 선택할 수 있습니다.",
       "limits": [
         "Chat은 작업 영역을 자동으로 편집하거나 셸 명령을 실행할 수 없습니다. 프로젝트 작업 요청은 코드로의 전달을 제안할 수 있습니다.",
-        "선택한 모델은 품질, 도구 사용, 비전, 비용 및 속도에 영향을 미칩니다. AndroidHarness를 설치한다고 해서 모든 AI 모델에 대한 액세스 권한이 부여되는 것은 아닙니다."
+        "선택한 모델은 품질, 도구 사용, 비전, 비용 및 속도에 영향을 미칩니다. YL Private Agents를 설치한다고 해서 모든 AI 모델에 대한 액세스 권한이 부여되는 것은 아닙니다."
       ],
       "fixes": [
         {
@@ -264,7 +264,7 @@
       "steps": [
         {
           "title": "핵심을 이해하라",
-          "body": "API 키는 비밀 자격 증명입니다. 이를 통해 AndroidHarness는 귀하의 공급자 계정에 요청을 보낼 수 있습니다. 키를 생성한다고 해서 모델을 구매하거나 계정에 자금을 조달하거나 요청을 무제한으로 만드는 것은 아닙니다."
+          "body": "API 키는 비밀 자격 증명입니다. 이를 통해 YL Private Agents는 귀하의 공급자 계정에 요청을 보낼 수 있습니다. 키를 생성한다고 해서 모델을 구매하거나 계정에 자금을 조달하거나 요청을 무제한으로 만드는 것은 아닙니다."
         },
         {
           "title": "청구 경로를 확인하세요",
@@ -272,7 +272,7 @@
         },
         {
           "title": "필요한 경우 액세스를 활성화하세요.",
-          "body": "공급자의 자체 체크아웃을 사용하여 결제 방법을 추가하고, 크레딧을 구매하고, 적합한 플랜을 활성화하세요. 확인하기 전에 자동 충전 및 지출 관리를 확인하세요. AndroidHarness는 공급자 API 구독을 판매하지 않습니다."
+          "body": "공급자의 자체 체크아웃을 사용하여 결제 방법을 추가하고, 크레딧을 구매하고, 적합한 플랜을 활성화하세요. 확인하기 전에 자동 충전 및 지출 관리를 확인하세요. YL Private Agents는 공급자 API 구독을 판매하지 않습니다."
         },
         {
           "title": "사용량을 주의 깊게 살펴보세요",
@@ -287,7 +287,7 @@
       "fixes": [
         {
           "problem": "채팅 앱 비용을 지불했는데 API 키가 작동하지 않습니다.",
-          "solution": "API 액세스, 사용 가능한 크레딧, 구독 크레딧 연결 단계는 개발자 콘솔에서 확인하세요. 또는 AndroidHarness에서 지원되는 로그인 연결을 사용하세요."
+          "solution": "API 액세스, 사용 가능한 크레딧, 구독 크레딧 연결 단계는 개발자 콘솔에서 확인하세요. 또는 YL Private Agents에서 지원되는 로그인 연결을 사용하세요."
         }
       ],
       "related": [
@@ -392,7 +392,7 @@
       "category": "providers",
       "title": "OpenAI API 키 연결",
       "summary": "API 액세스를 설정하고 OpenAI 연결 유형을 선택합니다.",
-      "location": "OpenAI 개발자 플랫폼 → API 키 및 청구; AndroidHarness → 공급자를 관리합니다.",
+      "location": "OpenAI 개발자 플랫폼 → API 키 및 청구; YL Private Agents → 공급자를 관리합니다.",
       "before": [
         "결제하려는 OpenAI 계정과 API 조직을 사용하세요."
       ],
@@ -406,7 +406,7 @@
           "body": "프로젝트 API 키를 생성하고, 인식 가능한 이름을 지정하고, 표시되는 동안 비밀을 복사하세요. 비공개로 유지하세요."
         },
         {
-          "title": "AndroidHarness에 추가하세요",
+          "title": "YL Private Agents에 추가하세요",
           "body": "공급자 관리에서 OpenAI 또는 OpenAI(응답)를 선택합니다. 키를 붙여넣고 계속해서 사용 가능한 모델을 선택한 후 저장하세요."
         },
         {
@@ -458,7 +458,7 @@
       "category": "providers",
       "title": "API를 통해 Claude를 연결하세요.",
       "summary": "Anthropic 키를 생성하고 API 자금을 확인하세요.",
-      "location": "Claude 콘솔 → API 키 및 청구; AndroidHarness → 공급자 관리 → Anthropic.",
+      "location": "Claude 콘솔 → API 키 및 청구; YL Private Agents → 공급자 관리 → Anthropic.",
       "before": [
         "의도한 Claude API 조직 또는 작업 공간에 액세스할 수 있습니다."
       ],
@@ -477,7 +477,7 @@
         },
         {
           "title": "저장 및 테스트",
-          "body": "AndroidHarness에서 Anthropic를 선택하고 키를 붙여넣은 후 계정에 사용 가능한 모델을 선택하고 저장합니다. 채팅이나 코드에서 선택하고 간단한 요청을 보내세요."
+          "body": "YL Private Agents에서 Anthropic를 선택하고 키를 붙여넣은 후 계정에 사용 가능한 모델을 선택하고 저장합니다. 채팅이나 코드에서 선택하고 간단한 요청을 보내세요."
         }
       ],
       "outcome": "저장된 Anthropic 연결은 선택한 모델로 응답할 수 있습니다.",
@@ -488,7 +488,7 @@
       "fixes": [
         {
           "problem": "공급자가 낮은 크레딧을 보고합니다.",
-          "solution": "이 키를 소유한 조직의 청구 페이지를 확인하세요. AndroidHarness에 키를 추가해도 자금이 추가되지 않습니다."
+          "solution": "이 키를 소유한 조직의 청구 페이지를 확인하세요. YL Private Agents에 키를 추가해도 자금이 추가되지 않습니다."
         }
       ],
       "related": [
@@ -524,7 +524,7 @@
       "category": "providers",
       "title": "Gemini API 키 연결",
       "summary": "Google AI Studio를 사용하고 올바른 프로젝트를 선택하세요.",
-      "location": "Google AI Studio → API 키; AndroidHarness → 공급자 관리 → Gemini.",
+      "location": "Google AI Studio → API 키; YL Private Agents → 공급자 관리 → Gemini.",
       "before": [
         "Gemini API에 적합한 Google 계정 및 프로젝트를 사용하세요."
       ],
@@ -539,14 +539,14 @@
         },
         {
           "title": "Gemini 연결 추가",
-          "body": "AndroidHarness에서 Gemini를 선택하고 키를 붙여넣은 다음 모델 목록으로 이동하여 계정에 제공되는 모델을 저장하세요."
+          "body": "YL Private Agents에서 Gemini를 선택하고 키를 붙여넣은 다음 모델 목록으로 이동하여 계정에 제공되는 모델을 저장하세요."
         },
         {
           "title": "짧은 메시지를 보내보세요",
           "body": "Chat 또는 Code에서 모델을 선택하세요. 실패할 경우 키의 프로젝트, 활성화된 API, 청구 상태 및 모델 제한이 요청과 일치하는지 확인하세요."
         }
       ],
-      "outcome": "AndroidHarness는 선택한 프로젝트에 연결된 키를 사용하여 Gemini에 도달할 수 있습니다.",
+      "outcome": "YL Private Agents는 선택한 프로젝트에 연결된 키를 사용하여 Gemini에 도달할 수 있습니다.",
       "limits": [
         "무료 등급과 유료 등급에는 한도와 조건이 다릅니다. 민감한 데이터를 사용하거나 구매하기 전에 현재 공식 청구 페이지를 확인하세요.",
         "이미지를 지원하는 모델이 이 앱을 통해 모든 공급자 기능을 사용할 수 있는 것은 아닙니다. 구현된 대화 및 도구 기능만 노출됩니다."
@@ -590,7 +590,7 @@
       "category": "providers",
       "title": "OpenRouter 연결",
       "summary": "하나의 연결을 사용하여 OpenRouter의 모델 카탈로그에서 선택하세요.",
-      "location": "OpenRouter → 설정 → 키 및 크레딧; AndroidHarness → 공급자 관리 → OpenRouter.",
+      "location": "OpenRouter → 설정 → 키 및 크레딧; YL Private Agents → 공급자 관리 → OpenRouter.",
       "before": [
         "OpenRouter 계정이 있습니다. 선택한 각 모델의 가격과 액세스 요구 사항을 확인하세요."
       ],
@@ -675,7 +675,7 @@
         },
         {
           "title": "모델 저장 및 선택",
-          "body": "일치하는 AndroidHarness 연결에 키를 붙여넣고 제공된 모델을 선택한 후 저장합니다. 대화 헤더에서 해당 모델을 선택하고 테스트하세요."
+          "body": "일치하는 YL Private Agents 연결에 키를 붙여넣고 제공된 모델을 선택한 후 저장합니다. 대화 헤더에서 해당 모델을 선택하고 테스트하세요."
         }
       ],
       "outcome": "선택한 서비스는 모델 선택기에서 사용할 수 있습니다.",
@@ -759,13 +759,13 @@
         },
         {
           "title": "전화로 테스트",
-          "body": "서버가 연결 가능한 인터페이스에서 수신 대기하고 있고 네트워크에서 연결을 허용하는지 확인하세요. 공급자를 저장하고 AndroidHarness에서 작은 요청을 보냅니다."
+          "body": "서버가 연결 가능한 인터페이스에서 수신 대기하고 있고 네트워크에서 연결을 허용하는지 확인하세요. 공급자를 저장하고 YL Private Agents에서 작은 요청을 보냅니다."
         }
       ],
       "outcome": "전화기는 호환되는 서버와 통신하고 모델 응답을 받을 수 있습니다.",
       "limits": [
         "데스크톱 모델 서버는 앱의 기기 내 로컬 모델 기능과 다릅니다.",
-        "AndroidHarness는 컴퓨터에서 Ollama 또는 LM Studio를 시작하지 않거나 자동으로 네트워크 터널을 생성하지 않습니다."
+        "YL Private Agents는 컴퓨터에서 Ollama 또는 LM Studio를 시작하지 않거나 자동으로 네트워크 터널을 생성하지 않습니다."
       ],
       "fixes": [
         {
@@ -983,7 +983,7 @@
       "steps": [
         {
           "title": "로그인 시작",
-          "body": "계정 추가 또는 로그인 작업을 선택합니다. 공식 브라우저 인증을 완료하고 AndroidHarness로 돌아갑니다. 계정 패널에서 대기 중인 로그인을 취소할 수 있습니다."
+          "body": "계정 추가 또는 로그인 작업을 선택합니다. 공식 브라우저 인증을 완료하고 YL Private Agents로 돌아갑니다. 계정 패널에서 대기 중인 로그인을 취소할 수 있습니다."
         },
         {
           "title": "연결된 계정을 선택하세요",
@@ -2475,7 +2475,7 @@
       "outcome": "원격 폴더는 작업 공간으로 나타나고 지원되는 작업은 SSH 호스트에서 작동합니다.",
       "limits": [
         "원격 서버의 로컬 호스트는 전화기의 로컬 호스트가 아닙니다. 원격 웹 미리보기에는 전화기에서 연결할 수 있는 URL 또는 별도로 구성된 연결이 필요합니다.",
-        "AndroidHarness는 원격 SSH 서버를 설치하거나 관리하지 않습니다."
+        "YL Private Agents는 원격 SSH 서버를 설치하거나 관리하지 않습니다."
       ],
       "fixes": [
         {
@@ -3580,7 +3580,7 @@
       ],
       "outcome": "실행 파일은 로컬 MCP 프로세스로 시작되고 도구를 성공적으로 광고합니다.",
       "limits": [
-        "로컬 MCP 서버는 실행 가능한 소프트웨어입니다. AndroidHarness는 휴대전화와 호환되는 임의의 데스크톱 바이너리를 만들지 않습니다.",
+        "로컬 MCP 서버는 실행 가능한 소프트웨어입니다. YL Private Agents는 휴대전화와 호환되는 임의의 데스크톱 바이너리를 만들지 않습니다.",
         "프로젝트에서 제공한 MCP/플러그인 구성에는 작업 공간 신뢰 검토가 필요합니다. Workspace MCP는 아직 다중 작업 공간 채팅에서 사용할 수 없습니다."
       ],
       "fixes": [
@@ -3621,7 +3621,7 @@
       "summary": "기술, 후크 및 도구를 활성화하기 전에 번들을 검토하세요.",
       "location": "설정 → 코딩 → 플러그인 → 설치/검색/추가.",
       "before": [
-        "AndroidHarness가 지원하는 번들 형식용으로 제작된 플러그인을 사용하세요.",
+        "YL Private Agents가 지원하는 번들 형식용으로 제작된 플러그인을 사용하세요.",
         "범위가 이 프로젝트인지 아니면 전역인지 선택하세요."
       ],
       "steps": [
@@ -4284,10 +4284,10 @@
       "steps": [
         {
           "title": "공급자 시작",
-          "body": "서비스가 실행되도록 공급자 앱의 자체 설정을 따르세요. AndroidHarness는 설치만으로 활성화되지 않습니다."
+          "body": "서비스가 실행되도록 공급자 앱의 자체 설정을 따르세요. YL Private Agents는 설치만으로 활성화되지 않습니다."
         },
         {
-          "title": "AndroidHarness 액세스 권한 부여",
+          "title": "YL Private Agents 액세스 권한 부여",
           "body": "쉘 제공자 섹션을 열고 권한을 요청하십시오. 공급자에서 의도한 요청을 승인한 다음 연결 상태를 새로 고칩니다."
         },
         {
@@ -4334,7 +4334,7 @@
       "category": "device",
       "title": "무선 디버깅 페어링",
       "summary": "앱에서 Android의 무선 ADB 경로를 연결하세요.",
-      "location": "Android 개발자 옵션 → 무선 디버깅; AndroidHarness → 단말기 및 장치 → 무선 ADB.",
+      "location": "Android 개발자 옵션 → 무선 디버깅; YL Private Agents → 단말기 및 장치 → 무선 ADB.",
       "before": [
         "무선 디버깅이 가능한 지원되는 Android 버전.",
         "Android 무선 디버깅을 허용하는 네트워크/장치 상태입니다.",
@@ -4342,7 +4342,7 @@
       ],
       "steps": [
         {
-          "title": "AndroidHarness에서 페어링 시작",
+          "title": "YL Private Agents에서 페어링 시작",
           "body": "Wireless ADB에서 페어링 버튼을 탭합니다. Android가 요청하는 경우 로컬 네트워크 권한을 허용합니다. 앱이 Android의 페어링 서비스를 찾기 시작합니다."
         },
         {
@@ -4351,7 +4351,7 @@
         },
         {
           "title": "알림을 통해 코드를 입력하세요",
-          "body": "알림 창을 아래로 내리고 AndroidHarness의 페어링 알림을 열고 코드 입력 작업을 사용한 다음 현재 Android에 표시된 6자리 코드를 제출하세요. 페어링/연결 결과를 기다립니다."
+          "body": "알림 창을 아래로 내리고 YL Private Agents의 페어링 알림을 열고 코드 입력 작업을 사용한 다음 현재 Android에 표시된 6자리 코드를 제출하세요. 페어링/연결 결과를 기다립니다."
         },
         {
           "title": "필요한 경우 수동 페어링을 사용하세요.",
@@ -4399,7 +4399,7 @@
       "summary": "루트 연결, 프로젝트 권한 및 작업 모드를 별도로 유지하십시오.",
       "location": "설정 → 코딩 → 터미널 및 장치 → 고급 → 루트 액세스.",
       "before": [
-        "이미 작동 중인 루트 관리자가 있는 장치입니다. AndroidHarness는 루팅하지 않습니다."
+        "이미 작동 중인 루트 관리자가 있는 장치입니다. YL Private Agents는 루팅하지 않습니다."
       ],
       "steps": [
         {
@@ -4462,7 +4462,7 @@
       "steps": [
         {
           "title": "먼저 Dhizuku를 확인하세요",
-          "body": "자체 앱을 열고 기기 소유자 활성화가 완료되었는지 확인하세요. AndroidHarness의 카드는 서비스가 설치되었는지, 활성화되었는지 또는 허가 대기 중인지 보고합니다."
+          "body": "자체 앱을 열고 기기 소유자 활성화가 완료되었는지 확인하세요. YL Private Agents의 카드는 서비스가 설치되었는지, 활성화되었는지 또는 허가 대기 중인지 보고합니다."
         },
         {
           "title": "연결 허용",
@@ -4697,7 +4697,7 @@
       "location": "설정 → Telegram.",
       "before": [
         "Telegram의 공식 BotFather를 통해 생성된 귀하가 제어하는 ​​봇입니다.",
-        "AndroidHarness의 Telegram 서비스를 활성화하여 휴대폰을 온라인 상태로 유지하세요."
+        "YL Private Agents의 Telegram 서비스를 활성화하여 휴대폰을 온라인 상태로 유지하세요."
       ],
       "steps": [
         {
@@ -4706,7 +4706,7 @@
         },
         {
           "title": "계정을 페어링하세요",
-          "body": "AndroidHarness에서 페어링을 시작하고, 제공된 링크/코드로 봇을 열고, 승인하기 전에 앱에서 Telegram 사용자 ID를 다시 검토하세요."
+          "body": "YL Private Agents에서 페어링을 시작하고, 제공된 링크/코드로 봇을 열고, 승인하기 전에 앱에서 Telegram 사용자 ID를 다시 검토하세요."
         },
         {
           "title": "업무 상황을 선택하세요",
@@ -4719,7 +4719,7 @@
       ],
       "outcome": "페어링된 Telegram 계정은 선택한 앱 프로젝트/채팅으로 작업을 보내고 진행 상황/결과를 받을 수 있습니다.",
       "limits": [
-        "봇과 휴대폰에는 네트워크 액세스가 필요합니다. Telegram는 사용자를 대신하여 AndroidHarness 작업을 호스팅하지 않습니다.",
+        "봇과 휴대폰에는 네트워크 액세스가 필요합니다. Telegram는 사용자를 대신하여 YL Private Agents 작업을 호스팅하지 않습니다.",
         "페어링, 앱 도구 권한, 모델 청구 및 백그라운드 설정은 계속 적용됩니다. 동일한 봇 토큰의 다른 경쟁 소비자를 실행하지 마십시오."
       ],
       "fixes": [
@@ -5707,7 +5707,7 @@
     {
       "id": "honest-limits",
       "category": "help",
-      "title": "AndroidHarness가 할 수 있는 것과 할 수 없는 것",
+      "title": "YL Private Agents가 할 수 있는 것과 할 수 없는 것",
       "summary": "모델 약속 및 장치 권한과 앱 기능을 분리하세요.",
       "location": "워크플로를 선택하기 전에 이 체크리스트를 사용하세요.",
       "before": [
@@ -5964,17 +5964,17 @@
     {
       "id": "share-to-chat",
       "category": "chat",
-      "title": "AndroidHarness에 무언가 공유",
+      "title": "YL Private Agents에 무언가 공유",
       "summary": "다른 앱의 텍스트, 링크, 지원되는 첨부 파일을 Chat으로 가져오세요.",
-      "location": "다른 Android 앱 → 공유 → AndroidHarness.",
+      "location": "다른 Android 앱 → 공유 → YL Private Agents.",
       "before": [
         "원본 앱은 콘텐츠에 대한 Android 공유를 제공해야 합니다.",
         "보내기 전에 비공개 콘텐츠와 모델 대상을 검토하세요."
       ],
       "steps": [
         {
-          "title": "공유에서 AndroidHarness를 선택하세요",
-          "body": "소스 앱의 Android 공유 시트를 사용하세요. AndroidHarness는 공유 텍스트 및 지원되는 첨부 파일 미리 보기에 대한 검토 시트를 엽니다."
+          "title": "공유에서 YL Private Agents를 선택하세요",
+          "body": "소스 앱의 Android 공유 시트를 사용하세요. YL Private Agents는 공유 텍스트 및 지원되는 첨부 파일 미리 보기에 대한 검토 시트를 엽니다."
         },
         {
           "title": "대화를 선택하세요",

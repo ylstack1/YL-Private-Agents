@@ -1,0 +1,158 @@
+package com.ylprivate.agents.ui.settings
+
+import com.ylprivate.agents.ui.theme.HarnessGlassSurface as Surface
+
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.selection.toggleable
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.DeleteOutline
+import androidx.compose.material.icons.rounded.Visibility
+import androidx.compose.material.icons.rounded.VisibilityOff
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.semantics.LiveRegionMode
+import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.liveRegion
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.text.input.VisualTransformation
+import androidx.compose.ui.unit.dp
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleEventObserver
+import androidx.lifecycle.compose.LocalLifecycleOwner
+import com.ylprivate.agents.R
+import com.ylprivate.agents.llm.ProviderApiKey
+import com.ylprivate.agents.llm.ProviderKeyCheck
+import com.ylprivate.agents.llm.ProviderKeyPool
+import com.ylprivate.agents.ui.common.ExpressiveIconButton
+import com.ylprivate.agents.ui.common.IconButton
+import com.ylprivate.agents.ui.common.OutlinedButton
+import com.ylprivate.agents.ui.common.TextButton
+import kotlinx.coroutines.launch
+
+/**
+ * The same draft editor is used by Add, Edit and Connection controls.
+ * [onTest] adds a Test button per key; a result only shows while the key
+ * still holds the value that was tested.
+ */
+@Composable
+internal fun ProviderKeysEditor(
+    pool: ProviderKeyPool,
+    onChange: (ProviderKeyPool) -> Unit,
+    enabled: Boolean = true,
+    onTest: (suspend (String) -> ProviderKeyCheck.Result)? = null,
+    /** What a test sends, shown above the keys when [onTest] is set. */
+    testHint: String? = null,
+) {
+    var revealed by remember { mutableStateOf(emptySet<String>()) }
+    // Key id to (tested value, result); a null result means the test is running.
+    var tests by remember { mutableStateOf(emptyMap<String, Pair<String, ProviderKeyCheck.Result?>>()) }
+    val scope = rememberCoroutineScope()
+    val context = LocalContext.current
+    val owner = LocalLifecycleOwner.current
+    DisposableEffect(owner) {
+        val observer = LifecycleEventObserver { _, event -> if (event == Lifecycle.Event.ON_STOP) revealed = emptySet() }
+        owner.lifecycle.addObserver(observer)
+        onDispose { owner.lifecycle.removeObserver(observer) }
+    }
+    fun update(id: String, transform: (ProviderApiKey) -> ProviderApiKey) =
+        onChange(pool.copy(keys = pool.keys.map { if (it.id == id) transform(it) else it }))
+
+    Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+        Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+            Text(stringResource(R.string.provider_api_keys), style = MaterialTheme.typography.titleMedium, modifier = Modifier.weight(1f))
+            Text(stringResource(R.string.provider_key_count, pool.keys.size, ProviderKeyPool.MAX_KEYS),
+                style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        }
+        Row(Modifier.fillMaxWidth().heightIn(min = 48.dp).toggleable(pool.rotate, enabled = enabled, role = Role.Switch,
+            onValueChange = { onChange(pool.copy(rotate = it)) }), verticalAlignment = Alignment.CenterVertically) {
+            Column(Modifier.weight(1f)) {
+                Text(stringResource(R.string.provider_rotate_keys))
+                Text(stringResource(R.string.provider_rotate_keys_hint), style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant)
+            }
+            Switch(pool.rotate, onCheckedChange = null, enabled = enabled)
+        }
+        if (onTest != null) Text(testHint ?: stringResource(R.string.provider_test_key_hint), style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant)
+        pool.keys.forEachIndexed { index, apiKey -> key(apiKey.id) {
+            val visible = apiKey.id in revealed
+            val test = tests[apiKey.id]?.takeIf { it.first == apiKey.value }
+            val testing = test != null && test.second == null
+            Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surfaceContainerHigh) {
+                Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                    OutlinedTextField(apiKey.label, { value -> update(apiKey.id) { it.copy(label = value.take(80)) } },
+                        enabled = enabled, singleLine = true, label = { Text(stringResource(R.string.provider_key_name, index + 1)) },
+                        modifier = Modifier.fillMaxWidth())
+                    OutlinedTextField(apiKey.value, { value -> update(apiKey.id) { it.copy(value = value.trim().take(8193)) } },
+                        enabled = enabled, singleLine = true,
+                        visualTransformation = if (visible) VisualTransformation.None else PasswordVisualTransformation(),
+                        keyboardOptions = KeyboardOptions(keyboardType = if (visible) KeyboardType.Ascii else KeyboardType.Password, autoCorrectEnabled = false),
+                        label = { Text(stringResource(R.string.provider_api_key_number, index + 1)) },
+                        trailingIcon = {
+                            IconButton(enabled = enabled, onClick = {
+                                revealed = if (visible) revealed - apiKey.id else revealed + apiKey.id
+                            }) {
+                                Icon(if (visible) Icons.Rounded.VisibilityOff else Icons.Rounded.Visibility,
+                                    stringResource(if (visible) R.string.provider_hide_key else R.string.provider_show_key, index + 1))
+                            }
+                        }, modifier = Modifier.fillMaxWidth())
+                    Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+                        Row(Modifier.weight(1f).heightIn(min = 48.dp).toggleable(apiKey.enabled, enabled = enabled, role = Role.Switch,
+                            onValueChange = { value -> update(apiKey.id) { it.copy(enabled = value) } }), verticalAlignment = Alignment.CenterVertically) {
+                            Switch(apiKey.enabled, onCheckedChange = null, enabled = enabled)
+                            Spacer(Modifier.width(8.dp))
+                            Text(stringResource(R.string.provider_use_key, index + 1))
+                        }
+                        if (onTest != null) TextButton(
+                            enabled = enabled && !testing && apiKey.value.isNotEmpty() && apiKey.value.all { it in '!'..'~' },
+                            onClick = {
+                                val value = apiKey.value
+                                tests = tests + (apiKey.id to (value to null))
+                                scope.launch {
+                                    val result = onTest(value)
+                                    tests = tests + (apiKey.id to (value to result))
+                                }
+                            },
+                        ) { Text(stringResource(R.string.provider_test_key), Modifier.semantics {
+                            contentDescription = context.getString(R.string.provider_test_key_description, index + 1)
+                        }) }
+                        ExpressiveIconButton(enabled = enabled, onClick = {
+                            revealed = revealed - apiKey.id
+                            onChange(pool.copy(keys = pool.keys.filterNot { it.id == apiKey.id }))
+                        }) { Icon(Icons.Rounded.DeleteOutline, stringResource(R.string.provider_remove_key, index + 1)) }
+                    }
+                    test?.let { (_, result) ->
+                        Text(
+                            when (result) {
+                                null -> stringResource(R.string.provider_testing_key)
+                                is ProviderKeyCheck.Result.Ok -> result.model?.let {
+                                    stringResource(R.string.provider_key_works_model, it, result.latencyMs.toInt())
+                                } ?: stringResource(R.string.provider_key_works, result.latencyMs.toInt())
+                                is ProviderKeyCheck.Result.Failed -> stringResource(R.string.provider_key_failed, result.message)
+                            },
+                            style = MaterialTheme.typography.bodySmall,
+                            color = when (result) {
+                                is ProviderKeyCheck.Result.Failed -> MaterialTheme.colorScheme.error
+                                is ProviderKeyCheck.Result.Ok -> MaterialTheme.colorScheme.primary
+                                null -> MaterialTheme.colorScheme.onSurfaceVariant
+                            },
+                            modifier = Modifier.semantics { liveRegion = LiveRegionMode.Polite },
+                        )
+                    }
+                }
+            }
+        } }
+        OutlinedButton(enabled = enabled && pool.keys.size < ProviderKeyPool.MAX_KEYS,
+            onClick = { onChange(pool.copy(keys = pool.keys + ProviderApiKey(value = ""))) }) {
+            Text(stringResource(R.string.provider_add_key))
+        }
+    }
+}

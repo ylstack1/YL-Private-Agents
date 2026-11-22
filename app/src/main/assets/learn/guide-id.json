@@ -92,7 +92,7 @@
       "outcome": "Anda dapat memilih Obrolan untuk penjelasan dan Kode untuk perubahan proyek nyata.",
       "limits": [
         "Obrolan tidak dapat mengedit ruang kerja Anda secara diam-diam atau menjalankan perintah shell. Permintaan pekerjaan proyek mungkin menawarkan penyerahan ke Kode.",
-        "Model yang Anda pilih memengaruhi kualitas, penggunaan alat, penglihatan, biaya, dan kecepatan. Menginstal AndroidHarness tidak memberikan akses ke setiap model AI."
+        "Model yang Anda pilih memengaruhi kualitas, penggunaan alat, penglihatan, biaya, dan kecepatan. Menginstal YL Private Agents tidak memberikan akses ke setiap model AI."
       ],
       "fixes": [
         {
@@ -264,7 +264,7 @@
       "steps": [
         {
           "title": "Pahami kuncinya",
-          "body": "Kunci API adalah kredensial rahasia. Ini memungkinkan AndroidHarness mengirim permintaan ke akun penyedia Anda. Membuat kunci tidak berarti membeli model, mendanai akun, atau membuat permintaan tanpa batas."
+          "body": "Kunci API adalah kredensial rahasia. Ini memungkinkan YL Private Agents mengirim permintaan ke akun penyedia Anda. Membuat kunci tidak berarti membeli model, mendanai akun, atau membuat permintaan tanpa batas."
         },
         {
           "title": "Periksa rute penagihan",
@@ -272,7 +272,7 @@
         },
         {
           "title": "Aktifkan akses jika diperlukan",
-          "body": "Gunakan pembayaran milik penyedia untuk menambahkan metode pembayaran, membeli kredit, atau mengaktifkan paket yang sesuai. Periksa top-up otomatis dan kontrol pengeluaran sebelum mengonfirmasi. AndroidHarness tidak menjual langganan penyedia API."
+          "body": "Gunakan pembayaran milik penyedia untuk menambahkan metode pembayaran, membeli kredit, atau mengaktifkan paket yang sesuai. Periksa top-up otomatis dan kontrol pengeluaran sebelum mengonfirmasi. YL Private Agents tidak menjual langganan penyedia API."
         },
         {
           "title": "Perhatikan penggunaan",
@@ -287,7 +287,7 @@
       "fixes": [
         {
           "problem": "Saya membayar untuk aplikasi obrolan tetapi kunci API saya gagal",
-          "solution": "Periksa konsol pengembang untuk akses API, kredit yang tersedia, dan langkah penautan kredit langganan apa pun. Alternatifnya, gunakan koneksi masuk yang didukung di AndroidHarness."
+          "solution": "Periksa konsol pengembang untuk akses API, kredit yang tersedia, dan langkah penautan kredit langganan apa pun. Alternatifnya, gunakan koneksi masuk yang didukung di YL Private Agents."
         }
       ],
       "related": [
@@ -392,7 +392,7 @@
       "category": "providers",
       "title": "Hubungkan kunci OpenAI API",
       "summary": "Atur akses API dan pilih jenis koneksi OpenAI.",
-      "location": "Platform pengembang OpenAI → Kunci dan Penagihan API; AndroidHarness → Kelola penyedia.",
+      "location": "Platform pengembang OpenAI → Kunci dan Penagihan API; YL Private Agents → Kelola penyedia.",
       "before": [
         "Gunakan akun OpenAI dan organisasi API yang ingin Anda gunakan untuk membayar."
       ],
@@ -406,7 +406,7 @@
           "body": "Buat kunci proyek API, beri nama yang dapat dikenali, dan salin rahasianya saat ditampilkan. Jaga kerahasiaannya."
         },
         {
-          "title": "Tambahkan ke AndroidHarness",
+          "title": "Tambahkan ke YL Private Agents",
           "body": "Di Kelola penyedia, pilih OpenAI atau OpenAI (Respons). Tempelkan kuncinya, lanjutkan, pilih model yang tersedia, dan simpan."
         },
         {
@@ -458,7 +458,7 @@
       "category": "providers",
       "title": "Hubungkan Claude melalui API",
       "summary": "Buat kunci Anthropic dan periksa pendanaan API-nya.",
-      "location": "Konsol Claude → Kunci dan Penagihan API; AndroidHarness → Kelola penyedia → Anthropic.",
+      "location": "Konsol Claude → Kunci dan Penagihan API; YL Private Agents → Kelola penyedia → Anthropic.",
       "before": [
         "Memiliki akses ke organisasi atau ruang kerja Claude API yang dituju."
       ],
@@ -477,7 +477,7 @@
         },
         {
           "title": "Simpan dan uji",
-          "body": "Pilih Anthropic di AndroidHarness, tempel kuncinya, pilih model yang tersedia untuk akun Anda, dan simpan. Pilih di Obrolan atau Kode dan kirim permintaan singkat."
+          "body": "Pilih Anthropic di YL Private Agents, tempel kuncinya, pilih model yang tersedia untuk akun Anda, dan simpan. Pilih di Obrolan atau Kode dan kirim permintaan singkat."
         }
       ],
       "outcome": "Koneksi Anthropic yang disimpan dapat menjawab dengan model yang Anda pilih.",
@@ -488,7 +488,7 @@
       "fixes": [
         {
           "problem": "Penyedia melaporkan kredit rendah",
-          "solution": "Periksa halaman penagihan untuk organisasi yang memiliki kunci ini. Menambahkan kunci ke AndroidHarness tidak menambah dana."
+          "solution": "Periksa halaman penagihan untuk organisasi yang memiliki kunci ini. Menambahkan kunci ke YL Private Agents tidak menambah dana."
         }
       ],
       "related": [
@@ -524,7 +524,7 @@
       "category": "providers",
       "title": "Hubungkan kunci Gemini API",
       "summary": "Gunakan Google AI Studio dan pilih proyek yang tepat.",
-      "location": "Google AI Studio → kunci API; AndroidHarness → Kelola penyedia → Gemini.",
+      "location": "Google AI Studio → kunci API; YL Private Agents → Kelola penyedia → Gemini.",
       "before": [
         "Gunakan akun Google dan proyek yang memenuhi syarat untuk Gemini API."
       ],
@@ -539,14 +539,14 @@
         },
         {
           "title": "Tambahkan koneksi Gemini",
-          "body": "Pilih Gemini di AndroidHarness, tempelkan kuncinya, lanjutkan ke daftar model, dan simpan model yang ditawarkan ke akun Anda."
+          "body": "Pilih Gemini di YL Private Agents, tempelkan kuncinya, lanjutkan ke daftar model, dan simpan model yang ditawarkan ke akun Anda."
         },
         {
           "title": "Cobalah pesan singkat",
           "body": "Pilih model di Obrolan atau Kode. Jika gagal, periksa apakah proyek kunci, API yang diaktifkan, status penagihan, dan batas model sesuai dengan permintaan Anda."
         }
       ],
-      "outcome": "AndroidHarness dapat mencapai Gemini menggunakan kunci yang dilampirkan pada proyek yang Anda pilih.",
+      "outcome": "YL Private Agents dapat mencapai Gemini menggunakan kunci yang dilampirkan pada proyek yang Anda pilih.",
       "limits": [
         "Tingkatan gratis dan berbayar memiliki batasan dan ketentuan yang berbeda. Periksa halaman penagihan resmi saat ini sebelum menggunakan data sensitif atau melakukan pembelian.",
         "Model yang mendukung gambar tidak membuat setiap fitur penyedia tersedia melalui aplikasi ini. Hanya kemampuan percakapan dan alat yang diimplementasikan yang diekspos."
@@ -590,7 +590,7 @@
       "category": "providers",
       "title": "Hubungkan OpenRouter",
       "summary": "Gunakan satu koneksi untuk memilih dari katalog model OpenRouter.",
-      "location": "OpenRouter → Pengaturan → Kunci dan Kredit; AndroidHarness → Kelola penyedia → OpenRouter.",
+      "location": "OpenRouter → Pengaturan → Kunci dan Kredit; YL Private Agents → Kelola penyedia → OpenRouter.",
       "before": [
         "Memiliki akun OpenRouter. Periksa harga setiap model yang dipilih dan persyaratan akses."
       ],
@@ -675,7 +675,7 @@
         },
         {
           "title": "Simpan dan pilih model",
-          "body": "Tempelkan kunci ke koneksi AndroidHarness yang cocok, pilih model yang ditawarkan, dan simpan. Pilih model itu di header percakapan dan ujilah."
+          "body": "Tempelkan kunci ke koneksi YL Private Agents yang cocok, pilih model yang ditawarkan, dan simpan. Pilih model itu di header percakapan dan ujilah."
         }
       ],
       "outcome": "Layanan yang dipilih tersedia di pemilih model Anda.",
@@ -759,13 +759,13 @@
         },
         {
           "title": "Tes dari telepon",
-          "body": "Pastikan server mendengarkan pada antarmuka yang dapat dijangkau dan jaringan mengizinkan koneksi. Simpan penyedia dan kirim permintaan kecil dari AndroidHarness."
+          "body": "Pastikan server mendengarkan pada antarmuka yang dapat dijangkau dan jaringan mengizinkan koneksi. Simpan penyedia dan kirim permintaan kecil dari YL Private Agents."
         }
       ],
       "outcome": "Telepon dapat berbicara dengan server yang kompatibel dan menerima balasan model.",
       "limits": [
         "Server model desktop berbeda dengan fitur model Lokal di perangkat pada aplikasi.",
-        "AndroidHarness tidak memulai Ollama atau LM Studio di komputer Anda atau secara otomatis membuat terowongan jaringan."
+        "YL Private Agents tidak memulai Ollama atau LM Studio di komputer Anda atau secara otomatis membuat terowongan jaringan."
       ],
       "fixes": [
         {
@@ -983,7 +983,7 @@
       "steps": [
         {
           "title": "Mulai masuk",
-          "body": "Pilih Tambahkan akun atau tindakan masuk. Selesaikan otorisasi browser resmi dan kembali ke AndroidHarness. Anda dapat membatalkan proses masuk yang tertunda dari panel akun."
+          "body": "Pilih Tambahkan akun atau tindakan masuk. Selesaikan otorisasi browser resmi dan kembali ke YL Private Agents. Anda dapat membatalkan proses masuk yang tertunda dari panel akun."
         },
         {
           "title": "Pilih akun yang terhubung",
@@ -2475,7 +2475,7 @@
       "outcome": "Folder jarak jauh muncul sebagai ruang kerja dan tindakan yang didukung beroperasi pada host SSH.",
       "limits": [
         "Localhost server jarak jauh bukanlah localhost ponsel Anda. Pratinjau web jarak jauh memerlukan URL yang dapat dijangkau dari ponsel atau koneksi yang dikonfigurasi secara terpisah.",
-        "AndroidHarness tidak menginstal atau mengelola server SSH jarak jauh untuk Anda."
+        "YL Private Agents tidak menginstal atau mengelola server SSH jarak jauh untuk Anda."
       ],
       "fixes": [
         {
@@ -3580,7 +3580,7 @@
       ],
       "outcome": "Eksekusi dimulai sebagai proses MCP lokal dan berhasil mengiklankan alat.",
       "limits": [
-        "Server MCP lokal adalah perangkat lunak yang dapat dijalankan. AndroidHarness tidak membuat biner desktop sembarangan kompatibel dengan ponsel Anda.",
+        "Server MCP lokal adalah perangkat lunak yang dapat dijalankan. YL Private Agents tidak membuat biner desktop sembarangan kompatibel dengan ponsel Anda.",
         "Konfigurasi MCP/plugin yang disediakan proyek memerlukan tinjauan kepercayaan ruang kerja. Workspace MCP belum tersedia dalam obrolan multi-ruang kerja."
       ],
       "fixes": [
@@ -3621,7 +3621,7 @@
       "summary": "Tinjau bundel sebelum mengaktifkan keterampilan, pengait, dan peralatannya.",
       "location": "Pengaturan → Pengkodean → Plugin → Terpasang / Temukan / Tambahkan.",
       "before": [
-        "Gunakan plugin yang dibuat untuk format bundel yang didukung AndroidHarness.",
+        "Gunakan plugin yang dibuat untuk format bundel yang didukung YL Private Agents.",
         "Pilih apakah cakupannya proyek ini atau global."
       ],
       "steps": [
@@ -4284,10 +4284,10 @@
       "steps": [
         {
           "title": "Mulai penyedia",
-          "body": "Ikuti pengaturan aplikasi penyedia agar layanannya berjalan. AndroidHarness tidak mengaktifkannya hanya dengan diinstal."
+          "body": "Ikuti pengaturan aplikasi penyedia agar layanannya berjalan. YL Private Agents tidak mengaktifkannya hanya dengan diinstal."
         },
         {
-          "title": "Berikan akses AndroidHarness",
+          "title": "Berikan akses YL Private Agents",
           "body": "Buka bagian penyedia shell dan minta izin. Setujui permintaan yang dimaksud pada penyedia, lalu segarkan status koneksi."
         },
         {
@@ -4334,7 +4334,7 @@
       "category": "device",
       "title": "Pasangkan debugging nirkabel",
       "summary": "Hubungkan rute nirkabel ADB dari aplikasi.",
-      "location": "Android Opsi pengembang → Debugging nirkabel; AndroidHarness → Terminal & perangkat → Nirkabel ADB.",
+      "location": "Android Opsi pengembang → Debugging nirkabel; YL Private Agents → Terminal & perangkat → Nirkabel ADB.",
       "before": [
         "Versi Android yang didukung dengan debugging nirkabel tersedia.",
         "Status jaringan/perangkat yang memungkinkan proses debug nirkabel Android.",
@@ -4342,7 +4342,7 @@
       ],
       "steps": [
         {
-          "title": "Mulai memasangkan dari AndroidHarness",
+          "title": "Mulai memasangkan dari YL Private Agents",
           "body": "Di Nirkabel ADB, ketuk tombol memasangkan. Izinkan izin jaringan lokal jika Android memintanya. Aplikasi mulai mencari layanan pemasangan Android."
         },
         {
@@ -4351,7 +4351,7 @@
         },
         {
           "title": "Masukkan kode melalui notifikasi",
-          "body": "Tarik bayangan notifikasi ke bawah, buka notifikasi pemasangan AndroidHarness, gunakan tindakan Masukkan kode, dan kirimkan kode enam digit yang saat ini ditampilkan oleh Android. Tunggu hasil pairing/koneksi."
+          "body": "Tarik bayangan notifikasi ke bawah, buka notifikasi pemasangan YL Private Agents, gunakan tindakan Masukkan kode, dan kirimkan kode enam digit yang saat ini ditampilkan oleh Android. Tunggu hasil pairing/koneksi."
         },
         {
           "title": "Gunakan pemasangan manual jika diperlukan",
@@ -4399,7 +4399,7 @@
       "summary": "Pisahkan koneksi root, izin proyek, dan mode tugas.",
       "location": "Pengaturan → Pengkodean → Terminal & perangkat → Lanjutan → Akses root.",
       "before": [
-        "Perangkat yang sudah memiliki root manager yang berfungsi. AndroidHarness tidak melakukan root."
+        "Perangkat yang sudah memiliki root manager yang berfungsi. YL Private Agents tidak melakukan root."
       ],
       "steps": [
         {
@@ -4462,7 +4462,7 @@
       "steps": [
         {
           "title": "Periksa Dhizuku terlebih dahulu",
-          "body": "Buka aplikasinya sendiri dan verifikasi bahwa aktivasi Pemilik Perangkat telah selesai. Kartu AndroidHarness melaporkan apakah layanan diinstal, aktif, atau menunggu izin."
+          "body": "Buka aplikasinya sendiri dan verifikasi bahwa aktivasi Pemilik Perangkat telah selesai. Kartu YL Private Agents melaporkan apakah layanan diinstal, aktif, atau menunggu izin."
         },
         {
           "title": "Berikan koneksinya",
@@ -4697,7 +4697,7 @@
       "location": "Pengaturan → Telegram.",
       "before": [
         "Bot yang Anda kendalikan, dibuat melalui BotFather resmi Telegram.",
-        "Jaga ponsel Anda tetap online dengan layanan Telegram AndroidHarness diaktifkan."
+        "Jaga ponsel Anda tetap online dengan layanan Telegram YL Private Agents diaktifkan."
       ],
       "steps": [
         {
@@ -4706,7 +4706,7 @@
         },
         {
           "title": "Pasangkan akun Anda",
-          "body": "Mulai memasangkan di AndroidHarness, buka bot dengan tautan/kode yang disediakan, dan tinjau kembali identitas pengguna Telegram di aplikasi sebelum menyetujuinya."
+          "body": "Mulai memasangkan di YL Private Agents, buka bot dengan tautan/kode yang disediakan, dan tinjau kembali identitas pengguna Telegram di aplikasi sebelum menyetujuinya."
         },
         {
           "title": "Pilih konteks pekerjaan",
@@ -4719,7 +4719,7 @@
       ],
       "outcome": "Akun Telegram Anda yang dipasangkan dapat mengirimkan pekerjaan ke proyek aplikasi/obrolan yang dipilih dan menerima kemajuan/hasil.",
       "limits": [
-        "Bot dan ponsel Anda memerlukan akses jaringan. Telegram tidak menghosting tugas AndroidHarness atas nama Anda.",
+        "Bot dan ponsel Anda memerlukan akses jaringan. Telegram tidak menghosting tugas YL Private Agents atas nama Anda.",
         "Pemasangan, izin alat aplikasi, penagihan model, dan pengaturan latar belakang masih berlaku. Jangan menjalankan konsumen pesaing lainnya dengan token bot yang sama."
       ],
       "fixes": [
@@ -5707,7 +5707,7 @@
     {
       "id": "honest-limits",
       "category": "help",
-      "title": "Apa yang bisa dan tidak bisa dilakukan AndroidHarness",
+      "title": "Apa yang bisa dan tidak bisa dilakukan YL Private Agents",
       "summary": "Pisahkan kemampuan aplikasi dari janji model dan izin perangkat.",
       "location": "Gunakan daftar periksa ini sebelum memilih alur kerja.",
       "before": [
@@ -5964,17 +5964,17 @@
     {
       "id": "share-to-chat",
       "category": "chat",
-      "title": "Bagikan sesuatu ke AndroidHarness",
+      "title": "Bagikan sesuatu ke YL Private Agents",
       "summary": "Bawa teks, tautan, dan lampiran yang didukung dari aplikasi lain ke dalam Obrolan.",
-      "location": "Aplikasi Android lainnya → Bagikan → AndroidHarness.",
+      "location": "Aplikasi Android lainnya → Bagikan → YL Private Agents.",
       "before": [
         "Aplikasi sumber harus menawarkan berbagi Android untuk kontennya.",
         "Tinjau konten pribadi dan tujuan model sebelum mengirim."
       ],
       "steps": [
         {
-          "title": "Pilih AndroidHarness di Bagikan",
-          "body": "Gunakan lembar berbagi Android aplikasi sumber. AndroidHarness membuka lembar tinjauan untuk teks yang dibagikan dan pratinjau lampiran yang didukung."
+          "title": "Pilih YL Private Agents di Bagikan",
+          "body": "Gunakan lembar berbagi Android aplikasi sumber. YL Private Agents membuka lembar tinjauan untuk teks yang dibagikan dan pratinjau lampiran yang didukung."
         },
         {
           "title": "Pilih percakapan",

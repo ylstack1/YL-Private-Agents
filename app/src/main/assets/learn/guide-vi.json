@@ -92,7 +92,7 @@
       "outcome": "Bạn có thể chọn Trò chuyện để được giải thích và Mã để thay đổi một dự án thực.",
       "limits": [
         "Trò chuyện không thể âm thầm chỉnh sửa không gian làm việc của bạn hoặc chạy lệnh shell. Một yêu cầu về công việc của dự án có thể chuyển giao cho Code.",
-        "Mô hình bạn chọn ảnh hưởng đến chất lượng, cách sử dụng công cụ, tầm nhìn, chi phí và tốc độ. Việc cài đặt AndroidHarness không cấp quyền truy cập vào mọi mô hình AI."
+        "Mô hình bạn chọn ảnh hưởng đến chất lượng, cách sử dụng công cụ, tầm nhìn, chi phí và tốc độ. Việc cài đặt YL Private Agents không cấp quyền truy cập vào mọi mô hình AI."
       ],
       "fixes": [
         {
@@ -264,7 +264,7 @@
       "steps": [
         {
           "title": "Hiểu chìa khóa",
-          "body": "Khóa API là thông tin xác thực bí mật. Nó cho phép AndroidHarness gửi yêu cầu đến tài khoản nhà cung cấp của bạn. Việc tạo khóa không tự nó mua một mô hình, nạp tiền vào tài khoản hoặc thực hiện các yêu cầu không giới hạn."
+          "body": "Khóa API là thông tin xác thực bí mật. Nó cho phép YL Private Agents gửi yêu cầu đến tài khoản nhà cung cấp của bạn. Việc tạo khóa không tự nó mua một mô hình, nạp tiền vào tài khoản hoặc thực hiện các yêu cầu không giới hạn."
         },
         {
           "title": "Kiểm tra lộ trình thanh toán",
@@ -272,7 +272,7 @@
         },
         {
           "title": "Kích hoạt quyền truy cập nếu cần",
-          "body": "Sử dụng thanh toán riêng của nhà cung cấp để thêm phương thức thanh toán, mua tín dụng hoặc kích hoạt gói phù hợp. Kiểm tra các khoản nạp tiền tự động và kiểm soát chi tiêu trước khi xác nhận. AndroidHarness không bán đăng ký API của nhà cung cấp."
+          "body": "Sử dụng thanh toán riêng của nhà cung cấp để thêm phương thức thanh toán, mua tín dụng hoặc kích hoạt gói phù hợp. Kiểm tra các khoản nạp tiền tự động và kiểm soát chi tiêu trước khi xác nhận. YL Private Agents không bán đăng ký API của nhà cung cấp."
         },
         {
           "title": "Theo dõi việc sử dụng",
@@ -287,7 +287,7 @@
       "fixes": [
         {
           "problem": "Tôi đã thanh toán cho một ứng dụng trò chuyện nhưng khóa API của tôi không thành công",
-          "solution": "Kiểm tra bảng điều khiển dành cho nhà phát triển để biết quyền truy cập API, tín dụng hiện có và bất kỳ bước liên kết tín dụng đăng ký nào. Hoặc sử dụng kết nối đăng nhập được hỗ trợ trong AndroidHarness."
+          "solution": "Kiểm tra bảng điều khiển dành cho nhà phát triển để biết quyền truy cập API, tín dụng hiện có và bất kỳ bước liên kết tín dụng đăng ký nào. Hoặc sử dụng kết nối đăng nhập được hỗ trợ trong YL Private Agents."
         }
       ],
       "related": [
@@ -392,7 +392,7 @@
       "category": "providers",
       "title": "Kết nối khóa OpenAI API",
       "summary": "Thiết lập quyền truy cập API và chọn loại kết nối OpenAI.",
-      "location": "Nền tảng dành cho nhà phát triển OpenAI → Khóa và thanh toán API; AndroidHarness → Quản lý nhà cung cấp.",
+      "location": "Nền tảng dành cho nhà phát triển OpenAI → Khóa và thanh toán API; YL Private Agents → Quản lý nhà cung cấp.",
       "before": [
         "Sử dụng tài khoản OpenAI và tổ chức API mà bạn định thanh toán."
       ],
@@ -406,7 +406,7 @@
           "body": "Tạo khóa API của dự án, đặt tên dễ nhận biết và sao chép bí mật trong khi nó được hiển thị. Giữ nó riêng tư."
         },
         {
-          "title": "Thêm nó vào AndroidHarness",
+          "title": "Thêm nó vào YL Private Agents",
           "body": "Trong Quản lý nhà cung cấp, chọn OpenAI hoặc OpenAI (Phản hồi). Dán khóa, tiếp tục, chọn một kiểu máy có sẵn và lưu."
         },
         {
@@ -458,7 +458,7 @@
       "category": "providers",
       "title": "Kết nối Claude thông qua API",
       "summary": "Tạo khóa Anthropic và kiểm tra nguồn vốn API của nó.",
-      "location": "Bảng điều khiển Claude → Phím API và Thanh toán; AndroidHarness → Quản lý nhà cung cấp → Anthropic.",
+      "location": "Bảng điều khiển Claude → Phím API và Thanh toán; YL Private Agents → Quản lý nhà cung cấp → Anthropic.",
       "before": [
         "Có quyền truy cập vào tổ chức hoặc không gian làm việc Claude API dự định."
       ],
@@ -477,7 +477,7 @@
         },
         {
           "title": "Lưu và kiểm tra",
-          "body": "Chọn Anthropic trong AndroidHarness, dán khóa, chọn mẫu có sẵn cho tài khoản của bạn và lưu. Chọn nó trong Trò chuyện hoặc Mã và gửi một yêu cầu ngắn."
+          "body": "Chọn Anthropic trong YL Private Agents, dán khóa, chọn mẫu có sẵn cho tài khoản của bạn và lưu. Chọn nó trong Trò chuyện hoặc Mã và gửi một yêu cầu ngắn."
         }
       ],
       "outcome": "Kết nối Anthropic đã lưu có thể trả lời với kiểu máy bạn đã chọn.",
@@ -488,7 +488,7 @@
       "fixes": [
         {
           "problem": "Nhà cung cấp báo cáo tín dụng thấp",
-          "solution": "Kiểm tra trang thanh toán để biết tổ chức sở hữu khóa này. Việc thêm khóa vào AndroidHarness sẽ không thêm tiền."
+          "solution": "Kiểm tra trang thanh toán để biết tổ chức sở hữu khóa này. Việc thêm khóa vào YL Private Agents sẽ không thêm tiền."
         }
       ],
       "related": [
@@ -524,7 +524,7 @@
       "category": "providers",
       "title": "Kết nối khóa Gemini API",
       "summary": "Sử dụng Google AI Studio và chọn dự án phù hợp.",
-      "location": "Google AI Studio → Phím API; AndroidHarness → Quản lý nhà cung cấp → Gemini.",
+      "location": "Google AI Studio → Phím API; YL Private Agents → Quản lý nhà cung cấp → Gemini.",
       "before": [
         "Sử dụng tài khoản Google và dự án đủ điều kiện cho Gemini API."
       ],
@@ -539,14 +539,14 @@
         },
         {
           "title": "Thêm kết nối Gemini",
-          "body": "Chọn Gemini trong AndroidHarness, dán khóa, tiếp tục vào danh sách mẫu và lưu mẫu được cung cấp vào tài khoản của bạn."
+          "body": "Chọn Gemini trong YL Private Agents, dán khóa, tiếp tục vào danh sách mẫu và lưu mẫu được cung cấp vào tài khoản của bạn."
         },
         {
           "title": "Hãy thử một tin nhắn ngắn",
           "body": "Chọn mô hình trong Trò chuyện hoặc Mã. Nếu không thành công, hãy kiểm tra xem dự án của khóa, API đã bật, trạng thái thanh toán và giới hạn kiểu máy có khớp với yêu cầu của bạn hay không."
         }
       ],
-      "outcome": "AndroidHarness có thể tiếp cận Gemini bằng cách sử dụng khóa được đính kèm với dự án bạn đã chọn.",
+      "outcome": "YL Private Agents có thể tiếp cận Gemini bằng cách sử dụng khóa được đính kèm với dự án bạn đã chọn.",
       "limits": [
         "Các cấp độ miễn phí và trả phí có các giới hạn và điều khoản khác nhau. Kiểm tra trang thanh toán chính thức hiện tại trước khi sử dụng dữ liệu nhạy cảm hoặc mua hàng.",
         "Một mô hình hỗ trợ hình ảnh không cung cấp mọi tính năng của nhà cung cấp thông qua ứng dụng này. Chỉ có khả năng hội thoại và công cụ được triển khai mới được hiển thị."
@@ -590,7 +590,7 @@
       "category": "providers",
       "title": "Kết nối OpenRouter",
       "summary": "Sử dụng một kết nối để chọn từ danh mục mẫu của OpenRouter.",
-      "location": "OpenRouter → Cài đặt → Khóa và Tín dụng; AndroidHarness → Quản lý nhà cung cấp → OpenRouter.",
+      "location": "OpenRouter → Cài đặt → Khóa và Tín dụng; YL Private Agents → Quản lý nhà cung cấp → OpenRouter.",
       "before": [
         "Có tài khoản OpenRouter. Kiểm tra giá cả và yêu cầu truy cập của từng mẫu đã chọn."
       ],
@@ -675,7 +675,7 @@
         },
         {
           "title": "Lưu và chọn một mô hình",
-          "body": "Dán khóa vào kết nối AndroidHarness phù hợp, chọn kiểu máy được cung cấp và lưu. Chọn mô hình đó trong tiêu đề cuộc trò chuyện và kiểm tra nó."
+          "body": "Dán khóa vào kết nối YL Private Agents phù hợp, chọn kiểu máy được cung cấp và lưu. Chọn mô hình đó trong tiêu đề cuộc trò chuyện và kiểm tra nó."
         }
       ],
       "outcome": "Dịch vụ đã chọn có sẵn trong bộ chọn mô hình của bạn.",
@@ -759,13 +759,13 @@
         },
         {
           "title": "Kiểm tra từ điện thoại",
-          "body": "Đảm bảo máy chủ đang lắng nghe trên giao diện có thể truy cập và mạng cho phép kết nối. Lưu nhà cung cấp và gửi một yêu cầu nhỏ từ AndroidHarness."
+          "body": "Đảm bảo máy chủ đang lắng nghe trên giao diện có thể truy cập và mạng cho phép kết nối. Lưu nhà cung cấp và gửi một yêu cầu nhỏ từ YL Private Agents."
         }
       ],
       "outcome": "Điện thoại có thể nói chuyện với máy chủ tương thích và nhận được phản hồi mẫu.",
       "limits": [
         "Máy chủ mô hình máy tính để bàn khác với tính năng Mô hình cục bộ trên thiết bị của ứng dụng.",
-        "AndroidHarness không khởi động Ollama hoặc LM Studio trên máy tính của bạn hoặc tự động tạo đường hầm mạng."
+        "YL Private Agents không khởi động Ollama hoặc LM Studio trên máy tính của bạn hoặc tự động tạo đường hầm mạng."
       ],
       "fixes": [
         {
@@ -983,7 +983,7 @@
       "steps": [
         {
           "title": "Bắt đầu đăng nhập",
-          "body": "Chọn Thêm tài khoản hoặc hành động đăng nhập. Hoàn tất ủy quyền trình duyệt chính thức và quay lại AndroidHarness. Bạn có thể hủy đăng nhập đang chờ xử lý từ bảng tài khoản."
+          "body": "Chọn Thêm tài khoản hoặc hành động đăng nhập. Hoàn tất ủy quyền trình duyệt chính thức và quay lại YL Private Agents. Bạn có thể hủy đăng nhập đang chờ xử lý từ bảng tài khoản."
         },
         {
           "title": "Chọn tài khoản được kết nối",
@@ -2475,7 +2475,7 @@
       "outcome": "Thư mục từ xa xuất hiện dưới dạng không gian làm việc và các hành động được hỗ trợ hoạt động trên máy chủ SSH.",
       "limits": [
         "Máy chủ cục bộ của máy chủ từ xa không phải là máy chủ cục bộ của điện thoại của bạn. Bản xem trước web từ xa cần có thể truy cập URL từ điện thoại hoặc kết nối được định cấu hình riêng.",
-        "AndroidHarness không cài đặt hoặc quản lý máy chủ SSH từ xa cho bạn."
+        "YL Private Agents không cài đặt hoặc quản lý máy chủ SSH từ xa cho bạn."
       ],
       "fixes": [
         {
@@ -3580,7 +3580,7 @@
       ],
       "outcome": "Tệp thực thi bắt đầu dưới dạng quy trình MCP cục bộ và quảng cáo thành công các công cụ.",
       "limits": [
-        "Máy chủ MCP cục bộ là phần mềm thực thi. AndroidHarness không tạo các tệp nhị phân tùy ý trên máy tính để bàn tương thích với điện thoại của bạn.",
+        "Máy chủ MCP cục bộ là phần mềm thực thi. YL Private Agents không tạo các tệp nhị phân tùy ý trên máy tính để bàn tương thích với điện thoại của bạn.",
         "Cấu hình MCP/plugin do dự án cung cấp cần được đánh giá độ tin cậy trong không gian làm việc. Workspace MCP chưa có sẵn trong cuộc trò chuyện trên nhiều không gian làm việc."
       ],
       "fixes": [
@@ -3621,7 +3621,7 @@
       "summary": "Xem lại gói trước khi kích hoạt các kỹ năng, móc nối và công cụ của gói đó.",
       "location": "Cài đặt → Mã hóa → Plugin → Đã cài đặt / Khám phá / Thêm.",
       "before": [
-        "Sử dụng plugin được tạo cho định dạng gói được hỗ trợ của AndroidHarness.",
+        "Sử dụng plugin được tạo cho định dạng gói được hỗ trợ của YL Private Agents.",
         "Chọn xem phạm vi của nó nên là dự án này hay toàn cầu."
       ],
       "steps": [
@@ -4284,10 +4284,10 @@
       "steps": [
         {
           "title": "Bắt đầu nhà cung cấp",
-          "body": "Làm theo thiết lập riêng của ứng dụng nhà cung cấp để dịch vụ của ứng dụng đó có thể chạy. AndroidHarness không kích hoạt nó chỉ bằng cách cài đặt."
+          "body": "Làm theo thiết lập riêng của ứng dụng nhà cung cấp để dịch vụ của ứng dụng đó có thể chạy. YL Private Agents không kích hoạt nó chỉ bằng cách cài đặt."
         },
         {
-          "title": "Cấp quyền truy cập AndroidHarness",
+          "title": "Cấp quyền truy cập YL Private Agents",
           "body": "Mở phần nhà cung cấp shell và yêu cầu quyền. Phê duyệt yêu cầu dự định trong nhà cung cấp, sau đó làm mới trạng thái kết nối."
         },
         {
@@ -4334,7 +4334,7 @@
       "category": "device",
       "title": "Ghép nối gỡ lỗi không dây",
       "summary": "Kết nối tuyến ADB không dây của Android từ ứng dụng.",
-      "location": "Android Tùy chọn dành cho nhà phát triển → Gỡ lỗi không dây; AndroidHarness → Thiết bị đầu cuối & thiết bị → ADB không dây.",
+      "location": "Android Tùy chọn dành cho nhà phát triển → Gỡ lỗi không dây; YL Private Agents → Thiết bị đầu cuối & thiết bị → ADB không dây.",
       "before": [
         "Phiên bản Android được hỗ trợ có sẵn tính năng gỡ lỗi không dây.",
         "Trạng thái mạng/thiết bị cho phép gỡ lỗi không dây Android.",
@@ -4342,7 +4342,7 @@
       ],
       "steps": [
         {
-          "title": "Bắt đầu ghép nối từ AndroidHarness",
+          "title": "Bắt đầu ghép nối từ YL Private Agents",
           "body": "Trong Wireless ADB, chạm vào nút ghép nối. Cho phép quyền mạng cục bộ nếu Android yêu cầu. Ứng dụng bắt đầu tìm kiếm dịch vụ ghép nối của Android."
         },
         {
@@ -4351,7 +4351,7 @@
         },
         {
           "title": "Nhập mã thông qua thông báo",
-          "body": "Kéo ngăn thông báo xuống, mở thông báo ghép nối của AndroidHarness, sử dụng hành động Nhập mã và gửi mã gồm sáu chữ số hiện được hiển thị bởi Android. Chờ kết quả ghép nối/kết nối."
+          "body": "Kéo ngăn thông báo xuống, mở thông báo ghép nối của YL Private Agents, sử dụng hành động Nhập mã và gửi mã gồm sáu chữ số hiện được hiển thị bởi Android. Chờ kết quả ghép nối/kết nối."
         },
         {
           "title": "Sử dụng ghép nối thủ công nếu cần",
@@ -4399,7 +4399,7 @@
       "summary": "Giữ kết nối gốc, quyền dự án và chế độ tác vụ riêng biệt.",
       "location": "Cài đặt → Mã hóa → Thiết bị đầu cuối & thiết bị → Nâng cao → Truy cập root.",
       "before": [
-        "Một thiết bị đã có trình quản lý gốc đang hoạt động. AndroidHarness không root nó."
+        "Một thiết bị đã có trình quản lý gốc đang hoạt động. YL Private Agents không root nó."
       ],
       "steps": [
         {
@@ -4462,7 +4462,7 @@
       "steps": [
         {
           "title": "Kiểm tra Dhizuku trước",
-          "body": "Mở ứng dụng của riêng nó và xác minh rằng quá trình kích hoạt Chủ sở hữu thiết bị đã hoàn tất. Thẻ của AndroidHarness báo cáo xem dịch vụ đã được cài đặt, đang hoạt động hay đang chờ cấp phép."
+          "body": "Mở ứng dụng của riêng nó và xác minh rằng quá trình kích hoạt Chủ sở hữu thiết bị đã hoàn tất. Thẻ của YL Private Agents báo cáo xem dịch vụ đã được cài đặt, đang hoạt động hay đang chờ cấp phép."
         },
         {
           "title": "Cấp kết nối",
@@ -4697,7 +4697,7 @@
       "location": "Cài đặt → Telegram.",
       "before": [
         "Một bot bạn điều khiển, được tạo thông qua BotFather chính thức của Telegram.",
-        "Giữ điện thoại của bạn trực tuyến khi bật dịch vụ Telegram của AndroidHarness."
+        "Giữ điện thoại của bạn trực tuyến khi bật dịch vụ Telegram của YL Private Agents."
       ],
       "steps": [
         {
@@ -4706,7 +4706,7 @@
         },
         {
           "title": "Ghép nối tài khoản của bạn",
-          "body": "Bắt đầu ghép nối trong AndroidHarness, mở bot bằng liên kết/mã được cung cấp và xem lại danh tính người dùng Telegram trong ứng dụng trước khi phê duyệt."
+          "body": "Bắt đầu ghép nối trong YL Private Agents, mở bot bằng liên kết/mã được cung cấp và xem lại danh tính người dùng Telegram trong ứng dụng trước khi phê duyệt."
         },
         {
           "title": "Chọn bối cảnh công việc",
@@ -4719,7 +4719,7 @@
       ],
       "outcome": "Tài khoản Telegram được ghép nối của bạn có thể gửi công việc đến dự án/trò chuyện ứng dụng đã chọn và nhận tiến trình/kết quả.",
       "limits": [
-        "Bot và điện thoại của bạn cần truy cập mạng. Telegram không thay mặt bạn thực hiện nhiệm vụ AndroidHarness.",
+        "Bot và điện thoại của bạn cần truy cập mạng. Telegram không thay mặt bạn thực hiện nhiệm vụ YL Private Agents.",
         "Ghép nối, quyền công cụ ứng dụng, thanh toán kiểu máy và cài đặt nền vẫn được áp dụng. Không chạy một người tiêu dùng cạnh tranh khác có cùng mã thông báo bot."
       ],
       "fixes": [
@@ -5707,7 +5707,7 @@
     {
       "id": "honest-limits",
       "category": "help",
-      "title": "AndroidHarness có thể và không thể làm gì",
+      "title": "YL Private Agents có thể và không thể làm gì",
       "summary": "Tách biệt khả năng của ứng dụng khỏi lời hứa về mô hình và quyền của thiết bị.",
       "location": "Sử dụng danh sách kiểm tra này trước khi chọn quy trình làm việc.",
       "before": [
@@ -5964,17 +5964,17 @@
     {
       "id": "share-to-chat",
       "category": "chat",
-      "title": "Chia sẻ nội dung nào đó vào AndroidHarness",
+      "title": "Chia sẻ nội dung nào đó vào YL Private Agents",
       "summary": "Đưa văn bản, liên kết và tệp đính kèm được hỗ trợ từ ứng dụng khác vào Trò chuyện.",
-      "location": "Một ứng dụng Android khác → Chia sẻ → AndroidHarness.",
+      "location": "Một ứng dụng Android khác → Chia sẻ → YL Private Agents.",
       "before": [
         "Ứng dụng nguồn phải cung cấp tính năng chia sẻ Android cho nội dung.",
         "Xem lại nội dung riêng tư và đích đến của mô hình trước khi gửi."
       ],
       "steps": [
         {
-          "title": "Chọn AndroidHarness trong Chia sẻ",
-          "body": "Sử dụng bảng chia sẻ Android của ứng dụng nguồn. AndroidHarness mở một bảng đánh giá về văn bản được chia sẻ và các bản xem trước tệp đính kèm được hỗ trợ."
+          "title": "Chọn YL Private Agents trong Chia sẻ",
+          "body": "Sử dụng bảng chia sẻ Android của ứng dụng nguồn. YL Private Agents mở một bảng đánh giá về văn bản được chia sẻ và các bản xem trước tệp đính kèm được hỗ trợ."
         },
         {
           "title": "Chọn cuộc trò chuyện",

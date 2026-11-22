@@ -92,7 +92,7 @@
       "outcome": "Açıklama için Sohbet'i, gerçek bir projede değişiklik yapmak için Kod'u seçebilirsiniz.",
       "limits": [
         "Chat, çalışma alanınızı sessizce düzenleyemez veya kabuk komutlarını çalıştıramaz. Proje çalışmasına yönelik bir talep, Kod'a geçiş yapılmasını sağlayabilir.",
-        "Seçtiğiniz model kaliteyi, takım kullanımını, vizyonu, maliyeti ve hızı etkiler. AndroidHarness'nin yüklenmesi her yapay zeka modeline erişim izni vermez."
+        "Seçtiğiniz model kaliteyi, takım kullanımını, vizyonu, maliyeti ve hızı etkiler. YL Private Agents'nin yüklenmesi her yapay zeka modeline erişim izni vermez."
       ],
       "fixes": [
         {
@@ -264,7 +264,7 @@
       "steps": [
         {
           "title": "Anahtarı anlayın",
-          "body": "API anahtarı gizli bir kimlik bilgisidir. AndroidHarness'nin sağlayıcı hesabınıza istek göndermesine olanak tanır. Anahtar oluşturmanın kendisi bir model satın almaz, bir hesaba fon sağlamaz veya istekleri sınırsız hale getirmez."
+          "body": "API anahtarı gizli bir kimlik bilgisidir. YL Private Agents'nin sağlayıcı hesabınıza istek göndermesine olanak tanır. Anahtar oluşturmanın kendisi bir model satın almaz, bir hesaba fon sağlamaz veya istekleri sınırsız hale getirmez."
         },
         {
           "title": "Faturalandırma yolunu kontrol edin",
@@ -272,7 +272,7 @@
         },
         {
           "title": "Gerekirse erişimi etkinleştirin",
-          "body": "Bir ödeme yöntemi eklemek, kredi satın almak veya uygun bir planı etkinleştirmek için sağlayıcının kendi ödeme sayfasını kullanın. Onaylamadan önce otomatik yüklemeleri ve harcama kontrollerini kontrol edin. AndroidHarness, sağlayıcı API aboneliklerini satmaz."
+          "body": "Bir ödeme yöntemi eklemek, kredi satın almak veya uygun bir planı etkinleştirmek için sağlayıcının kendi ödeme sayfasını kullanın. Onaylamadan önce otomatik yüklemeleri ve harcama kontrollerini kontrol edin. YL Private Agents, sağlayıcı API aboneliklerini satmaz."
         },
         {
           "title": "Kullanıma dikkat edin",
@@ -287,7 +287,7 @@
       "fixes": [
         {
           "problem": "Bir sohbet uygulaması için ödeme yaptım ancak API anahtarım başarısız oluyor",
-          "solution": "API erişimi, mevcut krediler ve abonelik-kredi bağlama adımları için geliştirici konsolunu kontrol edin. Alternatif olarak AndroidHarness'de desteklenen bir oturum açma bağlantısını kullanın."
+          "solution": "API erişimi, mevcut krediler ve abonelik-kredi bağlama adımları için geliştirici konsolunu kontrol edin. Alternatif olarak YL Private Agents'de desteklenen bir oturum açma bağlantısını kullanın."
         }
       ],
       "related": [
@@ -392,7 +392,7 @@
       "category": "providers",
       "title": "Bir OpenAI API anahtarı bağlayın",
       "summary": "API erişimini ayarlayın ve OpenAI bağlantı türünü seçin.",
-      "location": "OpenAI geliştirici platformu → API anahtarları ve Faturalandırma; AndroidHarness → Sağlayıcıları yönetin.",
+      "location": "OpenAI geliştirici platformu → API anahtarları ve Faturalandırma; YL Private Agents → Sağlayıcıları yönetin.",
       "before": [
         "Ödeme yapmayı düşündüğünüz OpenAI hesabını ve API organizasyonunu kullanın."
       ],
@@ -406,7 +406,7 @@
           "body": "Bir proje API anahtarı oluşturun, ona tanınabilir bir ad verin ve gizli dizi görüntülenirken kopyalayın. Bunu özel tut."
         },
         {
-          "title": "AndroidHarness'ye ekleyin",
+          "title": "YL Private Agents'ye ekleyin",
           "body": "Sağlayıcıları yönet bölümünde OpenAI veya OpenAI (Yanıtlar) öğesini seçin. Anahtarı yapıştırın, devam edin, mevcut bir modeli seçin ve kaydedin."
         },
         {
@@ -458,7 +458,7 @@
       "category": "providers",
       "title": "Claude'yi API aracılığıyla bağlayın",
       "summary": "Bir Anthropic anahtarı oluşturun ve API finansmanını kontrol edin.",
-      "location": "Claude Konsol → API anahtarları ve Faturalandırma; AndroidHarness → Sağlayıcıları yönetin → Anthropic.",
+      "location": "Claude Konsol → API anahtarları ve Faturalandırma; YL Private Agents → Sağlayıcıları yönetin → Anthropic.",
       "before": [
         "Amaçlanan Claude API organizasyonuna veya çalışma alanına erişime sahip olun."
       ],
@@ -477,7 +477,7 @@
         },
         {
           "title": "Kaydet ve test et",
-          "body": "AndroidHarness'de Anthropic'yi seçin, anahtarı yapıştırın, hesabınızda kullanılabilen bir model seçin ve kaydedin. Bunu Sohbet veya Kod'da seçin ve kısa bir istek gönderin."
+          "body": "YL Private Agents'de Anthropic'yi seçin, anahtarı yapıştırın, hesabınızda kullanılabilen bir model seçin ve kaydedin. Bunu Sohbet veya Kod'da seçin ve kısa bir istek gönderin."
         }
       ],
       "outcome": "Kaydedilmiş bir Anthropic bağlantısı seçtiğiniz modelle yanıt verebilir.",
@@ -488,7 +488,7 @@
       "fixes": [
         {
           "problem": "Sağlayıcı düşük kredi bildiriyor",
-          "solution": "Bu anahtarın sahibi olan kuruluşun faturalandırma sayfasını kontrol edin. AndroidHarness'ye anahtar eklemek para eklemez."
+          "solution": "Bu anahtarın sahibi olan kuruluşun faturalandırma sayfasını kontrol edin. YL Private Agents'ye anahtar eklemek para eklemez."
         }
       ],
       "related": [
@@ -524,7 +524,7 @@
       "category": "providers",
       "title": "Bir Gemini API anahtarı bağlayın",
       "summary": "Google AI Studio'yu kullanın ve doğru projeyi seçin.",
-      "location": "Google AI Studio → API tuşları; AndroidHarness → Sağlayıcıları yönetin → Gemini.",
+      "location": "Google AI Studio → API tuşları; YL Private Agents → Sağlayıcıları yönetin → Gemini.",
       "before": [
         "Gemini API'ye uygun bir Google hesabı ve proje kullanın."
       ],
@@ -539,14 +539,14 @@
         },
         {
           "title": "Gemini bağlantısını ekleyin",
-          "body": "AndroidHarness'de Gemini'yi seçin, anahtarı yapıştırın, model listesine devam edin ve hesabınıza sunulan bir modeli kaydedin."
+          "body": "YL Private Agents'de Gemini'yi seçin, anahtarı yapıştırın, model listesine devam edin ve hesabınıza sunulan bir modeli kaydedin."
         },
         {
           "title": "Kısa bir mesaj deneyin",
           "body": "Modeli Sohbet veya Kod'da seçin. Başarısız olursa anahtar projesinin, etkin API'nin, faturalama durumunun ve model sınırlarının isteğinizle eşleşip eşleşmediğini kontrol edin."
         }
       ],
-      "outcome": "AndroidHarness, seçtiğiniz projeye eklenen anahtarı kullanarak Gemini'ye ulaşabilir.",
+      "outcome": "YL Private Agents, seçtiğiniz projeye eklenen anahtarı kullanarak Gemini'ye ulaşabilir.",
       "limits": [
         "Ücretsiz ve ücretli katmanların farklı sınırları ve koşulları vardır. Hassas verileri kullanmadan veya satın alma işlemi yapmadan önce mevcut resmi faturalandırma sayfasını kontrol edin.",
         "Resimleri destekleyen bir model, her sağlayıcı özelliğinin bu uygulama aracılığıyla kullanılabilir olmasını sağlamaz. Yalnızca uygulanan konuşma ve araç yetenekleri gösterilir."
@@ -590,7 +590,7 @@
       "category": "providers",
       "title": "OpenRouter'yi bağlayın",
       "summary": "OpenRouter'nin model kataloğundan seçim yapmak için tek bir bağlantı kullanın.",
-      "location": "OpenRouter → Ayarlar → Tuşlar ve Krediler; AndroidHarness → Sağlayıcıları yönetin → OpenRouter.",
+      "location": "OpenRouter → Ayarlar → Tuşlar ve Krediler; YL Private Agents → Sağlayıcıları yönetin → OpenRouter.",
       "before": [
         "Bir OpenRouter hesabınız olsun. Seçilen her modelin fiyatını ve erişim gereksinimlerini kontrol edin."
       ],
@@ -675,7 +675,7 @@
         },
         {
           "title": "Bir modeli kaydedin ve seçin",
-          "body": "Anahtarı eşleşen AndroidHarness bağlantısına yapıştırın, sunulan bir modeli seçin ve kaydedin. Konuşma başlığında bu modeli seçin ve test edin."
+          "body": "Anahtarı eşleşen YL Private Agents bağlantısına yapıştırın, sunulan bir modeli seçin ve kaydedin. Konuşma başlığında bu modeli seçin ve test edin."
         }
       ],
       "outcome": "Seçilen hizmet model seçicinizde mevcuttur.",
@@ -759,13 +759,13 @@
         },
         {
           "title": "Telefondan test edin",
-          "body": "Sunucunun erişilebilir bir arayüzü dinlediğinden ve ağın bağlantıya izin verdiğinden emin olun. Sağlayıcıyı kaydedin ve AndroidHarness'den küçük bir istek gönderin."
+          "body": "Sunucunun erişilebilir bir arayüzü dinlediğinden ve ağın bağlantıya izin verdiğinden emin olun. Sağlayıcıyı kaydedin ve YL Private Agents'den küçük bir istek gönderin."
         }
       ],
       "outcome": "Telefon uyumlu sunucuyla konuşabilir ve bir model yanıtı alabilir.",
       "limits": [
         "Masaüstü model sunucusu, uygulamanın cihazdaki Yerel modeller özelliğinden farklıdır.",
-        "AndroidHarness, bilgisayarınızda Ollama veya LM Studio'yi başlatmaz veya otomatik olarak bir ağ tüneli oluşturmaz."
+        "YL Private Agents, bilgisayarınızda Ollama veya LM Studio'yi başlatmaz veya otomatik olarak bir ağ tüneli oluşturmaz."
       ],
       "fixes": [
         {
@@ -983,7 +983,7 @@
       "steps": [
         {
           "title": "Oturum açmayı başlat",
-          "body": "Hesap ekle'yi veya oturum açma eylemini seçin. Resmi tarayıcı yetkilendirmesini tamamlayın ve AndroidHarness'ye geri dönün. Bekleyen bir oturum açma işlemini hesap panelinden iptal edebilirsiniz."
+          "body": "Hesap ekle'yi veya oturum açma eylemini seçin. Resmi tarayıcı yetkilendirmesini tamamlayın ve YL Private Agents'ye geri dönün. Bekleyen bir oturum açma işlemini hesap panelinden iptal edebilirsiniz."
         },
         {
           "title": "Bağlı hesabı seçin",
@@ -2475,7 +2475,7 @@
       "outcome": "Uzak klasör bir çalışma alanı olarak görünür ve desteklenen eylemler SSH ana bilgisayarında çalışır.",
       "limits": [
         "Uzak sunucunun yerel ana bilgisayarı, telefonunuzun yerel ana bilgisayarı değildir. Uzaktan web önizlemeleri, telefondan erişilebilen bir URL'ye veya ayrı olarak yapılandırılmış bir bağlantıya ihtiyaç duyar.",
-        "AndroidHarness, uzak SSH sunucusunu sizin için kurmaz veya yönetmez."
+        "YL Private Agents, uzak SSH sunucusunu sizin için kurmaz veya yönetmez."
       ],
       "fixes": [
         {
@@ -3580,7 +3580,7 @@
       ],
       "outcome": "Yürütülebilir dosya yerel bir MCP işlemi olarak başlar ve araçları başarıyla tanıtır.",
       "limits": [
-        "Yerel MCP sunucusu çalıştırılabilir bir yazılımdır. AndroidHarness, rastgele masaüstü ikili dosyalarını telefonunuzla uyumlu hale getirmez.",
+        "Yerel MCP sunucusu çalıştırılabilir bir yazılımdır. YL Private Agents, rastgele masaüstü ikili dosyalarını telefonunuzla uyumlu hale getirmez.",
         "Proje tarafından sağlanan MCP/eklenti yapılandırmasının çalışma alanı güveninin incelenmesi gerekiyor. Workspace MCP henüz çoklu çalışma alanı sohbetlerinde kullanılamıyor."
       ],
       "fixes": [
@@ -3621,7 +3621,7 @@
       "summary": "Becerilerini, kancalarını ve araçlarını etkinleştirmeden önce bir paketi inceleyin.",
       "location": "Ayarlar → Kodlama → Eklentiler → Yüklendi / Keşfet / Ekle.",
       "before": [
-        "AndroidHarness'nin desteklenen paket formatı için yapılmış bir eklenti kullanın.",
+        "YL Private Agents'nin desteklenen paket formatı için yapılmış bir eklenti kullanın.",
         "Kapsamının bu proje mi yoksa küresel mi olacağını seçin."
       ],
       "steps": [
@@ -4284,10 +4284,10 @@
       "steps": [
         {
           "title": "Sağlayıcıyı başlat",
-          "body": "Hizmetinin çalışması için sağlayıcı uygulamasının kendi kurulumunu izleyin. AndroidHarness onu yalnızca kurularak etkinleştirmez."
+          "body": "Hizmetinin çalışması için sağlayıcı uygulamasının kendi kurulumunu izleyin. YL Private Agents onu yalnızca kurularak etkinleştirmez."
         },
         {
-          "title": "AndroidHarness'ye erişim izni ver",
+          "title": "YL Private Agents'ye erişim izni ver",
           "body": "Kabuk sağlayıcı bölümünü açın ve izin isteyin. Sağlayıcıda amaçlanan isteği onaylayın, ardından bağlantı durumunu yenileyin."
         },
         {
@@ -4334,7 +4334,7 @@
       "category": "device",
       "title": "Kablosuz hata ayıklamayı eşleştir",
       "summary": "Uygulamadan Android'nin kablosuz ADB rotasını bağlayın.",
-      "location": "Android Geliştirici seçenekleri → Kablosuz hata ayıklama; AndroidHarness → Terminal ve cihaz → Kablosuz ADB.",
+      "location": "Android Geliştirici seçenekleri → Kablosuz hata ayıklama; YL Private Agents → Terminal ve cihaz → Kablosuz ADB.",
       "before": [
         "Kablosuz hata ayıklama özelliğine sahip, desteklenen bir Android sürümü mevcuttur.",
         "Android kablosuz hata ayıklamaya izin veren bir ağ/cihaz durumu.",
@@ -4342,7 +4342,7 @@
       ],
       "steps": [
         {
-          "title": "AndroidHarness'den eşleştirmeye başlayın",
+          "title": "YL Private Agents'den eşleştirmeye başlayın",
           "body": "Kablosuz ADB'de eşleştirme düğmesine dokunun. Android isterse yerel ağ iznine izin verin. Uygulama, Android'nin eşleştirme hizmetini aramaya başlar."
         },
         {
@@ -4351,7 +4351,7 @@
         },
         {
           "title": "Kodu bildirim yoluyla girin",
-          "body": "Bildirim gölgesini aşağı çekin, AndroidHarness'nin eşleştirme bildirimini açın, Kodu girin işlemini kullanın ve halihazırda Android tarafından gösterilen altı haneli kodu gönderin. Eşleştirme/bağlantı sonucunu bekleyin."
+          "body": "Bildirim gölgesini aşağı çekin, YL Private Agents'nin eşleştirme bildirimini açın, Kodu girin işlemini kullanın ve halihazırda Android tarafından gösterilen altı haneli kodu gönderin. Eşleştirme/bağlantı sonucunu bekleyin."
         },
         {
           "title": "Gerekirse manuel eşleştirmeyi kullanın",
@@ -4399,7 +4399,7 @@
       "summary": "Kök bağlantısını, proje iznini ve görev modunu ayrı tutun.",
       "location": "Ayarlar → Kodlama → Terminal ve cihaz → Gelişmiş → Kök erişimi.",
       "before": [
-        "Zaten çalışan bir kök yöneticisi olan bir cihaz. AndroidHarness onu köklendirmez."
+        "Zaten çalışan bir kök yöneticisi olan bir cihaz. YL Private Agents onu köklendirmez."
       ],
       "steps": [
         {
@@ -4462,7 +4462,7 @@
       "steps": [
         {
           "title": "Önce Dhizuku'yi kontrol edin",
-          "body": "Kendi uygulamasını açın ve Cihaz Sahibi aktivasyonunun tamamlandığını doğrulayın. AndroidHarness kartı, hizmetin kurulu mu, etkin mi yoksa izin mi beklediğini bildirir."
+          "body": "Kendi uygulamasını açın ve Cihaz Sahibi aktivasyonunun tamamlandığını doğrulayın. YL Private Agents kartı, hizmetin kurulu mu, etkin mi yoksa izin mi beklediğini bildirir."
         },
         {
           "title": "Bağlantıyı ver",
@@ -4697,7 +4697,7 @@
       "location": "Ayarlar → Telegram.",
       "before": [
         "Telegram'nin resmi BotFather aracılığıyla oluşturulan, kontrol ettiğiniz bir bot.",
-        "AndroidHarness'nin Telegram hizmeti etkin durumdayken telefonunuzu çevrimiçi tutun."
+        "YL Private Agents'nin Telegram hizmeti etkin durumdayken telefonunuzu çevrimiçi tutun."
       ],
       "steps": [
         {
@@ -4706,7 +4706,7 @@
         },
         {
           "title": "Hesabınızı eşleştirin",
-          "body": "AndroidHarness'de eşleştirmeye başlayın, sağlanan bağlantı/kodla botu açın ve onaylamadan önce uygulamada Telegram kullanıcı kimliğini tekrar inceleyin."
+          "body": "YL Private Agents'de eşleştirmeye başlayın, sağlanan bağlantı/kodla botu açın ve onaylamadan önce uygulamada Telegram kullanıcı kimliğini tekrar inceleyin."
         },
         {
           "title": "Çalışma bağlamını seçin",
@@ -4719,7 +4719,7 @@
       ],
       "outcome": "Eşleştirilmiş Telegram hesabınız seçilen uygulama projesine/sohbetine çalışma gönderebilir ve ilerleme/sonuçları alabilir.",
       "limits": [
-        "Botun ve telefonunuzun ağ erişimine ihtiyacı var. Telegram, AndroidHarness görevini sizin adınıza barındırmaz.",
+        "Botun ve telefonunuzun ağ erişimine ihtiyacı var. Telegram, YL Private Agents görevini sizin adınıza barındırmaz.",
         "Eşleştirme, uygulama aracı izinleri, model faturalandırma ve arka plan ayarları hâlâ geçerlidir. Aynı bot tokenin başka bir rakip tüketicisini çalıştırmayın."
       ],
       "fixes": [
@@ -5707,7 +5707,7 @@
     {
       "id": "honest-limits",
       "category": "help",
-      "title": "AndroidHarness'nin yapabileceği ve yapamayacağı şeyler",
+      "title": "YL Private Agents'nin yapabileceği ve yapamayacağı şeyler",
       "summary": "Uygulama yeteneklerini model vaatlerinden ve cihaz izinlerinden ayırın.",
       "location": "Bir iş akışı seçmeden önce bu kontrol listesini kullanın.",
       "before": [
@@ -5964,17 +5964,17 @@
     {
       "id": "share-to-chat",
       "category": "chat",
-      "title": "AndroidHarness'de bir şeyler paylaşın",
+      "title": "YL Private Agents'de bir şeyler paylaşın",
       "summary": "Başka bir uygulamadaki metinleri, bağlantıları ve desteklenen ekleri Sohbete taşıyın.",
-      "location": "Başka bir Android uygulaması → Paylaş → AndroidHarness.",
+      "location": "Başka bir Android uygulaması → Paylaş → YL Private Agents.",
       "before": [
         "Kaynak uygulamanın içerik için Android paylaşımı sunması gerekir.",
         "Göndermeden önce özel içeriği ve model hedefini inceleyin."
       ],
       "steps": [
         {
-          "title": "Paylaşımda AndroidHarness'yi seçin",
-          "body": "Kaynak uygulamanın Android paylaşım sayfasını kullanın. AndroidHarness, paylaşılan metin ve desteklenen ek önizlemeleri için bir inceleme sayfası açar."
+          "title": "Paylaşımda YL Private Agents'yi seçin",
+          "body": "Kaynak uygulamanın Android paylaşım sayfasını kullanın. YL Private Agents, paylaşılan metin ve desteklenen ek önizlemeleri için bir inceleme sayfası açar."
         },
         {
           "title": "Konuşmayı seçin",

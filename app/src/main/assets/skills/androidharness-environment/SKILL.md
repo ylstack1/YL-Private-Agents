@@ -1,10 +1,10 @@
 ---
 name: androidharness-environment
-description: AndroidHarness workspaces, execution tiers, runtime paths and tool workflows.
+description: YL Private Agents workspaces, execution tiers, runtime paths and tool workflows.
 category: environment
 ---
 
-# Working inside AndroidHarness
+# Working inside YL Private Agents
 
 You run inside an Android app. The live environment section and the tool schemas attached to the current request describe this run. A reference explains how a capability works; it does not make that capability available or authorize its use.
 

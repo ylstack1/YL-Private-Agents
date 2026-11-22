@@ -92,7 +92,7 @@
       "outcome": "Maaari mong piliin ang Chat para sa isang paliwanag at Code para sa isang pagbabago sa isang tunay na proyekto.",
       "limits": [
         "Hindi maaaring tahimik na i-edit ng chat ang iyong workspace o magpatakbo ng mga shell command. Ang isang kahilingan para sa trabaho sa proyekto ay maaaring mag-alok ng handoff sa Code.",
-        "Ang modelong pipiliin mo ay nakakaapekto sa kalidad, paggamit ng tool, paningin, gastos, at bilis. Ang pag-install ng AndroidHarness ay hindi nagbibigay ng access sa bawat modelo ng AI."
+        "Ang modelong pipiliin mo ay nakakaapekto sa kalidad, paggamit ng tool, paningin, gastos, at bilis. Ang pag-install ng YL Private Agents ay hindi nagbibigay ng access sa bawat modelo ng AI."
       ],
       "fixes": [
         {
@@ -264,7 +264,7 @@
       "steps": [
         {
           "title": "Intindihin ang susi",
-          "body": "Ang API key ay isang lihim na kredensyal. Hinahayaan nito ang AndroidHarness na magpadala ng mga kahilingan sa iyong provider account. Ang paggawa ng susi ay hindi mismong bumili ng modelo, magpondo ng account, o gumawa ng mga kahilingan nang walang limitasyon."
+          "body": "Ang API key ay isang lihim na kredensyal. Hinahayaan nito ang YL Private Agents na magpadala ng mga kahilingan sa iyong provider account. Ang paggawa ng susi ay hindi mismong bumili ng modelo, magpondo ng account, o gumawa ng mga kahilingan nang walang limitasyon."
         },
         {
           "title": "Suriin ang ruta ng pagsingil",
@@ -272,7 +272,7 @@
         },
         {
           "title": "I-activate ang access kung kinakailangan",
-          "body": "Gamitin ang sariling checkout ng provider upang magdagdag ng paraan ng pagbabayad, bumili ng mga credit, o mag-activate ng angkop na plano. Tingnan ang mga awtomatikong top-up at kontrol sa paggastos bago kumpirmahin. Hindi nagbebenta ang AndroidHarness ng mga subscription sa provider na API."
+          "body": "Gamitin ang sariling checkout ng provider upang magdagdag ng paraan ng pagbabayad, bumili ng mga credit, o mag-activate ng angkop na plano. Tingnan ang mga awtomatikong top-up at kontrol sa paggastos bago kumpirmahin. Hindi nagbebenta ang YL Private Agents ng mga subscription sa provider na API."
         },
         {
           "title": "Bantayan ang paggamit",
@@ -287,7 +287,7 @@
       "fixes": [
         {
           "problem": "Nagbayad ako para sa isang chat app ngunit nabigo ang aking API key",
-          "solution": "Tingnan ang developer console para sa API access, available na mga credit, at anumang hakbang sa pag-link ng subscription-credit. Bilang kahalili, gumamit ng suportadong koneksyon sa pag-sign in sa AndroidHarness."
+          "solution": "Tingnan ang developer console para sa API access, available na mga credit, at anumang hakbang sa pag-link ng subscription-credit. Bilang kahalili, gumamit ng suportadong koneksyon sa pag-sign in sa YL Private Agents."
         }
       ],
       "related": [
@@ -392,7 +392,7 @@
       "category": "providers",
       "title": "Magkonekta ng OpenAI API key",
       "summary": "I-set up ang API access at piliin ang OpenAI na uri ng koneksyon.",
-      "location": "OpenAI developer platform → API key at Pagsingil; AndroidHarness → Pamahalaan ang mga provider.",
+      "location": "OpenAI developer platform → API key at Pagsingil; YL Private Agents → Pamahalaan ang mga provider.",
       "before": [
         "Gamitin ang OpenAI account at API na organisasyon na balak mong gamitin sa pagbabayad."
       ],
@@ -406,7 +406,7 @@
           "body": "Gumawa ng project na API key, bigyan ito ng nakikilalang pangalan, at kopyahin ang sikreto habang ipinapakita ito. Panatilihin itong pribado."
         },
         {
-          "title": "Idagdag ito sa AndroidHarness",
+          "title": "Idagdag ito sa YL Private Agents",
           "body": "Sa Pamahalaan ang mga provider, piliin ang OpenAI o OpenAI (Mga Tugon). I-paste ang key, magpatuloy, pumili ng available na modelo, at i-save."
         },
         {
@@ -458,7 +458,7 @@
       "category": "providers",
       "title": "Ikonekta ang Claude sa pamamagitan ng API",
       "summary": "Gumawa ng Anthropic key at tingnan ang API na pagpopondo nito.",
-      "location": "Claude Console → API key at Pagsingil; AndroidHarness → Pamahalaan ang mga provider → Anthropic.",
+      "location": "Claude Console → API key at Pagsingil; YL Private Agents → Pamahalaan ang mga provider → Anthropic.",
       "before": [
         "Magkaroon ng access sa nilalayong Claude API na organisasyon o workspace."
       ],
@@ -477,7 +477,7 @@
         },
         {
           "title": "I-save at subukan",
-          "body": "Piliin ang Anthropic sa AndroidHarness, i-paste ang key, pumili ng modelong available sa iyong account, at i-save. Piliin ito sa Chat o Code at magpadala ng maikling kahilingan."
+          "body": "Piliin ang Anthropic sa YL Private Agents, i-paste ang key, pumili ng modelong available sa iyong account, at i-save. Piliin ito sa Chat o Code at magpadala ng maikling kahilingan."
         }
       ],
       "outcome": "Ang isang naka-save na Anthropic na koneksyon ay makakasagot sa modelong iyong pinili.",
@@ -488,7 +488,7 @@
       "fixes": [
         {
           "problem": "Ang provider ay nag-uulat ng mababang mga kredito",
-          "solution": "Tingnan ang page ng pagsingil para sa organisasyong nagmamay-ari ng key na ito. Ang pagdaragdag ng susi sa AndroidHarness ay hindi nagdaragdag ng mga pondo."
+          "solution": "Tingnan ang page ng pagsingil para sa organisasyong nagmamay-ari ng key na ito. Ang pagdaragdag ng susi sa YL Private Agents ay hindi nagdaragdag ng mga pondo."
         }
       ],
       "related": [
@@ -524,7 +524,7 @@
       "category": "providers",
       "title": "Magkonekta ng Gemini API key",
       "summary": "Gamitin ang Google AI Studio at piliin ang tamang proyekto.",
-      "location": "Google AI Studio → API key; AndroidHarness → Pamahalaan ang mga provider → Gemini.",
+      "location": "Google AI Studio → API key; YL Private Agents → Pamahalaan ang mga provider → Gemini.",
       "before": [
         "Gumamit ng Google account at proyektong kwalipikado para sa Gemini API."
       ],
@@ -539,14 +539,14 @@
         },
         {
           "title": "Idagdag ang Gemini na koneksyon",
-          "body": "Piliin ang Gemini sa AndroidHarness, i-paste ang key, magpatuloy sa listahan ng modelo, at mag-save ng modelong inaalok sa iyong account."
+          "body": "Piliin ang Gemini sa YL Private Agents, i-paste ang key, magpatuloy sa listahan ng modelo, at mag-save ng modelong inaalok sa iyong account."
         },
         {
           "title": "Subukan ang isang maikling mensahe",
           "body": "Piliin ang modelo sa Chat o Code. Kung nabigo ito, tingnan kung ang proyekto ng key, pinagana ang API, status ng pagsingil, at mga limitasyon ng modelo ay tumutugma sa iyong kahilingan."
         }
       ],
-      "outcome": "Maaaring maabot ng AndroidHarness ang Gemini gamit ang key na naka-attach sa proyektong pinili mo.",
+      "outcome": "Maaaring maabot ng YL Private Agents ang Gemini gamit ang key na naka-attach sa proyektong pinili mo.",
       "limits": [
         "Ang mga libre at bayad na tier ay may magkaibang limitasyon at termino. Tingnan ang kasalukuyang opisyal na page ng pagsingil bago gumamit ng sensitibong data o bumili.",
         "Hindi ginagawang available ng isang modelong sumusuporta sa mga larawan ang bawat feature ng provider sa pamamagitan ng app na ito. Tanging ang ipinatupad na pag-uusap at mga kakayahan sa tool ang nakalantad."
@@ -590,7 +590,7 @@
       "category": "providers",
       "title": "Ikonekta ang OpenRouter",
       "summary": "Gumamit ng isang koneksyon upang pumili mula sa katalogo ng modelo ng OpenRouter.",
-      "location": "OpenRouter → Mga Setting → Mga Susi at Mga Kredito; AndroidHarness → Pamahalaan ang mga provider → OpenRouter.",
+      "location": "OpenRouter → Mga Setting → Mga Susi at Mga Kredito; YL Private Agents → Pamahalaan ang mga provider → OpenRouter.",
       "before": [
         "Magkaroon ng OpenRouter account. Suriin ang presyo ng bawat napiling modelo at mga kinakailangan sa pag-access."
       ],
@@ -675,7 +675,7 @@
         },
         {
           "title": "I-save at pumili ng modelo",
-          "body": "I-paste ang key sa katugmang AndroidHarness na koneksyon, pumili ng inaalok na modelo, at i-save. Piliin ang modelong iyon sa header ng pag-uusap at subukan ito."
+          "body": "I-paste ang key sa katugmang YL Private Agents na koneksyon, pumili ng inaalok na modelo, at i-save. Piliin ang modelong iyon sa header ng pag-uusap at subukan ito."
         }
       ],
       "outcome": "Ang napiling serbisyo ay available sa iyong tagapili ng modelo.",
@@ -759,13 +759,13 @@
         },
         {
           "title": "Pagsubok mula sa telepono",
-          "body": "Tiyaking nakikinig ang server sa isang naaabot na interface at pinapayagan ng network ang koneksyon. I-save ang provider at magpadala ng maliit na kahilingan mula sa AndroidHarness."
+          "body": "Tiyaking nakikinig ang server sa isang naaabot na interface at pinapayagan ng network ang koneksyon. I-save ang provider at magpadala ng maliit na kahilingan mula sa YL Private Agents."
         }
       ],
       "outcome": "Ang telepono ay maaaring makipag-usap sa katugmang server at makatanggap ng modelong tugon.",
       "limits": [
         "Ang server ng modelong desktop ay iba sa feature na Mga lokal na modelong nasa device ng app.",
-        "Hindi sinisimulan ng AndroidHarness ang Ollama o LM Studio sa iyong computer o awtomatikong gumagawa ng network tunnel."
+        "Hindi sinisimulan ng YL Private Agents ang Ollama o LM Studio sa iyong computer o awtomatikong gumagawa ng network tunnel."
       ],
       "fixes": [
         {
@@ -983,7 +983,7 @@
       "steps": [
         {
           "title": "Simulan ang pag-sign-in",
-          "body": "Piliin ang Magdagdag ng account o ang pagkilos sa pag-sign in. Tapusin ang opisyal na pahintulot ng browser at bumalik sa AndroidHarness. Maaari mong kanselahin ang isang nakabinbing pag-sign-in mula sa panel ng account."
+          "body": "Piliin ang Magdagdag ng account o ang pagkilos sa pag-sign in. Tapusin ang opisyal na pahintulot ng browser at bumalik sa YL Private Agents. Maaari mong kanselahin ang isang nakabinbing pag-sign-in mula sa panel ng account."
         },
         {
           "title": "Piliin ang konektadong account",
@@ -2475,7 +2475,7 @@
       "outcome": "Lumilitaw ang malayuang folder bilang isang workspace at gumagana ang mga sinusuportahang aksyon sa SSH host.",
       "limits": [
         "Ang localhost ng remote server ay hindi localhost ng iyong telepono. Ang mga malayuang web preview ay nangangailangan ng URL na maaabot mula sa telepono o isang hiwalay na naka-configure na koneksyon.",
-        "Hindi ini-install o pinangangasiwaan ng AndroidHarness ang remote SSH server para sa iyo."
+        "Hindi ini-install o pinangangasiwaan ng YL Private Agents ang remote SSH server para sa iyo."
       ],
       "fixes": [
         {
@@ -3580,7 +3580,7 @@
       ],
       "outcome": "Nagsisimula ang executable bilang isang lokal na proseso ng MCP at matagumpay na nag-a-advertise ng mga tool.",
       "limits": [
-        "Ang lokal na MCP server ay executable software. Hindi ginagawa ng AndroidHarness na magkatugma ang mga binary sa desktop sa iyong telepono.",
+        "Ang lokal na MCP server ay executable software. Hindi ginagawa ng YL Private Agents na magkatugma ang mga binary sa desktop sa iyong telepono.",
         "Ang MCP/plugin configuration na ibinigay ng proyekto ay nangangailangan ng pagsusuri ng tiwala sa workspace nito. Ang Workspace MCP ay hindi pa available sa mga multi-workspace na chat."
       ],
       "fixes": [
@@ -3621,7 +3621,7 @@
       "summary": "Suriin ang isang bundle bago i-enable ang mga kasanayan, kawit, at tool nito.",
       "location": "Mga Setting → Coding → Mga Plugin → Naka-install / Discover / Add.",
       "before": [
-        "Gumamit ng plugin na ginawa para sa sinusuportahang format ng bundle ng AndroidHarness.",
+        "Gumamit ng plugin na ginawa para sa sinusuportahang format ng bundle ng YL Private Agents.",
         "Piliin kung ang saklaw nito ay dapat na proyektong ito o pandaigdigan."
       ],
       "steps": [
@@ -4284,10 +4284,10 @@
       "steps": [
         {
           "title": "Simulan ang provider",
-          "body": "Sundin ang sariling setup ng provider app para gumana ang serbisyo nito. Hindi ito ina-activate ng AndroidHarness sa pamamagitan lamang ng pag-install."
+          "body": "Sundin ang sariling setup ng provider app para gumana ang serbisyo nito. Hindi ito ina-activate ng YL Private Agents sa pamamagitan lamang ng pag-install."
         },
         {
-          "title": "Bigyan ng access ang AndroidHarness",
+          "title": "Bigyan ng access ang YL Private Agents",
           "body": "Buksan ang seksyon ng shell-provider at humiling ng pahintulot. Aprubahan ang nilalayong kahilingan sa provider, pagkatapos ay i-refresh ang estado ng koneksyon."
         },
         {
@@ -4334,7 +4334,7 @@
       "category": "device",
       "title": "Ipares ang wireless debugging",
       "summary": "Ikonekta ang wireless na ruta ng Android ng ADB mula sa app.",
-      "location": "Android Mga opsyon ng developer → Wireless debugging; AndroidHarness → Terminal at device → Wireless ADB.",
+      "location": "Android Mga opsyon ng developer → Wireless debugging; YL Private Agents → Terminal at device → Wireless ADB.",
       "before": [
         "Isang sinusuportahang bersyon ng Android na may available na wireless debugging.",
         "Isang network/device state na nagbibigay-daan sa Android wireless debugging.",
@@ -4342,7 +4342,7 @@
       ],
       "steps": [
         {
-          "title": "Simulan ang pagpapares mula sa AndroidHarness",
+          "title": "Simulan ang pagpapares mula sa YL Private Agents",
           "body": "Sa Wireless ADB, i-tap ang button ng pagpapares. Payagan ang pahintulot ng lokal na network kung hihilingin ito ng Android. Nagsisimula ang app na maghanap ng serbisyo ng pagpapares ng Android."
         },
         {
@@ -4351,7 +4351,7 @@
         },
         {
           "title": "Ipasok ang code sa pamamagitan ng notification",
-          "body": "Hilahin pababa ang notification shade, buksan ang pagpapares na notification ng AndroidHarness, gamitin ang Enter code action nito, at isumite ang anim na digit na code na kasalukuyang ipinapakita ng Android. Maghintay para sa resulta ng pagpapares/pagkonekta."
+          "body": "Hilahin pababa ang notification shade, buksan ang pagpapares na notification ng YL Private Agents, gamitin ang Enter code action nito, at isumite ang anim na digit na code na kasalukuyang ipinapakita ng Android. Maghintay para sa resulta ng pagpapares/pagkonekta."
         },
         {
           "title": "Gumamit ng manu-manong pagpapares kung kinakailangan",
@@ -4399,7 +4399,7 @@
       "summary": "Panatilihing hiwalay ang root connection, pahintulot sa proyekto, at task mode.",
       "location": "Mga Setting → Coding → Terminal at device → Advanced → Root access.",
       "before": [
-        "Isang device na mayroon nang gumaganang root manager. Hindi ito na-root ng AndroidHarness."
+        "Isang device na mayroon nang gumaganang root manager. Hindi ito na-root ng YL Private Agents."
       ],
       "steps": [
         {
@@ -4462,7 +4462,7 @@
       "steps": [
         {
           "title": "Suriin muna ang Dhizuku",
-          "body": "Buksan ang sarili nitong app at i-verify na kumpleto na ang pag-activate ng May-ari ng Device. Iniuulat ng card ng AndroidHarness kung naka-install, aktibo, o naghihintay ng pahintulot ang serbisyo."
+          "body": "Buksan ang sarili nitong app at i-verify na kumpleto na ang pag-activate ng May-ari ng Device. Iniuulat ng card ng YL Private Agents kung naka-install, aktibo, o naghihintay ng pahintulot ang serbisyo."
         },
         {
           "title": "Ibigay ang koneksyon",
@@ -4697,7 +4697,7 @@
       "location": "Mga Setting → Telegram.",
       "before": [
         "Isang bot na kinokontrol mo, na ginawa sa pamamagitan ng opisyal na BotFather ng Telegram.",
-        "Panatilihing online ang iyong telepono nang naka-enable ang serbisyo ng AndroidHarness ng Telegram."
+        "Panatilihing online ang iyong telepono nang naka-enable ang serbisyo ng YL Private Agents ng Telegram."
       ],
       "steps": [
         {
@@ -4706,7 +4706,7 @@
         },
         {
           "title": "Ipares ang iyong account",
-          "body": "Simulan ang pagpapares sa AndroidHarness, buksan ang bot gamit ang ibinigay na link/code, at suriin muli ang Telegram user identity sa app bago ito aprubahan."
+          "body": "Simulan ang pagpapares sa YL Private Agents, buksan ang bot gamit ang ibinigay na link/code, at suriin muli ang Telegram user identity sa app bago ito aprubahan."
         },
         {
           "title": "Piliin ang konteksto ng trabaho",
@@ -4719,7 +4719,7 @@
       ],
       "outcome": "Ang iyong ipinares na Telegram account ay maaaring magpadala ng trabaho sa napiling proyekto ng app/chat at makatanggap ng pag-unlad/mga resulta.",
       "limits": [
-        "Ang bot at ang iyong telepono ay nangangailangan ng access sa network. Ang Telegram ay hindi nagho-host ng AndroidHarness na gawain sa ngalan mo.",
+        "Ang bot at ang iyong telepono ay nangangailangan ng access sa network. Ang Telegram ay hindi nagho-host ng YL Private Agents na gawain sa ngalan mo.",
         "Nalalapat pa rin ang pagpapares, mga pahintulot sa tool ng app, pagsingil ng modelo, at background. Huwag magpatakbo ng ibang kakumpitensyang consumer ng parehong bot token."
       ],
       "fixes": [
@@ -5707,7 +5707,7 @@
     {
       "id": "honest-limits",
       "category": "help",
-      "title": "Ano ang magagawa at hindi maaaring gawin ng AndroidHarness",
+      "title": "Ano ang magagawa at hindi maaaring gawin ng YL Private Agents",
       "summary": "Paghiwalayin ang mga kakayahan ng app mula sa mga pangako ng modelo at mga pahintulot sa device.",
       "location": "Gamitin ang checklist na ito bago pumili ng workflow.",
       "before": [
@@ -5964,17 +5964,17 @@
     {
       "id": "share-to-chat",
       "category": "chat",
-      "title": "Magbahagi ng isang bagay sa AndroidHarness",
+      "title": "Magbahagi ng isang bagay sa YL Private Agents",
       "summary": "Magdala ng text, mga link, at mga sinusuportahang attachment mula sa isa pang app sa isang Chat.",
-      "location": "Isa pang Android app → Ibahagi → AndroidHarness.",
+      "location": "Isa pang Android app → Ibahagi → YL Private Agents.",
       "before": [
         "Ang pinagmulang app ay dapat mag-alok ng Android na pagbabahagi para sa nilalaman.",
         "Suriin ang pribadong nilalaman at ang patutunguhan ng modelo bago ipadala."
       ],
       "steps": [
         {
-          "title": "Piliin ang AndroidHarness sa Ibahagi",
-          "body": "Gamitin ang Android share sheet ng source app. Nagbubukas ang AndroidHarness ng review sheet para sa nakabahaging text at mga suportadong attachment preview."
+          "title": "Piliin ang YL Private Agents sa Ibahagi",
+          "body": "Gamitin ang Android share sheet ng source app. Nagbubukas ang YL Private Agents ng review sheet para sa nakabahaging text at mga suportadong attachment preview."
         },
         {
           "title": "Piliin ang pag-uusap",

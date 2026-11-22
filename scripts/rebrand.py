@@ -36,7 +36,7 @@ from pathlib import Path
 
 TEXT_SUFFIXES = {
     ".kt", ".java", ".xml", ".kts", ".gradle", ".pro", ".json",
-    ".md", ".cpp", ".h", ".hpp", ".c", ".cmake",
+    ".md", ".cpp", ".h", ".hpp", ".c", ".cmake", ".aidl",
 }
 
 SKIP_DIRS = {
@@ -99,6 +99,10 @@ def build_replacements(args: argparse.Namespace) -> list[tuple[str, re.Pattern[s
         # androidharness-environment skill and the /data/local/tmp path.
         ("scheme-uri", re.compile(re.escape(f"{old_scheme}://")), f"{new_scheme}://"),
         ("scheme-attr", re.compile(re.escape(f'android:scheme="{old_scheme}"')), f'android:scheme="{new_scheme}"'),
+        # Runtime intent checks compare the parsed scheme to a bare literal.
+        ("scheme-compare", re.compile(r"(\.scheme\s*[!=]=\s*)\"" + re.escape(old_scheme) + r"\""), rf'\1"{new_scheme}"'),
+        # URL-encoded redirect_uri (%3A%2F%2F is ://), as asserted in tests.
+        ("scheme-encoded", re.compile(re.escape(f"{old_scheme}%3A%2F%2F")), f"{new_scheme}%3A%2F%2F"),
         # Identifier-safe: AndroidHarnessCompatTest -> YLPrivateAgentsCompatTest.
         ("name-ident", re.compile(r"(?<!Sanuu7/)" + re.escape(args.old_name) + r"(?=[A-Za-z0-9_])"), args.new_name.replace(" ", "")),
         # HTTP product token: a User-Agent cannot contain a space.
@@ -143,7 +147,9 @@ def move_package_dirs(root: Path, args: argparse.Namespace, dry_run: bool) -> li
     roots = []
     for dirpath, dirnames, _ in os.walk(root):
         dirnames[:] = [d for d in dirnames if d not in SKIP_DIRS]
-        if Path(dirpath).name == "java" and Path(dirpath).parent.parent.name == "src":
+        # java/ and aidl/ both mirror the package path; AIDL declares its own
+        # package and generates classes under it, so it has to move too.
+        if Path(dirpath).name in {"java", "aidl"} and Path(dirpath).parent.parent.name == "src":
             roots.append(Path(dirpath))
 
     for java_root in roots:

@@ -92,7 +92,7 @@
       "outcome": "Sie können „Chat“ für eine Erklärung und „Code“ für eine Änderung an einem echten Projekt wählen.",
       "limits": [
         "Chat kann Ihren Arbeitsbereich nicht stillschweigend bearbeiten oder Shell-Befehle ausführen. Eine Anfrage für Projektarbeit kann eine Übergabe an Code beinhalten.",
-        "Das von Ihnen gewählte Modell wirkt sich auf Qualität, Werkzeugnutzung, Sicht, Kosten und Geschwindigkeit aus. Durch die Installation von AndroidHarness wird nicht auf jedes KI-Modell Zugriff gewährt."
+        "Das von Ihnen gewählte Modell wirkt sich auf Qualität, Werkzeugnutzung, Sicht, Kosten und Geschwindigkeit aus. Durch die Installation von YL Private Agents wird nicht auf jedes KI-Modell Zugriff gewährt."
       ],
       "fixes": [
         {
@@ -264,7 +264,7 @@
       "steps": [
         {
           "title": "Verstehe den Schlüssel",
-          "body": "Ein API-Schlüssel ist ein geheimer Berechtigungsnachweis. Damit kann AndroidHarness Anfragen an Ihr Anbieterkonto senden. Durch das Erstellen eines Schlüssels wird weder ein Modell gekauft noch ein Konto aufgeladen oder es werden keine unbegrenzten Anfragen gestellt."
+          "body": "Ein API-Schlüssel ist ein geheimer Berechtigungsnachweis. Damit kann YL Private Agents Anfragen an Ihr Anbieterkonto senden. Durch das Erstellen eines Schlüssels wird weder ein Modell gekauft noch ein Konto aufgeladen oder es werden keine unbegrenzten Anfragen gestellt."
         },
         {
           "title": "Überprüfen Sie den Abrechnungsweg",
@@ -272,7 +272,7 @@
         },
         {
           "title": "Aktivieren Sie bei Bedarf den Zugriff",
-          "body": "Nutzen Sie den anbietereigenen Checkout, um eine Zahlungsmethode hinzuzufügen, Credits zu kaufen oder einen passenden Plan zu aktivieren. Überprüfen Sie vor der Bestätigung die automatischen Aufladungen und Ausgabenkontrollen. AndroidHarness verkauft keine Anbieter-API-Abonnements."
+          "body": "Nutzen Sie den anbietereigenen Checkout, um eine Zahlungsmethode hinzuzufügen, Credits zu kaufen oder einen passenden Plan zu aktivieren. Überprüfen Sie vor der Bestätigung die automatischen Aufladungen und Ausgabenkontrollen. YL Private Agents verkauft keine Anbieter-API-Abonnements."
         },
         {
           "title": "Behalten Sie die Nutzung im Auge",
@@ -287,7 +287,7 @@
       "fixes": [
         {
           "problem": "Ich habe für eine Chat-App bezahlt, aber mein API-Schlüssel schlägt fehl",
-          "solution": "Überprüfen Sie die Entwicklerkonsole auf API-Zugriff, verfügbare Credits und alle Schritte zur Verknüpfung von Abonnements und Credits. Alternativ können Sie eine unterstützte Anmeldeverbindung in AndroidHarness verwenden."
+          "solution": "Überprüfen Sie die Entwicklerkonsole auf API-Zugriff, verfügbare Credits und alle Schritte zur Verknüpfung von Abonnements und Credits. Alternativ können Sie eine unterstützte Anmeldeverbindung in YL Private Agents verwenden."
         }
       ],
       "related": [
@@ -392,7 +392,7 @@
       "category": "providers",
       "title": "Schließen Sie einen OpenAI API-Schlüssel an",
       "summary": "Richten Sie den API-Zugriff ein und wählen Sie den Verbindungstyp OpenAI.",
-      "location": "OpenAI-Entwicklerplattform → API-Schlüssel und Abrechnung; AndroidHarness → Anbieter verwalten.",
+      "location": "OpenAI-Entwicklerplattform → API-Schlüssel und Abrechnung; YL Private Agents → Anbieter verwalten.",
       "before": [
         "Verwenden Sie das OpenAI-Konto und die API-Organisation, mit der Sie bezahlen möchten."
       ],
@@ -406,7 +406,7 @@
           "body": "Erstellen Sie einen Schlüssel für das Projekt API, geben Sie ihm einen erkennbaren Namen und kopieren Sie das Geheimnis, während es angezeigt wird. Halten Sie es privat."
         },
         {
-          "title": "Fügen Sie es zu AndroidHarness hinzu",
+          "title": "Fügen Sie es zu YL Private Agents hinzu",
           "body": "Wählen Sie unter Anbieter verwalten die Option OpenAI oder OpenAI (Antworten) aus. Fügen Sie den Schlüssel ein, fahren Sie fort, wählen Sie ein verfügbares Modell aus und speichern Sie."
         },
         {
@@ -458,7 +458,7 @@
       "category": "providers",
       "title": "Verbinden Sie Claude über API",
       "summary": "Erstellen Sie einen Anthropic-Schlüssel und überprüfen Sie seine API-Finanzierung.",
-      "location": "Claude-Konsole → API-Tasten und Abrechnung; AndroidHarness → Anbieter verwalten → Anthropic.",
+      "location": "Claude-Konsole → API-Tasten und Abrechnung; YL Private Agents → Anbieter verwalten → Anthropic.",
       "before": [
         "Zugriff auf die vorgesehene Claude API Organisation oder den vorgesehenen Arbeitsbereich haben."
       ],
@@ -477,7 +477,7 @@
         },
         {
           "title": "Speichern und testen",
-          "body": "Wählen Sie Anthropic in AndroidHarness, fügen Sie den Schlüssel ein, wählen Sie ein für Ihr Konto verfügbares Modell aus und speichern Sie. Wählen Sie es im Chat oder Code aus und senden Sie eine kurze Anfrage."
+          "body": "Wählen Sie Anthropic in YL Private Agents, fügen Sie den Schlüssel ein, wählen Sie ein für Ihr Konto verfügbares Modell aus und speichern Sie. Wählen Sie es im Chat oder Code aus und senden Sie eine kurze Anfrage."
         }
       ],
       "outcome": "Eine gespeicherte Anthropic-Verbindung kann mit dem von Ihnen ausgewählten Modell antworten.",
@@ -488,7 +488,7 @@
       "fixes": [
         {
           "problem": "Der Anbieter meldet geringe Guthaben",
-          "solution": "Überprüfen Sie die Abrechnungsseite der Organisation, die diesen Schlüssel besitzt. Durch das Hinzufügen eines Schlüssels zu AndroidHarness werden keine Mittel hinzugefügt."
+          "solution": "Überprüfen Sie die Abrechnungsseite der Organisation, die diesen Schlüssel besitzt. Durch das Hinzufügen eines Schlüssels zu YL Private Agents werden keine Mittel hinzugefügt."
         }
       ],
       "related": [
@@ -524,7 +524,7 @@
       "category": "providers",
       "title": "Schließen Sie einen Gemini API-Schlüssel an",
       "summary": "Verwenden Sie Google AI Studio und wählen Sie das richtige Projekt aus.",
-      "location": "Google AI Studio → API-Tasten; AndroidHarness → Anbieter verwalten → Gemini.",
+      "location": "Google AI Studio → API-Tasten; YL Private Agents → Anbieter verwalten → Gemini.",
       "before": [
         "Verwenden Sie ein Google-Konto und ein Projekt, das für den Gemini API berechtigt ist."
       ],
@@ -539,14 +539,14 @@
         },
         {
           "title": "Fügen Sie die Gemini-Verbindung hinzu",
-          "body": "Wählen Sie Gemini in AndroidHarness, fügen Sie den Schlüssel ein, fahren Sie mit der Modellliste fort und speichern Sie ein angebotenes Modell in Ihrem Konto."
+          "body": "Wählen Sie Gemini in YL Private Agents, fügen Sie den Schlüssel ein, fahren Sie mit der Modellliste fort und speichern Sie ein angebotenes Modell in Ihrem Konto."
         },
         {
           "title": "Versuchen Sie es mit einer kurzen Nachricht",
           "body": "Wählen Sie das Modell im Chat oder Code aus. Wenn dies fehlschlägt, überprüfen Sie, ob das Projekt des Schlüssels, der aktivierte API, der Abrechnungsstatus und die Modellbeschränkungen Ihrer Anfrage entsprechen."
         }
       ],
-      "outcome": "AndroidHarness kann Gemini mithilfe des Schlüssels erreichen, der dem von Ihnen ausgewählten Projekt beigefügt ist.",
+      "outcome": "YL Private Agents kann Gemini mithilfe des Schlüssels erreichen, der dem von Ihnen ausgewählten Projekt beigefügt ist.",
       "limits": [
         "Kostenlose und kostenpflichtige Stufen haben unterschiedliche Limits und Bedingungen. Überprüfen Sie die aktuelle offizielle Abrechnungsseite, bevor Sie sensible Daten verwenden oder Einkäufe tätigen.",
         "Ein Modell, das Bilder unterstützt, macht nicht alle Anbieterfunktionen über diese App verfügbar. Es werden nur implementierte Konversations- und Toolfunktionen angezeigt."
@@ -590,7 +590,7 @@
       "category": "providers",
       "title": "Verbinden Sie OpenRouter",
       "summary": "Verwenden Sie eine Verbindung, um aus dem Modellkatalog von OpenRouter auszuwählen.",
-      "location": "OpenRouter → Einstellungen → Schlüssel und Credits; AndroidHarness → Anbieter verwalten → OpenRouter.",
+      "location": "OpenRouter → Einstellungen → Schlüssel und Credits; YL Private Agents → Anbieter verwalten → OpenRouter.",
       "before": [
         "Besitzen Sie ein OpenRouter-Konto. Überprüfen Sie den Preis und die Zugangsvoraussetzungen jedes ausgewählten Modells."
       ],
@@ -675,7 +675,7 @@
         },
         {
           "title": "Speichern Sie und wählen Sie ein Modell aus",
-          "body": "Stecken Sie den Schlüssel in den passenden AndroidHarness-Anschluss, wählen Sie ein angebotenes Modell aus und speichern Sie. Wählen Sie dieses Modell im Konversationskopf aus und testen Sie es."
+          "body": "Stecken Sie den Schlüssel in den passenden YL Private Agents-Anschluss, wählen Sie ein angebotenes Modell aus und speichern Sie. Wählen Sie dieses Modell im Konversationskopf aus und testen Sie es."
         }
       ],
       "outcome": "Der ausgewählte Service ist in Ihrer Modellauswahl verfügbar.",
@@ -759,13 +759,13 @@
         },
         {
           "title": "Testen Sie vom Telefon aus",
-          "body": "Stellen Sie sicher, dass der Server eine erreichbare Schnittstelle überwacht und das Netzwerk die Verbindung zulässt. Speichern Sie den Anbieter und senden Sie eine kleine Anfrage von AndroidHarness."
+          "body": "Stellen Sie sicher, dass der Server eine erreichbare Schnittstelle überwacht und das Netzwerk die Verbindung zulässt. Speichern Sie den Anbieter und senden Sie eine kleine Anfrage von YL Private Agents."
         }
       ],
       "outcome": "Das Telefon kann mit dem kompatiblen Server kommunizieren und eine Musterantwort empfangen.",
       "limits": [
         "Ein Desktop-Modellserver unterscheidet sich von der Funktion „Lokale Modelle“ auf dem Gerät der App.",
-        "AndroidHarness startet Ollama oder LM Studio nicht auf Ihrem Computer und erstellt nicht automatisch einen Netzwerktunnel."
+        "YL Private Agents startet Ollama oder LM Studio nicht auf Ihrem Computer und erstellt nicht automatisch einen Netzwerktunnel."
       ],
       "fixes": [
         {
@@ -983,7 +983,7 @@
       "steps": [
         {
           "title": "Beginnen Sie mit der Anmeldung",
-          "body": "Wählen Sie Konto hinzufügen oder die Anmeldeaktion. Beenden Sie die offizielle Browserautorisierung und kehren Sie zu AndroidHarness zurück. Sie können eine ausstehende Anmeldung im Kontobereich abbrechen."
+          "body": "Wählen Sie Konto hinzufügen oder die Anmeldeaktion. Beenden Sie die offizielle Browserautorisierung und kehren Sie zu YL Private Agents zurück. Sie können eine ausstehende Anmeldung im Kontobereich abbrechen."
         },
         {
           "title": "Wählen Sie das verbundene Konto",
@@ -2475,7 +2475,7 @@
       "outcome": "Der Remote-Ordner wird als Arbeitsbereich angezeigt und unterstützte Aktionen werden auf dem SSH-Host ausgeführt.",
       "limits": [
         "Der Localhost eines Remote-Servers ist nicht der Localhost Ihres Telefons. Für Remote-Webvorschauen ist ein URL erforderlich, der vom Telefon aus erreichbar ist, oder eine separat konfigurierte Verbindung.",
-        "AndroidHarness installiert oder verwaltet den Remote-SSH-Server nicht für Sie."
+        "YL Private Agents installiert oder verwaltet den Remote-SSH-Server nicht für Sie."
       ],
       "fixes": [
         {
@@ -3580,7 +3580,7 @@
       ],
       "outcome": "Die ausführbare Datei startet als lokaler MCP-Prozess und kündigt Tools erfolgreich an.",
       "limits": [
-        "Ein lokaler MCP-Server ist eine ausführbare Software. AndroidHarness macht keine beliebigen Desktop-Binärdateien mit Ihrem Telefon kompatibel.",
+        "Ein lokaler MCP-Server ist eine ausführbare Software. YL Private Agents macht keine beliebigen Desktop-Binärdateien mit Ihrem Telefon kompatibel.",
         "Für die vom Projekt bereitgestellte MCP/Plugin-Konfiguration muss die Vertrauenswürdigkeit des Arbeitsbereichs überprüft werden. Workspace MCP ist in Multi-Workspace-Chats noch nicht verfügbar."
       ],
       "fixes": [
@@ -3621,7 +3621,7 @@
       "summary": "Überprüfen Sie ein Bundle, bevor Sie seine Fähigkeiten, Hooks und Tools aktivieren.",
       "location": "Einstellungen → Codierung → Plugins → Installiert / Entdecken / Hinzufügen.",
       "before": [
-        "Verwenden Sie ein Plugin, das für das von AndroidHarness unterstützte Bundle-Format erstellt wurde.",
+        "Verwenden Sie ein Plugin, das für das von YL Private Agents unterstützte Bundle-Format erstellt wurde.",
         "Wählen Sie, ob der Geltungsbereich dieses Projekt oder global sein soll."
       ],
       "steps": [
@@ -4284,10 +4284,10 @@
       "steps": [
         {
           "title": "Starten Sie den Anbieter",
-          "body": "Befolgen Sie die Einrichtung der Anbieter-App, damit der Dienst ausgeführt wird. AndroidHarness aktiviert es nicht allein durch die Installation."
+          "body": "Befolgen Sie die Einrichtung der Anbieter-App, damit der Dienst ausgeführt wird. YL Private Agents aktiviert es nicht allein durch die Installation."
         },
         {
-          "title": "Gewähren Sie AndroidHarness-Zugriff",
+          "title": "Gewähren Sie YL Private Agents-Zugriff",
           "body": "Öffnen Sie den Abschnitt „Shell-Provider“ und fordern Sie die Erlaubnis an. Genehmigen Sie die beabsichtigte Anfrage beim Anbieter und aktualisieren Sie dann den Verbindungsstatus."
         },
         {
@@ -4334,7 +4334,7 @@
       "category": "device",
       "title": "Koppeln Sie das drahtlose Debugging",
       "summary": "Verbinden Sie die drahtlose ADB-Route des Android über die App.",
-      "location": "Android Entwickleroptionen → Drahtloses Debuggen; AndroidHarness → Terminal & Gerät → Wireless ADB.",
+      "location": "Android Entwickleroptionen → Drahtloses Debuggen; YL Private Agents → Terminal & Gerät → Wireless ADB.",
       "before": [
         "Eine unterstützte Android-Version mit drahtlosem Debugging verfügbar.",
         "Ein Netzwerk-/Gerätestatus, der das drahtlose Debuggen des Android ermöglicht.",
@@ -4342,7 +4342,7 @@
       ],
       "steps": [
         {
-          "title": "Beginnen Sie mit der Kopplung ab AndroidHarness",
+          "title": "Beginnen Sie mit der Kopplung ab YL Private Agents",
           "body": "Tippen Sie im Wireless ADB auf die Pairing-Schaltfläche. Erlauben Sie die Berechtigung für das lokale Netzwerk, wenn Android dies anfordert. Die App beginnt mit der Suche nach dem Kopplungsdienst des Android."
         },
         {
@@ -4351,7 +4351,7 @@
         },
         {
           "title": "Geben Sie den Code über die Benachrichtigung ein",
-          "body": "Ziehen Sie den Benachrichtigungsschirm herunter, öffnen Sie die Kopplungsbenachrichtigung von AndroidHarness, verwenden Sie die Aktion „Code eingeben“ und geben Sie den sechsstelligen Code ein, der derzeit von Android angezeigt wird. Warten Sie auf das Kopplungs-/Verbindungsergebnis."
+          "body": "Ziehen Sie den Benachrichtigungsschirm herunter, öffnen Sie die Kopplungsbenachrichtigung von YL Private Agents, verwenden Sie die Aktion „Code eingeben“ und geben Sie den sechsstelligen Code ein, der derzeit von Android angezeigt wird. Warten Sie auf das Kopplungs-/Verbindungsergebnis."
         },
         {
           "title": "Verwenden Sie bei Bedarf die manuelle Kopplung",
@@ -4399,7 +4399,7 @@
       "summary": "Halten Sie Root-Verbindung, Projektberechtigung und Aufgabenmodus getrennt.",
       "location": "Einstellungen → Codierung → Terminal & Gerät → Erweitert → Root-Zugriff.",
       "before": [
-        "Ein Gerät, das bereits über einen funktionierenden Root-Manager verfügt. AndroidHarness rootet es nicht."
+        "Ein Gerät, das bereits über einen funktionierenden Root-Manager verfügt. YL Private Agents rootet es nicht."
       ],
       "steps": [
         {
@@ -4462,7 +4462,7 @@
       "steps": [
         {
           "title": "Überprüfen Sie zuerst Dhizuku",
-          "body": "Öffnen Sie die eigene App und überprüfen Sie, ob die Aktivierung des Gerätebesitzers abgeschlossen ist. Die Karte von AndroidHarness meldet, ob der Dienst installiert oder aktiv ist oder auf die Erlaubnis wartet."
+          "body": "Öffnen Sie die eigene App und überprüfen Sie, ob die Aktivierung des Gerätebesitzers abgeschlossen ist. Die Karte von YL Private Agents meldet, ob der Dienst installiert oder aktiv ist oder auf die Erlaubnis wartet."
         },
         {
           "title": "Gewähren Sie die Verbindung",
@@ -4697,7 +4697,7 @@
       "location": "Einstellungen → Telegram.",
       "before": [
         "Ein Bot, den Sie steuern, erstellt mit dem offiziellen BotFather von Telegram.",
-        "Halten Sie Ihr Telefon online, wenn der Telegram-Dienst von AndroidHarness aktiviert ist."
+        "Halten Sie Ihr Telefon online, wenn der Telegram-Dienst von YL Private Agents aktiviert ist."
       ],
       "steps": [
         {
@@ -4706,7 +4706,7 @@
         },
         {
           "title": "Koppeln Sie Ihr Konto",
-          "body": "Beginnen Sie mit der Kopplung in AndroidHarness, öffnen Sie den Bot mit dem bereitgestellten Link/Code und überprüfen Sie die Telegram-Benutzeridentität erneut in der App, bevor Sie sie genehmigen."
+          "body": "Beginnen Sie mit der Kopplung in YL Private Agents, öffnen Sie den Bot mit dem bereitgestellten Link/Code und überprüfen Sie die Telegram-Benutzeridentität erneut in der App, bevor Sie sie genehmigen."
         },
         {
           "title": "Wählen Sie den Arbeitskontext",
@@ -4719,7 +4719,7 @@
       ],
       "outcome": "Ihr gekoppeltes Telegram-Konto kann Arbeiten an das ausgewählte App-Projekt/Chat senden und Fortschritte/Ergebnisse empfangen.",
       "limits": [
-        "Der Bot und Ihr Telefon benötigen Netzwerkzugriff. Telegram hostet die Aufgabe AndroidHarness nicht in Ihrem Namen.",
+        "Der Bot und Ihr Telefon benötigen Netzwerkzugriff. Telegram hostet die Aufgabe YL Private Agents nicht in Ihrem Namen.",
         "Kopplung, App-Tool-Berechtigungen, Modellabrechnung und Hintergrundeinstellungen gelten weiterhin. Führen Sie keinen anderen konkurrierenden Verbraucher desselben Bot-Tokens aus."
       ],
       "fixes": [
@@ -5707,7 +5707,7 @@
     {
       "id": "honest-limits",
       "category": "help",
-      "title": "Was AndroidHarness kann und was nicht",
+      "title": "Was YL Private Agents kann und was nicht",
       "summary": "Trennen Sie App-Funktionen von Modellversprechen und Geräteberechtigungen.",
       "location": "Verwenden Sie diese Checkliste, bevor Sie einen Workflow auswählen.",
       "before": [
@@ -5964,17 +5964,17 @@
     {
       "id": "share-to-chat",
       "category": "chat",
-      "title": "Teilen Sie etwas in AndroidHarness",
+      "title": "Teilen Sie etwas in YL Private Agents",
       "summary": "Bringen Sie Text, Links und unterstützte Anhänge aus einer anderen App in einen Chat.",
-      "location": "Eine weitere Android-App → Teilen → AndroidHarness.",
+      "location": "Eine weitere Android-App → Teilen → YL Private Agents.",
       "before": [
         "Die Quell-App muss Android-Freigabe für den Inhalt bieten.",
         "Überprüfen Sie private Inhalte und das Modellziel vor dem Senden."
       ],
       "steps": [
         {
-          "title": "Wählen Sie AndroidHarness unter Teilen",
-          "body": "Verwenden Sie das Freigabeblatt Android der Quell-App. AndroidHarness öffnet ein Überprüfungsblatt für den freigegebenen Text und unterstützte Anhangsvorschauen."
+          "title": "Wählen Sie YL Private Agents unter Teilen",
+          "body": "Verwenden Sie das Freigabeblatt Android der Quell-App. YL Private Agents öffnet ein Überprüfungsblatt für den freigegebenen Text und unterstützte Anhangsvorschauen."
         },
         {
           "title": "Wählen Sie das Gespräch",

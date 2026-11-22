@@ -227,7 +227,7 @@ JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM *vm, void *reserved) {
             {"nativeDestroy",     "(J)V",    (void *) PairingContext_Destroy},
     };
 
-    env->RegisterNatives(env->FindClass("com/androidharness/app/data/env/adb/PairingContext"), methods_PairingContext,
+    env->RegisterNatives(env->FindClass("com/ylprivate/agents/data/env/adb/PairingContext"), methods_PairingContext,
                          sizeof(methods_PairingContext) / sizeof(JNINativeMethod));
 
     return JNI_VERSION_1_6;

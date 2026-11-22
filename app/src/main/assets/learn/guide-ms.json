@@ -92,7 +92,7 @@
       "outcome": "Anda boleh memilih Sembang untuk penjelasan dan Kod untuk perubahan kepada projek sebenar.",
       "limits": [
         "Sembang tidak boleh mengedit ruang kerja anda secara senyap atau menjalankan arahan shell. Permintaan untuk kerja projek mungkin menawarkan pelepasan kepada Kod.",
-        "Model yang anda pilih mempengaruhi kualiti, penggunaan alat, penglihatan, kos dan kelajuan. Memasang AndroidHarness tidak memberikan akses kepada setiap model AI."
+        "Model yang anda pilih mempengaruhi kualiti, penggunaan alat, penglihatan, kos dan kelajuan. Memasang YL Private Agents tidak memberikan akses kepada setiap model AI."
       ],
       "fixes": [
         {
@@ -264,7 +264,7 @@
       "steps": [
         {
           "title": "Fahami kuncinya",
-          "body": "Kunci API ialah bukti kelayakan rahsia. Ia membolehkan AndroidHarness menghantar permintaan ke akaun pembekal anda. Mencipta kunci tidak dengan sendirinya membeli model, membiayai akaun atau membuat permintaan tanpa had."
+          "body": "Kunci API ialah bukti kelayakan rahsia. Ia membolehkan YL Private Agents menghantar permintaan ke akaun pembekal anda. Mencipta kunci tidak dengan sendirinya membeli model, membiayai akaun atau membuat permintaan tanpa had."
         },
         {
           "title": "Semak laluan pengebilan",
@@ -272,7 +272,7 @@
         },
         {
           "title": "Aktifkan akses jika perlu",
-          "body": "Gunakan pembayaran pembekal sendiri untuk menambah kaedah pembayaran, membeli kredit atau mengaktifkan pelan yang sesuai. Semak tambah nilai automatik dan kawalan perbelanjaan sebelum mengesahkan. AndroidHarness tidak menjual langganan pembekal API."
+          "body": "Gunakan pembayaran pembekal sendiri untuk menambah kaedah pembayaran, membeli kredit atau mengaktifkan pelan yang sesuai. Semak tambah nilai automatik dan kawalan perbelanjaan sebelum mengesahkan. YL Private Agents tidak menjual langganan pembekal API."
         },
         {
           "title": "Perhatikan penggunaan",
@@ -287,7 +287,7 @@
       "fixes": [
         {
           "problem": "Saya membayar untuk apl sembang tetapi kunci API saya gagal",
-          "solution": "Semak konsol pembangun untuk mendapatkan akses API, kredit yang tersedia dan sebarang langkah pemautan kredit langganan. Sebagai alternatif, gunakan sambungan log masuk yang disokong dalam AndroidHarness."
+          "solution": "Semak konsol pembangun untuk mendapatkan akses API, kredit yang tersedia dan sebarang langkah pemautan kredit langganan. Sebagai alternatif, gunakan sambungan log masuk yang disokong dalam YL Private Agents."
         }
       ],
       "related": [
@@ -392,7 +392,7 @@
       "category": "providers",
       "title": "Sambungkan kekunci OpenAI API",
       "summary": "Sediakan akses API dan pilih jenis sambungan OpenAI.",
-      "location": "Platform pembangun OpenAI → kunci dan Pengebilan API; AndroidHarness → Urus pembekal.",
+      "location": "Platform pembangun OpenAI → kunci dan Pengebilan API; YL Private Agents → Urus pembekal.",
       "before": [
         "Gunakan akaun OpenAI dan organisasi API yang anda ingin gunakan untuk membayar."
       ],
@@ -406,7 +406,7 @@
           "body": "Cipta kunci API projek, beri nama yang boleh dikenali dan salin rahsia semasa ia dipaparkan. Simpan ia peribadi."
         },
         {
-          "title": "Tambahkannya pada AndroidHarness",
+          "title": "Tambahkannya pada YL Private Agents",
           "body": "Dalam Urus pembekal, pilih OpenAI atau OpenAI (Respons). Tampal kekunci, teruskan, pilih model yang tersedia dan simpan."
         },
         {
@@ -458,7 +458,7 @@
       "category": "providers",
       "title": "Sambungkan Claude melalui API",
       "summary": "Cipta kunci Anthropic dan semak pembiayaan APInya.",
-      "location": "Konsol Claude → kekunci dan Pengebilan API; AndroidHarness → Urus pembekal → Anthropic.",
+      "location": "Konsol Claude → kekunci dan Pengebilan API; YL Private Agents → Urus pembekal → Anthropic.",
       "before": [
         "Mempunyai akses kepada organisasi atau ruang kerja Claude API yang dimaksudkan."
       ],
@@ -477,7 +477,7 @@
         },
         {
           "title": "Simpan dan uji",
-          "body": "Pilih Anthropic dalam AndroidHarness, tampal kekunci, pilih model yang tersedia untuk akaun anda dan simpan. Pilihnya dalam Sembang atau Kod dan hantar permintaan ringkas."
+          "body": "Pilih Anthropic dalam YL Private Agents, tampal kekunci, pilih model yang tersedia untuk akaun anda dan simpan. Pilihnya dalam Sembang atau Kod dan hantar permintaan ringkas."
         }
       ],
       "outcome": "Sambungan Anthropic yang disimpan boleh menjawab dengan model yang anda pilih.",
@@ -488,7 +488,7 @@
       "fixes": [
         {
           "problem": "Pembekal melaporkan kredit yang rendah",
-          "solution": "Semak halaman pengebilan untuk organisasi yang memiliki kunci ini. Menambah kunci pada AndroidHarness tidak menambah dana."
+          "solution": "Semak halaman pengebilan untuk organisasi yang memiliki kunci ini. Menambah kunci pada YL Private Agents tidak menambah dana."
         }
       ],
       "related": [
@@ -524,7 +524,7 @@
       "category": "providers",
       "title": "Sambungkan kekunci Gemini API",
       "summary": "Gunakan Google AI Studio dan pilih projek yang betul.",
-      "location": "Google AI Studio → kekunci API; AndroidHarness → Urus pembekal → Gemini.",
+      "location": "Google AI Studio → kekunci API; YL Private Agents → Urus pembekal → Gemini.",
       "before": [
         "Gunakan akaun Google dan projek yang layak untuk Gemini API."
       ],
@@ -539,14 +539,14 @@
         },
         {
           "title": "Tambahkan sambungan Gemini",
-          "body": "Pilih Gemini dalam AndroidHarness, tampal kekunci, teruskan ke senarai model dan simpan model yang ditawarkan pada akaun anda."
+          "body": "Pilih Gemini dalam YL Private Agents, tampal kekunci, teruskan ke senarai model dan simpan model yang ditawarkan pada akaun anda."
         },
         {
           "title": "Cuba mesej ringkas",
           "body": "Pilih model dalam Sembang atau Kod. Jika gagal, pastikan projek kunci, API yang didayakan, status pengebilan dan had model sepadan dengan permintaan anda."
         }
       ],
-      "outcome": "AndroidHarness boleh mencapai Gemini menggunakan kekunci yang dilampirkan pada projek yang anda pilih.",
+      "outcome": "YL Private Agents boleh mencapai Gemini menggunakan kekunci yang dilampirkan pada projek yang anda pilih.",
       "limits": [
         "Peringkat percuma dan berbayar mempunyai had dan syarat yang berbeza. Semak halaman pengebilan rasmi semasa sebelum menggunakan data sensitif atau membuat pembelian.",
         "Imej sokongan model tidak menjadikan setiap ciri pembekal tersedia melalui aplikasi ini. Hanya keupayaan perbualan dan alat yang dilaksanakan didedahkan."
@@ -590,7 +590,7 @@
       "category": "providers",
       "title": "Sambungkan OpenRouter",
       "summary": "Gunakan satu sambungan untuk memilih daripada katalog model OpenRouter.",
-      "location": "OpenRouter → Tetapan → Kekunci dan Kredit; AndroidHarness → Urus pembekal → OpenRouter.",
+      "location": "OpenRouter → Tetapan → Kekunci dan Kredit; YL Private Agents → Urus pembekal → OpenRouter.",
       "before": [
         "Mempunyai akaun OpenRouter. Semak setiap harga dan keperluan akses model yang dipilih."
       ],
@@ -675,7 +675,7 @@
         },
         {
           "title": "Simpan dan pilih model",
-          "body": "Tampalkan kunci ke dalam sambungan AndroidHarness yang sepadan, pilih model yang ditawarkan dan simpan. Pilih model itu dalam pengepala perbualan dan ujinya."
+          "body": "Tampalkan kunci ke dalam sambungan YL Private Agents yang sepadan, pilih model yang ditawarkan dan simpan. Pilih model itu dalam pengepala perbualan dan ujinya."
         }
       ],
       "outcome": "Perkhidmatan yang dipilih tersedia dalam pemilih model anda.",
@@ -759,13 +759,13 @@
         },
         {
           "title": "Uji dari telefon",
-          "body": "Pastikan pelayan mendengar pada antara muka yang boleh dicapai dan rangkaian membenarkan sambungan. Simpan pembekal dan hantar permintaan kecil daripada AndroidHarness."
+          "body": "Pastikan pelayan mendengar pada antara muka yang boleh dicapai dan rangkaian membenarkan sambungan. Simpan pembekal dan hantar permintaan kecil daripada YL Private Agents."
         }
       ],
       "outcome": "Telefon boleh bercakap dengan pelayan yang serasi dan menerima balasan model.",
       "limits": [
         "Pelayan model desktop adalah berbeza daripada ciri model Setempat pada peranti apl.",
-        "AndroidHarness tidak memulakan Ollama atau LM Studio pada komputer anda atau mencipta terowong rangkaian secara automatik."
+        "YL Private Agents tidak memulakan Ollama atau LM Studio pada komputer anda atau mencipta terowong rangkaian secara automatik."
       ],
       "fixes": [
         {
@@ -983,7 +983,7 @@
       "steps": [
         {
           "title": "Mulakan log masuk",
-          "body": "Pilih Tambah akaun atau tindakan log masuk. Selesaikan kebenaran pelayar rasmi dan kembali ke AndroidHarness. Anda boleh membatalkan log masuk yang belum selesai daripada panel akaun."
+          "body": "Pilih Tambah akaun atau tindakan log masuk. Selesaikan kebenaran pelayar rasmi dan kembali ke YL Private Agents. Anda boleh membatalkan log masuk yang belum selesai daripada panel akaun."
         },
         {
           "title": "Pilih akaun yang disambungkan",
@@ -2475,7 +2475,7 @@
       "outcome": "Folder jauh muncul sebagai ruang kerja dan tindakan yang disokong beroperasi pada hos SSH.",
       "limits": [
         "Hos tempatan pelayan jauh bukan hos tempatan telefon anda. Pratonton web jauh memerlukan URL yang boleh dicapai dari telefon atau sambungan yang dikonfigurasikan secara berasingan.",
-        "AndroidHarness tidak memasang atau mentadbir pelayan SSH jauh untuk anda."
+        "YL Private Agents tidak memasang atau mentadbir pelayan SSH jauh untuk anda."
       ],
       "fixes": [
         {
@@ -3580,7 +3580,7 @@
       ],
       "outcome": "Boleh laku bermula sebagai proses MCP tempatan dan mengiklankan alat dengan jayanya.",
       "limits": [
-        "Pelayan MCP tempatan ialah perisian boleh laku. AndroidHarness tidak menjadikan binari desktop sewenang-wenangnya serasi dengan telefon anda.",
+        "Pelayan MCP tempatan ialah perisian boleh laku. YL Private Agents tidak menjadikan binari desktop sewenang-wenangnya serasi dengan telefon anda.",
         "Konfigurasi MCP/plugin yang disediakan projek memerlukan semakan kepercayaan ruang kerjanya. Ruang kerja MCP belum tersedia dalam sembang berbilang ruang kerja lagi."
       ],
       "fixes": [
@@ -3621,7 +3621,7 @@
       "summary": "Semak berkas sebelum mendayakan kemahiran, cangkuk dan alatannya.",
       "location": "Tetapan → Pengekodan → Pemalam → Dipasang / Temui / Tambah.",
       "before": [
-        "Gunakan pemalam yang dibuat untuk format berkas yang disokong AndroidHarness.",
+        "Gunakan pemalam yang dibuat untuk format berkas yang disokong YL Private Agents.",
         "Pilih sama ada skopnya mestilah projek ini atau global."
       ],
       "steps": [
@@ -4284,10 +4284,10 @@
       "steps": [
         {
           "title": "Mulakan pembekal",
-          "body": "Ikuti persediaan apl penyedia itu sendiri supaya perkhidmatannya berjalan. AndroidHarness tidak mengaktifkannya hanya dengan dipasang."
+          "body": "Ikuti persediaan apl penyedia itu sendiri supaya perkhidmatannya berjalan. YL Private Agents tidak mengaktifkannya hanya dengan dipasang."
         },
         {
-          "title": "Berikan AndroidHarness akses",
+          "title": "Berikan YL Private Agents akses",
           "body": "Buka bahagian penyedia shell dan minta kebenaran. Luluskan permintaan yang dimaksudkan dalam pembekal, kemudian muat semula keadaan sambungan."
         },
         {
@@ -4334,7 +4334,7 @@
       "category": "device",
       "title": "Gandingkan penyahpepijatan wayarles",
       "summary": "Sambungkan laluan wayarles ADB Android daripada apl.",
-      "location": "Android Pilihan pemaju → Penyahpepijatan wayarles; AndroidHarness → Terminal & peranti → Wayarles ADB.",
+      "location": "Android Pilihan pemaju → Penyahpepijatan wayarles; YL Private Agents → Terminal & peranti → Wayarles ADB.",
       "before": [
         "Versi Android yang disokong dengan penyahpepijatan wayarles tersedia.",
         "Keadaan rangkaian/peranti yang membenarkan penyahpepijatan wayarles Android.",
@@ -4342,7 +4342,7 @@
       ],
       "steps": [
         {
-          "title": "Mula berpasangan dari AndroidHarness",
+          "title": "Mula berpasangan dari YL Private Agents",
           "body": "Dalam Wireless ADB, ketik butang berpasangan. Benarkan kebenaran rangkaian tempatan jika Android memintanya. Apl mula mencari perkhidmatan pasangan Android."
         },
         {
@@ -4351,7 +4351,7 @@
         },
         {
           "title": "Masukkan kod melalui pemberitahuan",
-          "body": "Tarik ke bawah lorek pemberitahuan, buka pemberitahuan gandingan AndroidHarness, gunakan tindakan Masukkan kodnya dan serahkan kod enam digit yang ditunjukkan oleh Android pada masa ini. Tunggu hasil berpasangan/sambungan."
+          "body": "Tarik ke bawah lorek pemberitahuan, buka pemberitahuan gandingan YL Private Agents, gunakan tindakan Masukkan kodnya dan serahkan kod enam digit yang ditunjukkan oleh Android pada masa ini. Tunggu hasil berpasangan/sambungan."
         },
         {
           "title": "Gunakan pasangan manual jika perlu",
@@ -4399,7 +4399,7 @@
       "summary": "Simpan sambungan akar, kebenaran projek dan mod tugasan berasingan.",
       "location": "Tetapan → Pengekodan → Terminal & peranti → Lanjutan → Akses root.",
       "before": [
-        "Peranti yang sudah mempunyai pengurus akar yang berfungsi. AndroidHarness tidak mengakarnya."
+        "Peranti yang sudah mempunyai pengurus akar yang berfungsi. YL Private Agents tidak mengakarnya."
       ],
       "steps": [
         {
@@ -4462,7 +4462,7 @@
       "steps": [
         {
           "title": "Semak Dhizuku dahulu",
-          "body": "Buka aplnya sendiri dan sahkan bahawa pengaktifan Pemilik Peranti telah selesai. Kad AndroidHarness melaporkan sama ada perkhidmatan dipasang, aktif atau menunggu kebenaran."
+          "body": "Buka aplnya sendiri dan sahkan bahawa pengaktifan Pemilik Peranti telah selesai. Kad YL Private Agents melaporkan sama ada perkhidmatan dipasang, aktif atau menunggu kebenaran."
         },
         {
           "title": "Berikan sambungan",
@@ -4697,7 +4697,7 @@
       "location": "Tetapan → Telegram.",
       "before": [
         "Bot yang anda kawal, dibuat melalui Telegram rasmi BotFather.",
-        "Pastikan telefon anda dalam talian dengan perkhidmatan Telegram AndroidHarness didayakan."
+        "Pastikan telefon anda dalam talian dengan perkhidmatan Telegram YL Private Agents didayakan."
       ],
       "steps": [
         {
@@ -4706,7 +4706,7 @@
         },
         {
           "title": "Gandingkan akaun anda",
-          "body": "Mula berpasangan dalam AndroidHarness, buka bot dengan pautan/kod yang disediakan dan semak semula identiti pengguna Telegram dalam apl sebelum meluluskannya."
+          "body": "Mula berpasangan dalam YL Private Agents, buka bot dengan pautan/kod yang disediakan dan semak semula identiti pengguna Telegram dalam apl sebelum meluluskannya."
         },
         {
           "title": "Pilih konteks kerja",
@@ -4719,7 +4719,7 @@
       ],
       "outcome": "Akaun Telegram berpasangan anda boleh menghantar kerja ke projek/sembang apl yang dipilih dan menerima kemajuan/hasil.",
       "limits": [
-        "Bot dan telefon anda memerlukan akses rangkaian. Telegram tidak mengehoskan tugas AndroidHarness bagi pihak anda.",
+        "Bot dan telefon anda memerlukan akses rangkaian. Telegram tidak mengehoskan tugas YL Private Agents bagi pihak anda.",
         "Berpasangan, kebenaran alat apl, pengebilan model dan tetapan latar belakang masih digunakan. Jangan jalankan pengguna lain yang bersaing dengan token bot yang sama."
       ],
       "fixes": [
@@ -5707,7 +5707,7 @@
     {
       "id": "honest-limits",
       "category": "help",
-      "title": "Perkara yang boleh dan tidak boleh dilakukan oleh AndroidHarness",
+      "title": "Perkara yang boleh dan tidak boleh dilakukan oleh YL Private Agents",
       "summary": "Asingkan keupayaan apl daripada janji model dan kebenaran peranti.",
       "location": "Gunakan senarai semak ini sebelum memilih aliran kerja.",
       "before": [
@@ -5964,17 +5964,17 @@
     {
       "id": "share-to-chat",
       "category": "chat",
-      "title": "Kongsi sesuatu ke dalam AndroidHarness",
+      "title": "Kongsi sesuatu ke dalam YL Private Agents",
       "summary": "Bawa teks, pautan dan lampiran yang disokong daripada apl lain ke dalam Sembang.",
-      "location": "Satu lagi aplikasi Android → Kongsi → AndroidHarness.",
+      "location": "Satu lagi aplikasi Android → Kongsi → YL Private Agents.",
       "before": [
         "Apl sumber mesti menawarkan perkongsian Android untuk kandungan.",
         "Semak kandungan peribadi dan destinasi model sebelum dihantar."
       ],
       "steps": [
         {
-          "title": "Pilih AndroidHarness dalam Kongsi",
-          "body": "Gunakan helaian saham Android apl sumber. AndroidHarness membuka helaian ulasan untuk teks kongsi dan pratonton lampiran yang disokong."
+          "title": "Pilih YL Private Agents dalam Kongsi",
+          "body": "Gunakan helaian saham Android apl sumber. YL Private Agents membuka helaian ulasan untuk teks kongsi dan pratonton lampiran yang disokong."
         },
         {
           "title": "Pilih perbualan",

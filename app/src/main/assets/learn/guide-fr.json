@@ -92,7 +92,7 @@
       "outcome": "Vous pouvez choisir Chat pour une explication et Code pour modifier un projet réel.",
       "limits": [
         "Chat ne peut pas modifier silencieusement votre espace de travail ni exécuter de commandes shell. Une demande de travail sur un projet peut offrir un transfert vers Code.",
-        "Le modèle que vous choisissez affecte la qualité, l’utilisation des outils, la vision, le coût et la rapidité. L'installation de AndroidHarness ne donne pas accès à tous les modèles d'IA."
+        "Le modèle que vous choisissez affecte la qualité, l’utilisation des outils, la vision, le coût et la rapidité. L'installation de YL Private Agents ne donne pas accès à tous les modèles d'IA."
       ],
       "fixes": [
         {
@@ -264,7 +264,7 @@
       "steps": [
         {
           "title": "Comprendre la clé",
-          "body": "Une clé API est un identifiant secret. Il permet à AndroidHarness d'envoyer des demandes à votre compte fournisseur. La création d'une clé ne permet pas en soi d'acheter un modèle, de financer un compte ou de rendre les demandes illimitées."
+          "body": "Une clé API est un identifiant secret. Il permet à YL Private Agents d'envoyer des demandes à votre compte fournisseur. La création d'une clé ne permet pas en soi d'acheter un modèle, de financer un compte ou de rendre les demandes illimitées."
         },
         {
           "title": "Vérifier le parcours de facturation",
@@ -272,7 +272,7 @@
         },
         {
           "title": "Activer l'accès si nécessaire",
-          "body": "Utilisez la propre caisse du fournisseur pour ajouter un mode de paiement, acheter des crédits ou activer un plan approprié. Vérifiez les recharges automatiques et les contrôles des dépenses avant de confirmer. AndroidHarness ne vend pas d’abonnements au fournisseur API."
+          "body": "Utilisez la propre caisse du fournisseur pour ajouter un mode de paiement, acheter des crédits ou activer un plan approprié. Vérifiez les recharges automatiques et les contrôles des dépenses avant de confirmer. YL Private Agents ne vend pas d’abonnements au fournisseur API."
         },
         {
           "title": "Gardez un œil sur l'utilisation",
@@ -287,7 +287,7 @@
       "fixes": [
         {
           "problem": "J'ai payé pour une application de chat mais ma clé API échoue",
-          "solution": "Vérifiez la console du développeur pour l'accès au API, les crédits disponibles et toute étape de liaison entre les crédits d'abonnement et les crédits. Vous pouvez également utiliser une connexion de connexion prise en charge dans AndroidHarness."
+          "solution": "Vérifiez la console du développeur pour l'accès au API, les crédits disponibles et toute étape de liaison entre les crédits d'abonnement et les crédits. Vous pouvez également utiliser une connexion de connexion prise en charge dans YL Private Agents."
         }
       ],
       "related": [
@@ -392,7 +392,7 @@
       "category": "providers",
       "title": "Connecter une clé OpenAI API",
       "summary": "Configurez l'accès API et choisissez le type de connexion OpenAI.",
-      "location": "Plateforme de développement OpenAI → Clés et facturation API ; AndroidHarness → Gérer les fournisseurs.",
+      "location": "Plateforme de développement OpenAI → Clés et facturation API ; YL Private Agents → Gérer les fournisseurs.",
       "before": [
         "Utilisez le compte OpenAI et l'organisation API avec laquelle vous avez l'intention de payer."
       ],
@@ -406,7 +406,7 @@
           "body": "Créez une clé de projet API, donnez-lui un nom reconnaissable et copiez le secret pendant qu'il est affiché. Gardez-le privé."
         },
         {
-          "title": "Ajoutez-le à AndroidHarness",
+          "title": "Ajoutez-le à YL Private Agents",
           "body": "Dans Gérer les fournisseurs, choisissez OpenAI ou OpenAI (Réponses). Collez la clé, continuez, sélectionnez un modèle disponible et enregistrez."
         },
         {
@@ -458,7 +458,7 @@
       "category": "providers",
       "title": "Connectez le Claude via le API",
       "summary": "Créez une clé Anthropic et vérifiez son financement API.",
-      "location": "Console Claude → Clés API et facturation ; AndroidHarness → Gérer les fournisseurs → Anthropic.",
+      "location": "Console Claude → Clés API et facturation ; YL Private Agents → Gérer les fournisseurs → Anthropic.",
       "before": [
         "Avoir accès à l’organisation ou à l’espace de travail Claude API prévu."
       ],
@@ -477,7 +477,7 @@
         },
         {
           "title": "Enregistrer et tester",
-          "body": "Choisissez Anthropic dans AndroidHarness, collez la clé, sélectionnez un modèle disponible pour votre compte et enregistrez. Sélectionnez-le dans Chat ou Code et envoyez une courte demande."
+          "body": "Choisissez Anthropic dans YL Private Agents, collez la clé, sélectionnez un modèle disponible pour votre compte et enregistrez. Sélectionnez-le dans Chat ou Code et envoyez une courte demande."
         }
       ],
       "outcome": "Une connexion Anthropic enregistrée peut répondre avec le modèle que vous avez sélectionné.",
@@ -488,7 +488,7 @@
       "fixes": [
         {
           "problem": "Le fournisseur signale des crédits faibles",
-          "solution": "Consultez la page de facturation de l'organisation qui possède cette clé. L'ajout d'une clé à AndroidHarness n'ajoute pas de fonds."
+          "solution": "Consultez la page de facturation de l'organisation qui possède cette clé. L'ajout d'une clé à YL Private Agents n'ajoute pas de fonds."
         }
       ],
       "related": [
@@ -524,7 +524,7 @@
       "category": "providers",
       "title": "Connectez une clé Gemini API",
       "summary": "Utilisez Google AI Studio et choisissez le bon projet.",
-      "location": "Google AI Studio → Touches API ; AndroidHarness → Gérer les fournisseurs → Gemini.",
+      "location": "Google AI Studio → Touches API ; YL Private Agents → Gérer les fournisseurs → Gemini.",
       "before": [
         "Utilisez un compte Google et un projet éligible pour le Gemini API."
       ],
@@ -539,14 +539,14 @@
         },
         {
           "title": "Ajouter la connexion Gemini",
-          "body": "Choisissez Gemini dans AndroidHarness, collez la clé, passez à la liste des modèles et enregistrez un modèle proposé sur votre compte."
+          "body": "Choisissez Gemini dans YL Private Agents, collez la clé, passez à la liste des modèles et enregistrez un modèle proposé sur votre compte."
         },
         {
           "title": "Essayez un court message",
           "body": "Choisissez le modèle dans Chat ou Code. En cas d'échec, vérifiez que le projet de la clé, le API activé, l'état de facturation et les limites du modèle correspondent à votre demande."
         }
       ],
-      "outcome": "AndroidHarness peut joindre Gemini en utilisant la clé attachée au projet que vous avez choisi.",
+      "outcome": "YL Private Agents peut joindre Gemini en utilisant la clé attachée au projet que vous avez choisi.",
       "limits": [
         "Les niveaux gratuits et payants ont des limites et des conditions différentes. Consultez la page de facturation officielle actuelle avant d'utiliser des données sensibles ou d'effectuer des achats.",
         "Un modèle prenant en charge les images ne rend pas toutes les fonctionnalités du fournisseur disponibles via cette application. Seules les fonctionnalités de conversation et d’outils implémentées sont exposées."
@@ -590,7 +590,7 @@
       "category": "providers",
       "title": "Connectez OpenRouter",
       "summary": "Utilisez une connexion pour choisir dans le catalogue de modèles de OpenRouter.",
-      "location": "OpenRouter → Paramètres → Clés et crédits ; AndroidHarness → Gérer les fournisseurs → OpenRouter.",
+      "location": "OpenRouter → Paramètres → Clés et crédits ; YL Private Agents → Gérer les fournisseurs → OpenRouter.",
       "before": [
         "Avoir un compte OpenRouter. Vérifiez le prix et les conditions d’accès de chaque modèle choisi."
       ],
@@ -675,7 +675,7 @@
         },
         {
           "title": "Enregistrez et sélectionnez un modèle",
-          "body": "Collez la clé dans la connexion AndroidHarness correspondante, choisissez un modèle proposé et enregistrez. Sélectionnez ce modèle dans l'en-tête de la conversation et testez-le."
+          "body": "Collez la clé dans la connexion YL Private Agents correspondante, choisissez un modèle proposé et enregistrez. Sélectionnez ce modèle dans l'en-tête de la conversation et testez-le."
         }
       ],
       "outcome": "Le service choisi est disponible dans votre sélecteur de modèles.",
@@ -759,13 +759,13 @@
         },
         {
           "title": "Test depuis le téléphone",
-          "body": "Assurez-vous que le serveur écoute sur une interface accessible et que le réseau autorise la connexion. Enregistrez le fournisseur et envoyez une petite demande de AndroidHarness."
+          "body": "Assurez-vous que le serveur écoute sur une interface accessible et que le réseau autorise la connexion. Enregistrez le fournisseur et envoyez une petite demande de YL Private Agents."
         }
       ],
       "outcome": "Le téléphone peut parler au serveur compatible et recevoir une réponse modèle.",
       "limits": [
         "Un serveur de modèle de bureau est différent de la fonctionnalité de modèles locaux sur l'appareil de l'application.",
-        "AndroidHarness ne démarre pas Ollama ou LM Studio sur votre ordinateur et ne crée pas automatiquement de tunnel réseau."
+        "YL Private Agents ne démarre pas Ollama ou LM Studio sur votre ordinateur et ne crée pas automatiquement de tunnel réseau."
       ],
       "fixes": [
         {
@@ -983,7 +983,7 @@
       "steps": [
         {
           "title": "Commencer la connexion",
-          "body": "Choisissez Ajouter un compte ou l'action de connexion. Terminez l'autorisation officielle du navigateur et revenez à AndroidHarness. Vous pouvez annuler une connexion en attente à partir du panneau de compte."
+          "body": "Choisissez Ajouter un compte ou l'action de connexion. Terminez l'autorisation officielle du navigateur et revenez à YL Private Agents. Vous pouvez annuler une connexion en attente à partir du panneau de compte."
         },
         {
           "title": "Choisissez le compte connecté",
@@ -2475,7 +2475,7 @@
       "outcome": "Le dossier distant apparaît comme un espace de travail et les actions prises en charge fonctionnent sur l'hôte SSH.",
       "limits": [
         "L’hôte local d’un serveur distant n’est pas l’hôte local de votre téléphone. Les aperçus Web à distance nécessitent un URL accessible depuis le téléphone ou une connexion configurée séparément.",
-        "AndroidHarness n'installe ni n'administre le serveur distant SSH pour vous."
+        "YL Private Agents n'installe ni n'administre le serveur distant SSH pour vous."
       ],
       "fixes": [
         {
@@ -3580,7 +3580,7 @@
       ],
       "outcome": "L'exécutable démarre en tant que processus MCP local et annonce les outils avec succès.",
       "limits": [
-        "Un serveur MCP local est un logiciel exécutable. AndroidHarness ne rend pas les binaires de bureau arbitraires compatibles avec votre téléphone.",
+        "Un serveur MCP local est un logiciel exécutable. YL Private Agents ne rend pas les binaires de bureau arbitraires compatibles avec votre téléphone.",
         "La configuration du plug-in MCP/plugin fournie par le projet nécessite un examen de l'approbation de l'espace de travail. Workspace MCP n'est pas encore disponible dans les discussions multi-espaces de travail."
       ],
       "fixes": [
@@ -3621,7 +3621,7 @@
       "summary": "Examinez un bundle avant d’activer ses compétences, hooks et outils.",
       "location": "Paramètres → Codage → Plugins → Installé / Découvrir / Ajouter.",
       "before": [
-        "Utilisez un plugin conçu pour le format de bundle pris en charge par AndroidHarness.",
+        "Utilisez un plugin conçu pour le format de bundle pris en charge par YL Private Agents.",
         "Choisissez si sa portée doit être ce projet ou globale."
       ],
       "steps": [
@@ -4284,10 +4284,10 @@
       "steps": [
         {
           "title": "Démarrer le fournisseur",
-          "body": "Suivez la configuration de l'application du fournisseur pour que son service soit exécuté. AndroidHarness ne l'active pas simplement en étant installé."
+          "body": "Suivez la configuration de l'application du fournisseur pour que son service soit exécuté. YL Private Agents ne l'active pas simplement en étant installé."
         },
         {
-          "title": "Accorder l'accès à AndroidHarness",
+          "title": "Accorder l'accès à YL Private Agents",
           "body": "Ouvrez la section du fournisseur de shell et demandez l'autorisation. Approuvez la demande prévue auprès du fournisseur, puis actualisez l'état de la connexion."
         },
         {
@@ -4334,7 +4334,7 @@
       "category": "device",
       "title": "Associer le débogage sans fil",
       "summary": "Connectez l'itinéraire sans fil ADB du Android depuis l'application.",
-      "location": "Options du développeur Android → Débogage sans fil ; AndroidHarness → Terminal et appareil → Sans fil ADB.",
+      "location": "Options du développeur Android → Débogage sans fil ; YL Private Agents → Terminal et appareil → Sans fil ADB.",
       "before": [
         "Une version Android prise en charge avec débogage sans fil disponible.",
         "Un état du réseau/périphérique qui permet le débogage sans fil du Android.",
@@ -4342,7 +4342,7 @@
       ],
       "steps": [
         {
-          "title": "Commencer l'appairage à partir de AndroidHarness",
+          "title": "Commencer l'appairage à partir de YL Private Agents",
           "body": "Dans Wireless ADB, appuyez sur le bouton de couplage. Autorisez l'autorisation du réseau local si Android le demande. L'application commence à rechercher le service de couplage du Android."
         },
         {
@@ -4351,7 +4351,7 @@
         },
         {
           "title": "Entrez le code via la notification",
-          "body": "Déroulez le volet de notification, ouvrez la notification d'appairage de AndroidHarness, utilisez son action Entrer le code et soumettez le code à six chiffres actuellement affiché par Android. Attendez le résultat de l’appairage/connexion."
+          "body": "Déroulez le volet de notification, ouvrez la notification d'appairage de YL Private Agents, utilisez son action Entrer le code et soumettez le code à six chiffres actuellement affiché par Android. Attendez le résultat de l’appairage/connexion."
         },
         {
           "title": "Utilisez le couplage manuel si nécessaire",
@@ -4399,7 +4399,7 @@
       "summary": "Gardez la connexion racine, l’autorisation du projet et le mode tâche séparés.",
       "location": "Paramètres → Codage → Terminal et appareil → Avancé → Accès root.",
       "before": [
-        "Un appareil qui dispose déjà d’un gestionnaire racine fonctionnel. AndroidHarness ne le roote pas."
+        "Un appareil qui dispose déjà d’un gestionnaire racine fonctionnel. YL Private Agents ne le roote pas."
       ],
       "steps": [
         {
@@ -4462,7 +4462,7 @@
       "steps": [
         {
           "title": "Vérifiez d'abord Dhizuku",
-          "body": "Ouvrez sa propre application et vérifiez que l'activation du propriétaire de l'appareil est terminée. La carte AndroidHarness indique si le service est installé, actif ou en attente d'autorisation."
+          "body": "Ouvrez sa propre application et vérifiez que l'activation du propriétaire de l'appareil est terminée. La carte YL Private Agents indique si le service est installé, actif ou en attente d'autorisation."
         },
         {
           "title": "Accorder la connexion",
@@ -4697,7 +4697,7 @@
       "location": "Paramètres → Telegram.",
       "before": [
         "Un bot que vous contrôlez, créé via le BotFather officiel de Telegram.",
-        "Gardez votre téléphone en ligne avec le service Telegram de AndroidHarness activé."
+        "Gardez votre téléphone en ligne avec le service Telegram de YL Private Agents activé."
       ],
       "steps": [
         {
@@ -4706,7 +4706,7 @@
         },
         {
           "title": "Associez votre compte",
-          "body": "Commencez l'appairage dans AndroidHarness, ouvrez le bot avec le lien/code fourni et vérifiez l'identité de l'utilisateur Telegram dans l'application avant de l'approuver."
+          "body": "Commencez l'appairage dans YL Private Agents, ouvrez le bot avec le lien/code fourni et vérifiez l'identité de l'utilisateur Telegram dans l'application avant de l'approuver."
         },
         {
           "title": "Choisissez le contexte de travail",
@@ -4719,7 +4719,7 @@
       ],
       "outcome": "Votre compte Telegram couplé peut envoyer du travail au projet/chat d'application choisi et recevoir les progrès/résultats.",
       "limits": [
-        "Le bot et votre téléphone ont besoin d'un accès au réseau. Telegram n'héberge pas la tâche AndroidHarness en votre nom.",
+        "Le bot et votre téléphone ont besoin d'un accès au réseau. Telegram n'héberge pas la tâche YL Private Agents en votre nom.",
         "Le couplage, les autorisations des outils d'application, la facturation du modèle et les paramètres d'arrière-plan s'appliquent toujours. N'exécutez pas un autre consommateur concurrent du même jeton de bot."
       ],
       "fixes": [
@@ -5707,7 +5707,7 @@
     {
       "id": "honest-limits",
       "category": "help",
-      "title": "Ce que AndroidHarness peut et ne peut pas faire",
+      "title": "Ce que YL Private Agents peut et ne peut pas faire",
       "summary": "Séparez les fonctionnalités des applications des promesses du modèle et des autorisations des appareils.",
       "location": "Utilisez cette liste de contrôle avant de choisir un flux de travail.",
       "before": [
@@ -5964,17 +5964,17 @@
     {
       "id": "share-to-chat",
       "category": "chat",
-      "title": "Partager quelque chose dans AndroidHarness",
+      "title": "Partager quelque chose dans YL Private Agents",
       "summary": "Importez du texte, des liens et des pièces jointes prises en charge depuis une autre application dans un chat.",
-      "location": "Une autre application Android → Partager → AndroidHarness.",
+      "location": "Une autre application Android → Partager → YL Private Agents.",
       "before": [
         "L'application source doit proposer le partage Android pour le contenu.",
         "Vérifiez le contenu privé et la destination du modèle avant de l'envoyer."
       ],
       "steps": [
         {
-          "title": "Choisissez AndroidHarness dans Partager",
-          "body": "Utilisez la feuille de partage Android de l’application source. AndroidHarness ouvre une feuille de révision pour le texte partagé et les aperçus des pièces jointes prises en charge."
+          "title": "Choisissez YL Private Agents dans Partager",
+          "body": "Utilisez la feuille de partage Android de l’application source. YL Private Agents ouvre une feuille de révision pour le texte partagé et les aperçus des pièces jointes prises en charge."
         },
         {
           "title": "Choisissez la conversation",

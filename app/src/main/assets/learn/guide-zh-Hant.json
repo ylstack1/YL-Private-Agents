@@ -92,7 +92,7 @@
       "outcome": "您可以選擇“聊天”來獲取解釋，選擇“代碼”來更改真實項目。",
       "limits": [
         "Chat 無法靜默編輯您的工作區或執行 shell 指令。專案工作請求可能會移交給程式碼。",
-        "您選擇的模型會影響品質、工具使用、願景、成本和速度。安裝 AndroidHarness 並不授予對每個 AI 模型的存取權。"
+        "您選擇的模型會影響品質、工具使用、願景、成本和速度。安裝 YL Private Agents 並不授予對每個 AI 模型的存取權。"
       ],
       "fixes": [
         {
@@ -264,7 +264,7 @@
       "steps": [
         {
           "title": "了解關鍵",
-          "body": "API 金鑰是秘密憑證。它允許 AndroidHarness 向您的提供者帳戶發送請求。建立金鑰本身並不購買模型、為帳戶提供資金或使請求不受限制。"
+          "body": "API 金鑰是秘密憑證。它允許 YL Private Agents 向您的提供者帳戶發送請求。建立金鑰本身並不購買模型、為帳戶提供資金或使請求不受限制。"
         },
         {
           "title": "檢查計費路徑",
@@ -272,7 +272,7 @@
         },
         {
           "title": "如果需要啟動存取權限",
-          "body": "使用提供者自己的結帳功能添加付款方式、購買積分或啟動合適的計劃。確認前檢查自動儲值和支出控制。 AndroidHarness 不出售提供者 API 訂閱。"
+          "body": "使用提供者自己的結帳功能添加付款方式、購買積分或啟動合適的計劃。確認前檢查自動儲值和支出控制。 YL Private Agents 不出售提供者 API 訂閱。"
         },
         {
           "title": "密切注意使用情況",
@@ -287,7 +287,7 @@
       "fixes": [
         {
           "problem": "我付費購買了聊天應用程序，但我的 API 密鑰失敗",
-          "solution": "檢查開發者控制台的 API 存取權限、可用積分以及任何訂閱積分連結步驟。或使用 AndroidHarness 中支援的登入連線。"
+          "solution": "檢查開發者控制台的 API 存取權限、可用積分以及任何訂閱積分連結步驟。或使用 YL Private Agents 中支援的登入連線。"
         }
       ],
       "related": [
@@ -392,7 +392,7 @@
       "category": "providers",
       "title": "連接 OpenAI API 鑰匙",
       "summary": "設定API接入並選擇OpenAI連接類型。",
-      "location": "OpenAI開發者平台→API金鑰與計費；AndroidHarness → 管理提供者。",
+      "location": "OpenAI開發者平台→API金鑰與計費；YL Private Agents → 管理提供者。",
       "before": [
         "使用您打算付款的 OpenAI 帳戶和 API 組織。"
       ],
@@ -406,7 +406,7 @@
           "body": "建立一個項目 API 金鑰，為其指定一個可識別的名稱，並在顯示時複製該金鑰。保密。"
         },
         {
-          "title": "加入AndroidHarness",
+          "title": "加入YL Private Agents",
           "body": "在管理提供者中，選擇 OpenAI 或 OpenAI（回應）。貼上密鑰，繼續，選擇可用模型，然後儲存。"
         },
         {
@@ -458,7 +458,7 @@
       "category": "providers",
       "title": "透過API連接Claude",
       "summary": "建立 Anthropic 金鑰並檢查其 API 資金。",
-      "location": "Claude 控制台→API按鍵和計費；AndroidHarness → 管理提供者 → Anthropic。",
+      "location": "Claude 控制台→API按鍵和計費；YL Private Agents → 管理提供者 → Anthropic。",
       "before": [
         "有權存取預期的 Claude API 組織或工作區。"
       ],
@@ -477,7 +477,7 @@
         },
         {
           "title": "儲存並測試",
-          "body": "在AndroidHarness中選擇Anthropic，貼上金鑰，選擇您的帳戶可用的型號，然後儲存。在聊天或程式碼中選擇它並發送一個簡短的請求。"
+          "body": "在YL Private Agents中選擇Anthropic，貼上金鑰，選擇您的帳戶可用的型號，然後儲存。在聊天或程式碼中選擇它並發送一個簡短的請求。"
         }
       ],
       "outcome": "已儲存的 Anthropic 連接可以使用您選擇的型號進行應答。",
@@ -488,7 +488,7 @@
       "fixes": [
         {
           "problem": "提供者報告信用低",
-          "solution": "檢查擁有此金鑰的組織的計費頁面。在 AndroidHarness 新增密鑰不會增加資金。"
+          "solution": "檢查擁有此金鑰的組織的計費頁面。在 YL Private Agents 新增密鑰不會增加資金。"
         }
       ],
       "related": [
@@ -524,7 +524,7 @@
       "category": "providers",
       "title": "連接 Gemini API 鑰匙",
       "summary": "使用 Google AI Studio 並選擇正確的項目。",
-      "location": "Google AI Studio → API 鍵； AndroidHarness → 管理供應商 → Gemini。",
+      "location": "Google AI Studio → API 鍵； YL Private Agents → 管理供應商 → Gemini。",
       "before": [
         "使用符合 Gemini API 資格的 Google 帳戶和項目。"
       ],
@@ -539,14 +539,14 @@
         },
         {
           "title": "新增 Gemini 連接",
-          "body": "在AndroidHarness中選擇Gemini，貼上金鑰，繼續到型號列表，並將提供的型號儲存到您的帳戶。"
+          "body": "在YL Private Agents中選擇Gemini，貼上金鑰，繼續到型號列表，並將提供的型號儲存到您的帳戶。"
         },
         {
           "title": "嘗試發短信",
           "body": "在聊天或程式碼中選擇模型。如果失敗，請檢查金鑰的項目、啟用的 API、計費狀態和型號限制是否符合您的要求。"
         }
       ],
-      "outcome": "AndroidHarness 可以使用您選擇的項目隨附的金鑰到達 Gemini。",
+      "outcome": "YL Private Agents 可以使用您選擇的項目隨附的金鑰到達 Gemini。",
       "limits": [
         "免費和付費方案有不同的限制和條款。在使用敏感資料或進行購買之前，請檢查當前的官方計費頁面。",
         "支援圖像的模型並不能使每個提供者功能都可以透過此應用程式使用。僅公開已實現的對話和工具功能。"
@@ -590,7 +590,7 @@
       "category": "providers",
       "title": "連接OpenRouter",
       "summary": "使用連接即可從 OpenRouter 的型號目錄中進行選擇。",
-      "location": "OpenRouter → 設定 → 金鑰和積分；AndroidHarness → 管理供應商 → OpenRouter。",
+      "location": "OpenRouter → 設定 → 金鑰和積分；YL Private Agents → 管理供應商 → OpenRouter。",
       "before": [
         "擁有 OpenRouter 帳戶。檢查每個所選型號的價格和訪問要求。"
       ],
@@ -675,7 +675,7 @@
         },
         {
           "title": "儲存並選擇模型",
-          "body": "將金鑰貼到相符的 AndroidHarness 連接中，選擇提供的型號，然後儲存。在對話標題中選擇該模型並進行測試。"
+          "body": "將金鑰貼到相符的 YL Private Agents 連接中，選擇提供的型號，然後儲存。在對話標題中選擇該模型並進行測試。"
         }
       ],
       "outcome": "您的模型選擇器中提供了所選的服務。",
@@ -759,13 +759,13 @@
         },
         {
           "title": "從電話測試",
-          "body": "確保伺服器正在偵聽可存取的介面並且網路允許連線。儲存提供者並從 AndroidHarness 發送一個小請求。"
+          "body": "確保伺服器正在偵聽可存取的介面並且網路允許連線。儲存提供者並從 YL Private Agents 發送一個小請求。"
         }
       ],
       "outcome": "電話可以與相容伺服器通訊並接收模型回覆。",
       "limits": [
         "桌面模型伺服器與應用程式的裝置上本機模型功能不同。",
-        "AndroidHarness 不會在您的電腦上啟動 Ollama 或 LM Studio 或自動建立網路隧道。"
+        "YL Private Agents 不會在您的電腦上啟動 Ollama 或 LM Studio 或自動建立網路隧道。"
       ],
       "fixes": [
         {
@@ -983,7 +983,7 @@
       "steps": [
         {
           "title": "開始登入",
-          "body": "選擇新增帳戶或登入操作。完成官方瀏覽器授權，返回AndroidHarness。您可以從帳戶面板取消待處理的登入。"
+          "body": "選擇新增帳戶或登入操作。完成官方瀏覽器授權，返回YL Private Agents。您可以從帳戶面板取消待處理的登入。"
         },
         {
           "title": "選擇關聯的帳戶",
@@ -2475,7 +2475,7 @@
       "outcome": "遠端資料夾顯示為工作區，支援的操作在 SSH 主機上執行。",
       "limits": [
         "遠端伺服器的本機主機不是您手機的本機。遠端 Web 預覽需要可透過電話或單獨設定的連線存取 URL。",
-        "AndroidHarness 不會為您安裝或管理遠端 SSH 伺服器。"
+        "YL Private Agents 不會為您安裝或管理遠端 SSH 伺服器。"
       ],
       "fixes": [
         {
@@ -3580,7 +3580,7 @@
       ],
       "outcome": "此可執行檔作為本機 MCP 進程啟動並成功通告工具。",
       "limits": [
-        "本地MCP伺服器是可執行軟體。 AndroidHarness 不會使任何桌面二進位與您的手機相容。",
+        "本地MCP伺服器是可執行軟體。 YL Private Agents 不會使任何桌面二進位與您的手機相容。",
         "專案提供的MCP/插件配置需要其工作區信任審核。工作區 MCP 尚不支援多工作區聊天。"
       ],
       "fixes": [
@@ -3621,7 +3621,7 @@
       "summary": "在啟用其技能、掛鉤和工具之前檢查捆綁包。",
       "location": "設定→編碼→外掛程式→安裝/發現/新增。",
       "before": [
-        "使用為 AndroidHarness 支援的捆綁格式製作的插件。",
+        "使用為 YL Private Agents 支援的捆綁格式製作的插件。",
         "選擇其範圍是本項目還是全域。"
       ],
       "steps": [
@@ -4284,10 +4284,10 @@
       "steps": [
         {
           "title": "啟動提供者",
-          "body": "遵循提供者應用程式自己的設置，使其服務運行。 AndroidHarness 僅安裝後不會啟動它。"
+          "body": "遵循提供者應用程式自己的設置，使其服務運行。 YL Private Agents 僅安裝後不會啟動它。"
         },
         {
-          "title": "授予 AndroidHarness 存取權限",
+          "title": "授予 YL Private Agents 存取權限",
           "body": "開啟 shell-provider 部分並請求權限。批准提供者中的預期請求，然後刷新連線狀態。"
         },
         {
@@ -4334,7 +4334,7 @@
       "category": "device",
       "title": "配對無線調試",
       "summary": "從應用程式連接Android的無線ADB路由。",
-      "location": "Android 開發者選項→無線除錯；AndroidHarness → 終端機和裝置 → 無線 ADB。",
+      "location": "Android 開發者選項→無線除錯；YL Private Agents → 終端機和裝置 → 無線 ADB。",
       "before": [
         "支援的 Android 版本，可進行無線調試。",
         "允許 Android 無線調試的網路/設備狀態。",
@@ -4342,7 +4342,7 @@
       ],
       "steps": [
         {
-          "title": "從AndroidHarness開始配對",
+          "title": "從YL Private Agents開始配對",
           "body": "在無線 ADB 中，點選配對按鈕。如果 Android 請求，則允許本機網路權限。应用程序开始寻找Android的配对服务。"
         },
         {
@@ -4351,7 +4351,7 @@
         },
         {
           "title": "透過通知輸入代碼",
-          "body": "拉下通知欄，開啟 AndroidHarness 的配對通知，使用其輸入代碼操作，然後提交 Android 目前顯示的六位數代碼。等待配對/連線結果。"
+          "body": "拉下通知欄，開啟 YL Private Agents 的配對通知，使用其輸入代碼操作，然後提交 Android 目前顯示的六位數代碼。等待配對/連線結果。"
         },
         {
           "title": "如果需要，請使用手動配對",
@@ -4399,7 +4399,7 @@
       "summary": "將 root 連線、專案權限和任務模式分開。",
       "location": "設定→編碼→終端和設備→進階→根存取。",
       "before": [
-        "已具有工作根管理器的设备。 AndroidHarness 沒有root。"
+        "已具有工作根管理器的设备。 YL Private Agents 沒有root。"
       ],
       "steps": [
         {
@@ -4462,7 +4462,7 @@
       "steps": [
         {
           "title": "先檢查Dhizuku",
-          "body": "打開自己的應用程式並驗證裝置擁有者啟動是否已完成。 AndroidHarness 的卡片報告服務是否已安裝、活動或正在等待許可。"
+          "body": "打開自己的應用程式並驗證裝置擁有者啟動是否已完成。 YL Private Agents 的卡片報告服務是否已安裝、活動或正在等待許可。"
         },
         {
           "title": "授予連接",
@@ -4697,7 +4697,7 @@
       "location": "設定 → Telegram。",
       "before": [
         "您控制的機器人，透過Telegram的官方BotFather創建。",
-        "啟用 AndroidHarness 的 Telegram 服務，讓您的手機保持在線上。"
+        "啟用 YL Private Agents 的 Telegram 服務，讓您的手機保持在線上。"
       ],
       "steps": [
         {
@@ -4706,7 +4706,7 @@
         },
         {
           "title": "配對您的帳戶",
-          "body": "在 AndroidHarness 中開始配對，使用提供的連結/代碼開啟機器人，並在批准之前在應用程式中檢查 Telegram 用戶身份。"
+          "body": "在 YL Private Agents 中開始配對，使用提供的連結/代碼開啟機器人，並在批准之前在應用程式中檢查 Telegram 用戶身份。"
         },
         {
           "title": "選擇工作環境",
@@ -4719,7 +4719,7 @@
       ],
       "outcome": "您配對的 Telegram 帳戶可以將工作傳送到所選的應用程式專案/聊天並接收進度/結果。",
       "limits": [
-        "機器人和您的手機需要網路存取。 Telegram 不代表您託管 AndroidHarness 任務。",
+        "機器人和您的手機需要網路存取。 Telegram 不代表您託管 YL Private Agents 任務。",
         "配對、應用程式工具權限、模型計費和背景設定仍然適用。不要运行同一机器人令牌的另一个竞争消费者。"
       ],
       "fixes": [
@@ -5707,7 +5707,7 @@
     {
       "id": "honest-limits",
       "category": "help",
-      "title": "AndroidHarness 能做什麼、不能做什麼",
+      "title": "YL Private Agents 能做什麼、不能做什麼",
       "summary": "將應用程式功能與模型承諾和設備權限分開。",
       "location": "在選擇工作流程之前使用此清單。",
       "before": [
@@ -5964,17 +5964,17 @@
     {
       "id": "share-to-chat",
       "category": "chat",
-      "title": "分享一些東西到AndroidHarness",
+      "title": "分享一些東西到YL Private Agents",
       "summary": "將文字、連結和支援的附件從另一個應用程式引入聊天中。",
-      "location": "另一個Android應用程式→分享→AndroidHarness。",
+      "location": "另一個Android應用程式→分享→YL Private Agents。",
       "before": [
         "來源應用程式必須提供內容的 Android 共用。",
         "發送前查看私人內容和模型目的地。"
       ],
       "steps": [
         {
-          "title": "分享中選擇AndroidHarness",
-          "body": "使用來源應用程式的 Android 共用表。 AndroidHarness 開啟共享文字和支援的附件預覽的審閱表。"
+          "title": "分享中選擇YL Private Agents",
+          "body": "使用來源應用程式的 Android 共用表。 YL Private Agents 開啟共享文字和支援的附件預覽的審閱表。"
         },
         {
           "title": "選擇對話",
