@@ -37,7 +37,9 @@ graphify-out/
 docs/*
 !docs/configuration/
 !docs/harness.schema.json
+!docs/superpowers/
 !docs/superpowers/specs/**/
+!docs/superpowers/plans/
 screenshots/
 mock-server.js
 README.full.md
