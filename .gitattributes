@@ -1,0 +1,20 @@
+# Protected-files merge driver (AGENTS.md §7).
+#
+# Belt and suspenders: even an accidental `git merge upstream/main` keeps this
+# fork's brand files. Cherry-pick upstream commits instead (AGENTS.md §5).
+#
+# Requires the one-time local setup:
+#   git config merge.ours.driver true
+
+app/src/main/res/** merge=ours
+app/src/main/AndroidManifest.xml merge=ours
+app/src/main/assets/skills/** merge=ours
+app/src/main/aidl/** merge=ours
+app/build.gradle.kts merge=ours
+local_gpu/build.gradle.kts merge=ours
+settings.gradle.kts merge=ours
+gradle.properties merge=ours
+AGENTS.md merge=ours
+scripts/rebrand.py merge=ours
+scripts/rebrand.ps1 merge=ours
+scripts/rebrand.sh merge=ours
