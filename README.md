@@ -229,6 +229,19 @@ AndroidHarness takes ideas and design inspiration from these open source project
 [sora-editor](https://github.com/Rosemoe/sora-editor) and
 [Eruda](https://github.com/liriliri/eruda).
 
+## Repository rules & upstream compatibility
+
+This repo is a **fork of `Sanuu7/AndroidHarness`** rebranded as **YL-Private-Agents**. All agent-working rules, rebranding procedure, and upstream-sync workflow live in **[AGENTS.md](AGENTS.md)**. Read it before adding features, fixing bugs, or pulling from upstream.
+
+Key rules summarized here:
+
+- **Never `git merge` or `git pull upstream` directly.** Upstream uses package `com.androidharness.app`; this fork uses its own rebranded package. Use **cherry-pick** for individual upstream commits instead.
+- **No hardcoded brand/package names.** `com.androidharness.app`, `AndroidHarness`, `Theme.AndroidHarness`, and `androidharness` are replaceable tokens. Use `scripts/rebrand.sh` (Git Bash/Linux/macOS) or `scripts/rebrand.ps1` (Windows PowerShell) to rebrand consistently.
+- **One feature per commit.** Wire each feature in exactly one registration point (settings section, tool registry, or navigation route).
+- **Protected files** (`res/`, `AndroidManifest.xml`, `build.gradle.kts`, `strings.xml`) keep your brand version even during syncs.
+
+See **[AGENTS.md](AGENTS.md)** for the full workflow, commit convention, and what to skip when porting upstream changes.
+
 ## License
 
 Released under the [MIT License](LICENSE).
