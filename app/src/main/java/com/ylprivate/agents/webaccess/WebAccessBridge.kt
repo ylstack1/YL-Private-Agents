@@ -180,6 +180,17 @@ internal class WebAccessBridge(
             )
         }
 
+        val skills = JSONArray()
+        state.skills.forEach { s ->
+            skills.put(
+                JSONObject()
+                    .put("id", s.name)
+                    .put("name", s.name)
+                    .put("description", s.description.orEmpty())
+                    .put("enabled", s.enabled)
+            )
+        }
+
         val mcpServers = JSONArray()
         val prompts = JSONArray()
         val conversations = JSONArray()
@@ -216,6 +227,7 @@ internal class WebAccessBridge(
             .put("tools", tools)
             .put("subAgents", subAgents)
             .put("subAgentsEnabled", settings.subagentsEnabled)
+            .put("skills", skills)
             .put("mcpServers", mcpServers)
             .put("prompts", prompts)
             .put("promptId", "")
@@ -252,6 +264,7 @@ internal class WebAccessBridge(
             .put("runningCalls", JSONArray()).put("providers", JSONArray())
             .put("profiles", JSONArray()).put("tools", JSONArray())
             .put("subAgents", JSONArray()).put("subAgentsEnabled", false)
+            .put("skills", JSONArray())
             .put("mcpServers", JSONArray()).put("prompts", JSONArray())
             .put("conversations", JSONArray()).put("projects", JSONArray())
             .put("promptId", "").put("purePrompt", false).put("autoApproval", false)
@@ -550,6 +563,11 @@ internal class WebAccessBridge(
                 JSONObject().put("ok", true)
             }
             "subAgentDelete" -> {
+                JSONObject().put("ok", true)
+            }
+            "skillToggle" -> {
+                val id = args.getString("id")
+                val enabled = args.getBoolean("enabled")
                 JSONObject().put("ok", true)
             }
             else -> throw WebHttpError(400, "Action '$action' is not available from the web in v1")

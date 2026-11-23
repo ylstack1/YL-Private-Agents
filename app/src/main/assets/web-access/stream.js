@@ -110,6 +110,14 @@ function createLiveMessages(element,rich) {
     const existing=new Set();
     state.messages.forEach((message,index)=>{
       const id=String(message.id || `${message.role}-${index}`);existing.add(id);let row=rows.get(id);
+    const existing=new Set();
+    state.messages.forEach((message,index)=>{
+      const id=String(message.id || `${message.role}-${index}`);existing.add(id);let row=rows.get(id);
+      // Merge streaming text from phone into last assistant message
+      let messageText = message.content || '';
+      if (state.streamingText && state.streamingMessageId && message.id === state.streamingMessageId && message.role === 'assistant') {
+        messageText = message.content || '' + state.streamingText;
+      }
       if(!row) {
         const article=document.createElement('article');article.className=`message ${message.role==='user'?'user':''}`;
         article.innerHTML='<div class="message-meta"></div><details class="message-thinking"><summary></summary><div class="thinking-body"></div></details><details class="message-input"><summary></summary><pre></pre></details><div class="body"></div>';
@@ -135,7 +143,7 @@ function createLiveMessages(element,rich) {
         const hasDiff=/^[+\-@].*/m.test(toolText);
         row.body.render=text=>`<details><summary>${esc(t('工具结果'))}</summary><pre class="${hasDiff?'diff-result':''}">${diffHighlight(text)}</pre></details>`;
       }
-      updateSlot(row.body,message.content || '',streaming,state.streamingAnimationMode);
+      updateSlot(row.body,messageText || '',streaming,state.streamingAnimationMode);
       if(element.children[index]!==row.article)element.insertBefore(row.article,element.children[index] || null);
     });
     for(const [id,row] of rows)if(!existing.has(id)){rich.release(row.article);slots.delete(row.body);slots.delete(row.thinking);row.article.remove();rows.delete(id);}

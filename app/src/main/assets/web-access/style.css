@@ -154,6 +154,9 @@ small, .muted { color: var(--muted); }
   scroll-behavior: smooth;
   overscroll-behavior: contain;
   padding: 24px max(32px, calc((100% - 850px)/2));
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 .message {
   line-height: 1.8;
@@ -234,6 +237,83 @@ summary { cursor: pointer; }
 .message-controls { display: flex; gap: 3px; opacity: 0; }
 .message:hover .message-controls, .message-controls:focus-within { opacity: 1; }
 .message-controls button { padding: 4px 8px; min-height: 28px; font-size: 10px; }
+/* Streaming animation */
+.streaming .message-meta strong::after {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--secondary);
+  margin-left: 8px;
+  animation: typing-dot 1.4s infinite ease-in-out both;
+}
+.streaming .message-meta strong::after:nth-child(1) { animation-delay: 0s; }
+.streaming .message-meta strong::after:nth-child(2) { animation-delay: 0.2s; }
+.streaming .message-meta strong::after:nth-child(3) { animation-delay: 0.4s; }
+@keyframes typing-dot {
+  0%, 80%, 100% { transform: scale(0); opacity: 0.5; }
+  40% { transform: scale(1); opacity: 1; }
+}
+.stream-fade > p:last-child { animation: stream-fade 0.5s ease-out; }
+@keyframes stream-fade { from { opacity: 0.45; } to { opacity: 1; } }
+/* Thinking block */
+.message-thinking summary {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--muted);
+  cursor: pointer;
+  list-style: none;
+  padding: 6px 12px;
+  background: color-mix(in srgb, var(--outline-variant) 15%, transparent);
+  border-radius: 8px 8px 0 0;
+  border: 1px solid var(--line);
+  border-bottom: none;
+}
+.message-thinking summary::-webkit-details-marker { display: none; }
+.message-thinking summary:hover { color: var(--primary); }
+.thinking-body {
+  font-size: 11px;
+  color: var(--muted);
+  font-style: italic;
+  padding: 8px 12px;
+  background: color-mix(in srgb, var(--outline-variant) 10%, transparent);
+  border-radius: 0 0 8px 8px;
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.message-input {
+  margin-top: 8px;
+}
+.message-input summary {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--muted);
+  cursor: pointer;
+  list-style: none;
+  padding: 6px 12px;
+  background: color-mix(in srgb, var(--outline-variant) 15%, transparent);
+  border-radius: 8px 8px 0 0;
+  border: 1px solid var(--line);
+  border-bottom: none;
+}
+.message-input summary::-webkit-details-marker { display: none; }
+.message-input summary:hover { color: var(--primary); }
+.message-input .thinking-body {
+  font-family: "Cascadia Code", Consolas, monospace;
+  font-size: 11px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  padding: 12px;
+}
+.message-input pre {
+  margin: 0;
+  white-space: pre-wrap;
+}
 .welcome {
   text-align: center;
   padding: 10px 20px 28px;
