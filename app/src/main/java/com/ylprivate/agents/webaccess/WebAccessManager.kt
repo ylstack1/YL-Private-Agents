@@ -161,6 +161,10 @@ internal class WebAccessManager(private val activity: Activity, private val sett
                 WebAccessHttp.media(socket.getOutputStream(), resource, request.headers["range"], request.method == "HEAD")
                 return
             }
+            if (request.method == "GET" && request.path == "/favicon.ico") {
+                WebAccessHttp.respond(socket.getOutputStream(), 204, "text/plain", ByteArray(0))
+                return
+            }
             if (!request.authenticated(token)) throw WebHttpError(401, "Enter the access code shown on the phone")
             if (request.method == "GET" && request.path == "/api/events") {
                 val pool = streams ?: throw WebHttpError(503, "Server stopped")

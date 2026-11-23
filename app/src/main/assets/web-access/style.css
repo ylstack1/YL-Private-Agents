@@ -758,4 +758,45 @@ pre code {
   dialog>header { padding: 20px 20px 12px; }
   #dialog-content { padding: 12px 20px 24px; }
 }
-@media (prefers-reduced-motion: reduce) { *, *::before { transition: none !important; scroll-behavior: auto !important; } }
+.app.sidebar-collapsed .sidebar { display: none; }
+.app.sidebar-open .sidebar { display: flex; }
+.app.sidebar-open .sidebar-scrim { display: block; position: fixed; inset: 0; background: #00000066; border: 0; border-radius: 0; z-index: 5; width: 100%; }
+#open-sidebar { display: flex !important; }
+.topbar { height: 64px; padding: 10px 14px; }
+.topbar h2 { font-size: 13px; }
+.top-actions { gap: 4px; }
+#run-state { display: none; }
+.context-button { padding: 6px; font-size: 10px; }
+.context-button .icon { display: none; }
+.messages, .interaction { padding-left: 20px; padding-right: 20px; }
+.composer-area { padding: 10px 12px 16px; }
+.composer-context { gap: 0; }
+.context-chip { font-size: 11px; }
+.composer { padding: 6px 8px 8px; }
+.composer-left, .composer-right { gap: 2px; }
+.approval-control { font-size: 11px; }
+.composer-actions .icon-button { width: 36px; height: 36px; min-height: 36px; }
+.composer textarea { font-size: 14px; }
+.model-control select { max-width: 180px; font-size: 11px; }
+.welcome-heading { gap: 10px; }
+.welcome h1 { font-size: 25px; }
+.welcome p { max-width: 260px; margin: 16px auto 0; }
+.settings-dialog { max-width: calc(100vw - 20px); height: 92dvh; border-radius: 24px; }
+.settings-dialog>header { height: 72px; padding: 16px 20px; }
+.settings-body { flex-direction: column; height: calc(100% - 72px); gap: 12px; padding: 0 16px 16px; }
+.settings-dialog nav { flex-direction: row; width: 100%; overflow-x: auto; flex-shrink: 0; gap: 4px; padding: 0 0 6px; }
+.settings-dialog nav button { font-size: 12px; gap: 8px; white-space: nowrap; padding: 9px 12px; min-height: 40px; border-radius: 999px; }
+.settings-dialog nav .icon { width: 16px; height: 16px; }
+.settings-page { padding: 4px 4px 16px; }
+.compression-form { grid-template-columns: 1fr; }
+dialog>header { padding: 20px 20px 12px; }
+#dialog-content { padding: 12px 20px 24px; }
+/* Login page - hide everything except login card */
+#app[hidden] { display: none !important; }
+#app:not([hidden]) .sidebar-scrim { display: none; }
+.login { display: flex; align-items: center; justify-content: center; height: 100dvh; background: var(--background); }
+.login-card { width: 440px; max-width: calc(100vw - 40px); border-radius: 28px; padding: 36px; background: var(--surface); display: flex; flex-direction: column; gap: 20px; }
+.login-card h1 { font-weight: 500; font-size: 26px; margin: 0; }
+.login-card p { font-size: 12px; color: var(--muted); margin: 0; }
+.login-card .primary { display: flex; align-items: center; justify-content: space-between; padding: 13px 20px; }
+.login-card #login-error { color: var(--error); margin-top: 8px; font-size: 12px; height: 16px; }

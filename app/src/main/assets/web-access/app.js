@@ -243,6 +243,7 @@ async function uploadFiles(files) {
   finally { uploading = false; $('upload-status').textContent = ''; $('file-input').value = ''; render(); }
 }
 $('login-form').addEventListener('submit', e => { e.preventDefault(); token = $('token').value.trim(); safe(async () => { await sync(); if (connected) { sessionStorage.setItem('lyra-web-token',token); $('token').value = ''; } }); });
+$('token').addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey && !e.isComposing) { e.preventDefault(); $('login-form').requestSubmit(); } });
 $('logout').addEventListener('click', () => { sessionStorage.removeItem('lyra-web-token'); token = ''; state = null; showLogin(); });
 $('new-chat').addEventListener('click', () => safe(async () => { await action('new'); selectHistory('normal'); closeSidebar(); }));
 $('history-search').addEventListener('input',renderHistory);
