@@ -146,6 +146,10 @@ internal class WebAccessManager(private val activity: Activity, private val sett
                 WebAccessHttp.respond(socket.getOutputStream(), 200, type, cachedAssets.getValue(request.path))
                 return
             }
+            if (request.method == "GET" && request.path == "/favicon.ico") {
+                WebAccessHttp.respond(socket.getOutputStream(), 204, "text/plain", ByteArray(0))
+                return
+            }
             if (request.method == "GET" && request.path == "/api/locale") {
                 val locale = runBlocking { withContext(Dispatchers.Main) { bridge.locale() } }
                 WebAccessHttp.respond(socket.getOutputStream(), 200, "application/json; charset=utf-8", locale.toString().toByteArray())

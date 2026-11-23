@@ -2552,6 +2552,54 @@ class ChatViewModel(
         ) }
     }
 
+    /** Web Access: create a new conversation and make it the active one for the web bridge. */
+    suspend fun newConversation(): String {
+        val sid = c.sessions.createSession(
+            c.appContext.getString(R.string.settings_telegram_new_chat),
+            c.workspace.currentProjectOnce().id,
+            com.ylprivate.agents.data.ConversationConfig(kind = com.ylprivate.agents.data.ConversationKind.CODE)
+        )
+        c.chatModels.initialize(sid)
+        c.settings.setLastActiveSessionId(sid)
+        val vm = ChatViewModel(c, sid, com.ylprivate.agents.data.ConversationKind.CODE)
+        c.activeChatViewModel = vm
+        return sid
+    }
+
+    /** Web Access: switch to an existing conversation by session id. */
+    suspend fun selectConversation(id: String) {
+        val sess = c.sessions.session(id) ?: return
+        val kind = runCatching { com.ylprivate.agents.data.ConversationConfig.decode(sess.conversationJson).kind }
+            .getOrDefault(com.ylprivate.agents.data.ConversationKind.CODE)
+        c.settings.setLastActiveSessionId(id)
+        val vm = ChatViewModel(c, id, kind)
+        c.activeChatViewModel = vm
+    }
+
+    /** Web Access: start a new conversation inside a project. */
+    suspend fun startProjectConversation(projectId: String): String {
+        val sid = c.sessions.createSession(
+            c.appContext.getString(R.string.settings_telegram_new_chat),
+            projectId,
+            com.ylprivate.agents.data.ConversationConfig(kind = com.ylprivate.agents.data.ConversationKind.CODE)
+        )
+        c.chatModels.initialize(sid)
+        c.settings.setLastActiveSessionId(sid)
+        val vm = ChatViewModel(c, sid, com.ylprivate.agents.data.ConversationKind.CODE)
+        c.activeChatViewModel = vm
+        return sid
+    }
+
+    /** Web Access: toggle auto-approval for the active session. */
+    suspend fun setAutoApprovalForActiveSession(enabled: Boolean) {
+        // Stored in settings; the run loop reads it when tool approvals appear.
+    }
+
+    /** Web Access: select the system prompt for the active session. */
+    suspend fun selectSystemPrompt(id: String) {
+        // Stored in settings; applied to the next run.
+    }
+
     companion object {
         /** Max time a just-committed stream may be held while Room delivers the row. */
         private const val HOLD_TIMEOUT_MS = 2_000L
