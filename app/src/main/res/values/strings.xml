@@ -1177,4 +1177,15 @@
     <string name="web_access_title">Web Access</string>
     <string name="web_access_notification">Desktop browser access is active</string>
     <string name="web_access_stop">Stop web access</string>
+    <string name="web_access_desc">Open the current chat from a desktop browser on the same Wi-Fi. The phone shows an access code; enter it on the computer to connect.</string>
+    <string name="web_access_lan">Allow access from other devices on the LAN</string>
+    <string name="web_access_port">Port</string>
+    <string name="web_access_start">Start server</string>
+    <string name="web_access_addresses">Open this address on the computer</string>
+    <string name="web_access_token">Access code</string>
+    <string name="web_access_copy">Copy</string>
+    <string name="web_access_reset_token">New code</string>
+    <string name="web_access_hint">The code changes every time the server starts. The server stops when you close the app.</string>
+    <string name="web_access_storage_desc">File uploads need All-files access on Android 11+.</string>
+    <string name="web_access_storage_permission">Grant All-files access</string>
 </resources>

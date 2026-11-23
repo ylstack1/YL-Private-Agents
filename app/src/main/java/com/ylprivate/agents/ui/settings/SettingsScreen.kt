@@ -562,6 +562,11 @@ private fun SettingsScreenContent(
                         SettingsPage.SYNC -> com.ylprivate.agents.ui.transfer.SyncSettingsSection(container)
                         SettingsPage.FTP_SERVER -> com.ylprivate.agents.ui.transfer.FtpServerSection(container)
                         SettingsPage.ABOUT -> AboutSection(container)
+                        SettingsPage.WEB_ACCESS -> {
+                            val mgr = container.webAccessManager
+                            if (mgr != null) WebAccessSettings(settings, mgr, container.settings, scope)
+                            else Text(stringResource(R.string.web_access_start))
+                        }
                         SettingsPage.SKILLS, SettingsPage.USAGE, SettingsPage.SETUP -> Unit
                     }
                         if (page != SettingsPage.LEARN && page != SettingsPage.LOCAL_MODELS) Spacer(Modifier.height(16.dp))

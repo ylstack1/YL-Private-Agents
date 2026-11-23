@@ -261,6 +261,12 @@ internal enum class SettingsPage(
         R.string.settings_group_help_about,
         "about license mit copyright credits author sanuu github repository open source thanks",
     ),
+    WEB_ACCESS(
+        R.string.web_access_title,
+        R.string.web_access_desc,
+        R.string.settings_group_your_assistant,
+        "web access remote browser desktop http server lan control chat from computer",
+    ),
 }
 
 internal data class SettingsSearchEntry(

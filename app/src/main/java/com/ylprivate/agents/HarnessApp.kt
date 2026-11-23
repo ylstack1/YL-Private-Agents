@@ -291,6 +291,9 @@ class AppContainer(val appContext: Context) {
     /** The currently visible chat's ViewModel, so WebAccessBridge can drive it from a browser. */
     @Volatile var activeChatViewModel: com.ylprivate.agents.ui.chat.ChatViewModel? = null
 
+    /** Web Access server, created in MainActivity and stopped with the task. */
+    @Volatile internal var webAccessManager: com.ylprivate.agents.webaccess.WebAccessManager? = null
+
     /**
      * Every search provider web_search may use, resolved per call so Settings changes
      * apply to the very next search without a restart. Tool descriptions read this

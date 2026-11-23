@@ -40,6 +40,7 @@ import androidx.core.content.ContextCompat
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.ylprivate.agents.data.AppSettings
+import com.ylprivate.agents.data.ThemeMode
 import com.ylprivate.agents.data.ScreenshotPolicy
 import com.ylprivate.agents.data.update.UpdateIntents
 import com.ylprivate.agents.ui.AppNav
@@ -51,6 +52,8 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.repeatOnLifecycle
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
+import com.ylprivate.agents.webaccess.WebAccessBridge
+import com.ylprivate.agents.webaccess.WebAccessManager
 import java.io.File
 import com.ylprivate.agents.ui.common.Button
 
@@ -97,6 +100,14 @@ class MainActivity : AppCompatActivity() {
             val settings by container.settings.settings
                 .collectAsStateWithLifecycle(initialValue = null)
             val currentSettings = settings ?: return@setContent
+
+            // Web Access server: created once settings load, stopped with the task.
+            LaunchedEffect(currentSettings, container) {
+                if (container.webAccessManager == null) {
+                    val bridge = WebAccessBridge(this@MainActivity, currentSettings, container)
+                    container.webAccessManager = WebAccessManager(this@MainActivity, currentSettings, bridge)
+                }
+            }
 
             HarnessTheme(
                 themeMode = currentSettings.themeMode,
@@ -180,6 +191,16 @@ class MainActivity : AppCompatActivity() {
                         onDispose { container.browser.unbindReadCaptureHost(host) }
                     }
                     AppNav(container)
+                    // Mirror the phone theme into the Web Access browser UI (dark/light + accent).
+                    val colors = MaterialTheme.colorScheme
+                    val isDark = currentSettings.themeMode == ThemeMode.DARK
+                        || currentSettings.themeMode == ThemeMode.AMOLED
+                        || (currentSettings.themeMode == ThemeMode.SYSTEM
+                            && (resources.configuration.uiMode and android.content.res.Configuration.UI_MODE_NIGHT_MASK)
+                                == android.content.res.Configuration.UI_MODE_NIGHT_YES)
+                    LaunchedEffect(currentSettings.themeMode, isDark, colors) {
+                        container.webAccessManager?.updateTheme(isDark, colors)
+                    }
                     com.ylprivate.agents.ui.common.StorageAccessPrompt()
                 }
 

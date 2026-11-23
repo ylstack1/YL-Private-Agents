@@ -314,6 +314,7 @@ internal fun settingsIcon(page: SettingsPage): ImageVector = when (page) {
     SettingsPage.UPDATES -> Icons.Rounded.SystemUpdate
     SettingsPage.SETUP -> Icons.Rounded.Checklist
     SettingsPage.ABOUT -> Icons.Rounded.Info
+    SettingsPage.WEB_ACCESS -> Icons.Rounded.Language
 }
 
 @Composable
