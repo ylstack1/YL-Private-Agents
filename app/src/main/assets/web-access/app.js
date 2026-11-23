@@ -242,8 +242,25 @@ async function uploadFiles(files) {
   } catch (e) { message(e.message); }
   finally { uploading = false; $('upload-status').textContent = ''; $('file-input').value = ''; render(); }
 }
-$('login-form').addEventListener('submit', e => { e.preventDefault(); token = $('token').value.trim(); if (!token) { message(t("请输入访问码")); return; } safe(async () => { await sync(); if (connected) { sessionStorage.setItem('lyra-web-token',token); $('token').value = ''; $('login-error').textContent = ''; } else { $('login-error').textContent = t("无法连接手机，请检查访问码和网络"); } }); });
-$('token').addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey && !e.isComposing) { e.preventDefault(); $('login-form').requestSubmit(); } });
+$('login-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  token = $('token').value.trim();
+  if (!token) { message(t("请输入访问码")); return; }
+  try {
+    await sync();
+    if (connected) {
+      sessionStorage.setItem('lyra-web-token', token);
+      $('token').value = '';
+      $('login-error').textContent = '';
+    } else {
+      $('login-error').textContent = t("无法连接手机，请检查访问码和网络");
+    }
+  } catch (e) {
+    message(e.message);
+    $('login-error').textContent = t("连接失败：" + e.message);
+  }
+});
+$('token').addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey && !e.isComposing) { e.preventDefault(); $('login-form').dispatchEvent(new Event('submit', {cancelable: true})); } });
 $('logout').addEventListener('click', () => { sessionStorage.removeItem('lyra-web-token'); token = ''; state = null; showLogin(); });
 $('new-chat').addEventListener('click', () => safe(async () => { await action('new'); selectHistory('normal'); closeSidebar(); }));
 $('history-search').addEventListener('input',renderHistory);
