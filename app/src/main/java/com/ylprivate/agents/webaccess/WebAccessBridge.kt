@@ -7,8 +7,10 @@ import com.ylprivate.agents.data.AppSettings
 import com.ylprivate.agents.ui.chat.ChatViewModel
 import com.ylprivate.agents.agent.ContextEstimate
 import com.ylprivate.agents.agent.ThinkingLevel
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.json.JSONArray
 import org.json.JSONObject
@@ -39,17 +41,46 @@ internal class WebAccessBridge(
     val media = WebAccessMedia(context)
 
     private var instanceId = UUID.randomUUID().toString()
-    /** Bumped on every mutating action; the browser must echo it back, else 409. */
+    /** Bumped on every mutating action AND every phone-state change; the browser must echo it back, else 409. */
     @Volatile private var sessionRevision = 0
+    /** Job that collects state changes and bumps sessionRevision for live SSE streaming. */
+    @Volatile private var stateJob: kotlinx.coroutines.Job? = null
 
     /** The chat currently on screen, or null while no conversation is open. */
     private val controller: ChatViewModel?
         get() = container.activeChatViewModel
+    /** Last controller we were watching, to start/stop state collection when it changes. */
+    private var lastController: ChatViewModel? = null
+
+    /** Start watching the active chat's state so every phone-side change bumps sessionRevision for SSE. */
+    private fun watchController(c: ChatViewModel) {
+        stateJob?.cancel()
+        stateJob = kotlinx.coroutines.CoroutineScope(kotlinx.coroutines.Dispatchers.Main).launch {
+            c.state.collect { _ ->
+                sessionRevision++
+            }
+        }
+    }
+
+    /** Stop watching state changes. */
+    private fun unwatchController() {
+        stateJob?.cancel()
+        stateJob = null
+    }
+
+    /** Start/stop watching the current controller when it changes. */
+    private fun syncController() {
+        val c = controller
+        if (c === lastController) return
+        unwatchController()
+        lastController = c
+        if (c != null) watchController(c)
+    }
 
     /** Configuration signature for SSE change detection.
      * Reflects the controller's current state so the browser gets live updates
      * whenever the phone app state changes (agent replying, tool results, etc.). */
-    fun configurationSignature(): Int = controller?.state?.value?.hashCode() ?: 0
+    fun configurationSignature(): Int = sessionRevision
 
     fun locale(): JSONObject {
         val tag = java.util.Locale.getDefault().toLanguageTag()
@@ -58,6 +89,7 @@ internal class WebAccessBridge(
 
     /** Full snapshot of the app state the browser renders. */
     suspend fun snapshot(): JSONObject {
+        syncController()
         val c = controller ?: return emptySnapshot()
         val state = c.state.value
 
@@ -286,6 +318,7 @@ internal class WebAccessBridge(
 
     /** Execute one action from the browser. Every action calls a real ChatViewModel method. */
     suspend fun action(args: JSONObject): JSONObject = withContext(Dispatchers.Main) {
+        syncController()
         val action = args.getString("action")
         val mutating = setOf(
             "send", "stop", "continue", "approve", "deny", "question", "model",
