@@ -2,6 +2,7 @@ package com.ylprivate.agents.webaccess
 
 import android.content.Context
 import com.ylprivate.agents.AppContainer
+import com.ylprivate.agents.R
 import com.ylprivate.agents.data.AppSettings
 import com.ylprivate.agents.ui.chat.ChatViewModel
 import com.ylprivate.agents.agent.ContextEstimate
@@ -291,8 +292,7 @@ internal class WebAccessBridge(
             "send" -> {
                 val text = args.getString("text")
                 require(text.isNotBlank()) { "Enter a message" }
-                val c = controller
-                    ?: throw WebHttpError(409, "No conversation is open on the phone")
+                val c = controller ?: ensureActiveConversation()
                 val ok = c.send(text)
                 if (!ok) throw WebHttpError(409, "Message was refused — compaction or block may be in progress")
                 JSONObject().put("ok", true).put("delivery", "sent")
@@ -337,7 +337,7 @@ internal class WebAccessBridge(
             }
             "new" -> {
                 val sid = controller?.newConversation()
-                    ?: throw WebHttpError(409, "No conversation is open on the phone")
+                    ?: createNewConversation()
                 JSONObject().put("ok", true).put("conversationId", sid)
             }
             "select" -> {
@@ -522,5 +522,24 @@ internal class WebAccessBridge(
         }
         JSONObject().put("entries", entries).put("uri", uri)
             .put("needsStoragePermission", false)
+    }
+
+    /** Ensure there's an active conversation — create one if none exists on the phone. */
+    private suspend fun ensureActiveConversation(): ChatViewModel {
+        return controller ?: createNewConversation()
+    }
+
+    /** Create a brand-new conversation and make it the active web-bridge chat. */
+    private suspend fun createNewConversation(): ChatViewModel {
+        val sid = container.sessions.createSession(
+            container.appContext.getString(R.string.settings_telegram_new_chat),
+            container.workspace.currentProjectOnce().id,
+            com.ylprivate.agents.data.ConversationConfig(kind = com.ylprivate.agents.data.ConversationKind.CODE)
+        )
+        container.chatModels.initialize(sid)
+        container.settings.setLastActiveSessionId(sid)
+        val vm = ChatViewModel(container, sid, com.ylprivate.agents.data.ConversationKind.CODE)
+        container.activeChatViewModel = vm
+        return vm
     }
 }
