@@ -94,6 +94,10 @@ data class AppSettings(
     val webSearchProvider: String = "keyless",
     /** Search providers the user switched off. Everything else that is ready (has keys, or needs none) can be used. */
     val disabledSearchProviders: Set<String> = emptySet(),
+    /** Web Access: bind host ("0.0.0.0" serves on LAN, "127.0.0.1" is localhost-only). */
+    val webAccessHost: String = "0.0.0.0",
+    /** Web Access: HTTP port the desktop browser connects to. */
+    val webAccessPort: Int = 8765,
     /**
      * Screenshots are allowed by default outside credential screens. Off blocks
      * them app wide; screens that show keys and tokens always block.
@@ -376,6 +380,8 @@ class SettingsRepository(private val context: Context) {
         val DISABLED_SKILLS = stringSetPreferencesKey("disabled_skills")
         val WEB_SEARCH_PROVIDER = stringPreferencesKey("web_search_provider")
         val DISABLED_SEARCH_PROVIDERS = stringSetPreferencesKey("disabled_search_providers")
+        val WEB_ACCESS_HOST = stringPreferencesKey("web_access_host")
+        val WEB_ACCESS_PORT = intPreferencesKey("web_access_port")
         val ALLOW_SCREENSHOTS = booleanPreferencesKey("allow_screenshots")
         val PLANNING_MODELS_ENABLED = booleanPreferencesKey("planning_models_enabled")
         val PLANNING_PROVIDER = stringPreferencesKey("planning_provider_id")
@@ -525,6 +531,8 @@ class SettingsRepository(private val context: Context) {
                 ?.takeIf { it in WEB_SEARCH_PROVIDERS }
                 ?: "keyless",
             disabledSearchProviders = prefs[Keys.DISABLED_SEARCH_PROVIDERS].orEmpty().filterTo(HashSet()) { it in WEB_SEARCH_PROVIDERS },
+            webAccessHost = prefs[Keys.WEB_ACCESS_HOST] ?: "0.0.0.0",
+            webAccessPort = prefs[Keys.WEB_ACCESS_PORT] ?: 8765,
             allowScreenshots = prefs[Keys.ALLOW_SCREENSHOTS] ?: true,
             planningModelsEnabled = prefs[Keys.PLANNING_MODELS_ENABLED] ?: false,
             planningProviderId = prefs[Keys.PLANNING_PROVIDER],
@@ -740,6 +748,16 @@ class SettingsRepository(private val context: Context) {
             val disabled = prefs[Keys.DISABLED_SEARCH_PROVIDERS].orEmpty()
             prefs[Keys.DISABLED_SEARCH_PROVIDERS] = if (enabled) disabled - provider else disabled + provider
         }
+    }
+
+    suspend fun setWebAccessHost(host: String) {
+        require(host in listOf("0.0.0.0", "127.0.0.1")) { "Invalid bind address" }
+        context.settingsStore.edit { it[Keys.WEB_ACCESS_HOST] = host }
+    }
+
+    suspend fun setWebAccessPort(port: Int) {
+        require(port in 1024..65535) { "Port must be 1024..65535" }
+        context.settingsStore.edit { it[Keys.WEB_ACCESS_PORT] = port }
     }
 
     suspend fun setProviderEnabled(id: String, enabled: Boolean) {

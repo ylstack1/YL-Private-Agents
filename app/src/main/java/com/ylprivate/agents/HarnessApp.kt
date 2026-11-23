@@ -288,6 +288,9 @@ class AppContainer(val appContext: Context) {
     private val disabledSearchProviders = AtomicReference<Set<String>>(emptySet())
     private val searchKeyMigrated = AtomicBoolean(false)
 
+    /** The currently visible chat's ViewModel, so WebAccessBridge can drive it from a browser. */
+    @Volatile var activeChatViewModel: com.ylprivate.agents.ui.chat.ChatViewModel? = null
+
     /**
      * Every search provider web_search may use, resolved per call so Settings changes
      * apply to the very next search without a restart. Tool descriptions read this

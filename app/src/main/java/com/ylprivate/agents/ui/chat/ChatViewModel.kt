@@ -286,7 +286,7 @@ class ChatViewModel(
     private val c: AppContainer,
     initialSessionId: String?,
     initialKind: com.ylprivate.agents.data.ConversationKind = com.ylprivate.agents.data.ConversationKind.CODE,
-) : ViewModel() {
+    ) : ViewModel() {
 
     private val _state = MutableStateFlow(
         ChatUiState(
@@ -411,6 +411,8 @@ class ChatViewModel(
     val live: StateFlow<LiveModeSession?> = _live
 
     init {
+        // Register as the active chat so WebAccessBridge can drive this session from a browser.
+        c.activeChatViewModel = this
         viewModelScope.launch {
             sessionIdFlow.flatMapLatest(c.chatModels::observe).collect(::applyModelState)
         }
@@ -1292,6 +1294,7 @@ class ChatViewModel(
     override fun onCleared() {
         _live.value?.close()
         super.onCleared()
+        if (c.activeChatViewModel === this) c.activeChatViewModel = null
     }
 
     fun stopAside() { sideJob?.cancel() }
