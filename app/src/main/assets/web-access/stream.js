@@ -149,7 +149,9 @@ function createLiveMessages(element,rich) {
     for(const [id,row] of rows)if(!existing.has(id)){rich.release(row.article);slots.delete(row.body);slots.delete(row.thinking);row.article.remove();rows.delete(id);}
     scroll();
     // Apply syntax highlighting to code blocks after render
-    if(window.Prism)Prism.highlightAll(element);
+    if (window.Prism) {
+      Prism.highlightAll(element);
+    }
   }};
 }
 

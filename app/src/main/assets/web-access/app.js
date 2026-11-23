@@ -38,7 +38,7 @@ async function action(actionName, args = {}, refresh = true) {
   if (refresh) await sync();
   return data;
 }
-async async function safe(work) { try { return await work(); } catch (e) { message(e.message); } }
+async function safe(work) { try { return await work(); } catch (e) { message(e.message); } }
 function preserveFields(root, work) {
   const fields = [...root.querySelectorAll('input,textarea,select')].map(el => ({id:el.id,name:el.name,value:el.value,checked:el.checked,
     focused:el===document.activeElement,start:el.selectionStart,end:el.selectionEnd}));

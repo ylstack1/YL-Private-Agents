@@ -81,7 +81,7 @@ internal object WebAccessHttp {
     }
 
     private const val SECURITY_HEADERS = "Cache-Control: no-store\r\nX-Content-Type-Options: nosniff\r\nReferrer-Policy: no-referrer\r\nX-Frame-Options: DENY\r\n" +
-        "Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob: https: http:; media-src 'self' data: blob: https: http:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'\r\n"
+        "Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' data: https://cdnjs.cloudflare.com; img-src 'self' data: blob: https: http:; media-src 'self' data: blob: https: http:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'\r\n"
 
     fun eventHeaders(output: OutputStream) {
         output.write(("HTTP/1.1 200 OK\r\nContent-Type: text/event-stream; charset=utf-8\r\nConnection: close\r\nX-Accel-Buffering: no\r\n" + SECURITY_HEADERS + "\r\n").toByteArray(Charsets.US_ASCII))
