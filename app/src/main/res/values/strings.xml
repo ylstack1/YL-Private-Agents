@@ -1172,4 +1172,9 @@
     <string name="stream_writes_title">Stream file writes as text</string>
     <string name="stream_writes_desc">Some servers, including several NVIDIA models, only send a file write once it is finished. For those models the agent writes the file into its reply instead, so you can watch it being written.</string>
     <string name="stream_writes_detected">Models detected so far: %1$d</string>
+
+    <!-- Web Access: desktop-browser remote chat. Copied from YL-COS; AGPL-3.0 provenance, private use only. -->
+    <string name="web_access_title">Web Access</string>
+    <string name="web_access_notification">Desktop browser access is active</string>
+    <string name="web_access_stop">Stop web access</string>
 </resources>
