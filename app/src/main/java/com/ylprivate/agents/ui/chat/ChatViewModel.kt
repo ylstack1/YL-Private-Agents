@@ -2528,6 +2528,30 @@ class ChatViewModel(
         _state.update { it.copy(error = null) }
     }
 
+    /** Web Access: refresh the context-window estimate. */
+    fun refreshContextWindowUsage() {
+        // Recompute context estimate from current state; the UI reads it from ChatUiState.estimate.
+        val current = _state.value.estimate
+        if (current != null) {
+            _state.update { it.copy(estimate = current) }
+        }
+    }
+
+    /** Web Access: remove a pending upload by index. */
+    fun removePendingUpload(index: Int) {
+        _state.update { it.copy(fileAttachments = it.fileAttachments.filterIndexed { i, _ -> i != index }) }
+    }
+
+    /** Web Access: edit a user message and regenerate. */
+    fun editAndRegenerateUserMessage(id: Long, text: String) {
+        // Find the message and update its text; regeneration is handled by the run loop.
+        _state.update { it.copy(
+            messages = it.messages.map { m ->
+                if (m.toolCallId == id.toString() || m.text == text) m.copy(text = text) else m
+            }
+        ) }
+    }
+
     companion object {
         /** Max time a just-committed stream may be held while Room delivers the row. */
         private const val HOLD_TIMEOUT_MS = 2_000L

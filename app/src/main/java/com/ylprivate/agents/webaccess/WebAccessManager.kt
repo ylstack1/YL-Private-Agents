@@ -88,6 +88,7 @@ internal class WebAccessManager(private val activity: Activity, private val sett
             server = socket
             // One access code per run, held in memory only (never persisted).
             val token = java.util.UUID.randomUUID().toString()
+            bridge.accessToken = token
             val pool = ThreadPoolExecutor(4, 4, 0L, TimeUnit.MILLISECONDS, ArrayBlockingQueue(8)) { task ->
                 Thread(task, "YLWebClient").apply { isDaemon = true }
             }
