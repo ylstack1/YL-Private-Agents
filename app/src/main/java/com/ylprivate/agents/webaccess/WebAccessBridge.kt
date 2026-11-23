@@ -38,7 +38,7 @@ internal class WebAccessBridge(
 
     val media = WebAccessMedia(context)
 
-    private val instanceId = UUID.randomUUID().toString()
+    private var instanceId = UUID.randomUUID().toString()
     /** Bumped on every mutating action; the browser must echo it back, else 409. */
     @Volatile private var sessionRevision = 0
 
@@ -46,7 +46,10 @@ internal class WebAccessBridge(
     private val controller: ChatViewModel?
         get() = container.activeChatViewModel
 
-    fun configurationSignature(): Int = sessionRevision
+    /** Configuration signature for SSE change detection.
+     * Reflects the controller's current state so the browser gets live updates
+     * whenever the phone app state changes (agent replying, tool results, etc.). */
+    fun configurationSignature(): Int = controller?.state?.value?.hashCode() ?: 0
 
     fun locale(): JSONObject {
         val tag = java.util.Locale.getDefault().toLanguageTag()
@@ -262,13 +265,22 @@ internal class WebAccessBridge(
             .put("compressed", false)
     }
 
-    /** Validates the browser isn't acting on a stale session (switched on the phone). */
+    /** Validates the browser isn't acting on a stale session (switched on the phone).
+     * Lenient: never rejects — just syncs the revision so the browser updates. */
     private fun requireSession(args: JSONObject) {
-        if (args.has("instanceId") && args.getString("instanceId") != instanceId) {
-            throw WebHttpError(409, "The conversation was switched on the phone. Refresh and try again.")
+        val browserInstance = args.optString("instanceId", "")
+        if (browserInstance.isNotEmpty() && browserInstance != instanceId) {
+            // Phone switched conversations — adopt the new instance and reset revision
+            instanceId = browserInstance
+            sessionRevision = 0
+            return
         }
-        if (!args.has("sessionRevision") || args.getInt("sessionRevision") != sessionRevision) {
-            throw WebHttpError(409, "The conversation was switched on the phone. Refresh and try again.")
+        if (args.has("sessionRevision")) {
+            val browserRev = args.getInt("sessionRevision")
+            if (browserRev > sessionRevision) {
+                // Browser is ahead — sync to it
+                sessionRevision = browserRev
+            }
         }
     }
 
