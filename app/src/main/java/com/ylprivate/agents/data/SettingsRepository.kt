@@ -1520,6 +1520,15 @@ class SettingsRepository(private val context: Context) {
             else prefs[Keys.LAST_ACTIVE_SESSION] = sessionId
         }
     }
+
+    /** Web Access: archive/unarchive a session. */
+    suspend fun setSessionArchived(sessionId: String, archived: Boolean) {
+        context.settingsStore.edit { prefs ->
+            val set = prefs[Keys.ARCHIVED].orEmpty().toMutableSet()
+            if (archived) set.add(sessionId) else set.remove(sessionId)
+            prefs[Keys.ARCHIVED] = set
+        }
+    }
 }
 
 /** Entries are "providerId|model=tokens"; the key itself may hold "=", so split on the last one. */

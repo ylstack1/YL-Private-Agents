@@ -950,6 +950,16 @@ class SessionRepository(
         removeUnreferencedOriginals(originals)
     }
 
+    /** Web Access: rename a project. */
+    suspend fun renameProject(id: String, name: String) {
+        db.dao().renameProject(id, name)
+    }
+
+    /** Web Access: persist workspace selection for a session. */
+    suspend fun setSessionProject(id: String, projectId: String) {
+        db.dao().setSessionProject(id, projectId)
+    }
+
     /** Branches and saved answer versions can share image references. */
     private suspend fun originalNames(sessionId: String): Set<String>? {
         if (images == null) return null

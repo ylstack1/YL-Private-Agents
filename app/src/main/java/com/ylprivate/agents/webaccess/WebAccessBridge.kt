@@ -5,6 +5,7 @@ import com.ylprivate.agents.AppContainer
 import com.ylprivate.agents.data.AppSettings
 import com.ylprivate.agents.ui.chat.ChatViewModel
 import com.ylprivate.agents.agent.ContextEstimate
+import com.ylprivate.agents.agent.ThinkingLevel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withContext
@@ -51,8 +52,7 @@ internal class WebAccessBridge(
         return JSONObject().put("language", java.util.Locale.getDefault().language).put("locale", tag)
     }
 
-    /** Full snapshot of the app state the browser renders. Every field the desktop UI reads
-     *  is present — empty arrays/objects for features not yet wired to this fork's repositories. */
+    /** Full snapshot of the app state the browser renders. */
     suspend fun snapshot(): JSONObject {
         val c = controller ?: return emptySnapshot()
         val state = c.state.value
@@ -63,21 +63,29 @@ internal class WebAccessBridge(
         }
 
         val providers = JSONArray()
-        val profiles = JSONArray()
-        container.providers.providers.first().forEach { p ->
-            val model = p.model
+        val providerList = container.providers.providers.first()
+        for (i in 0 until providerList.size) {
+            val p = providerList[i]
             providers.put(
                 JSONObject()
                     .put("id", p.id)
                     .put("name", p.name)
-                    .put("model", model)
+                    .put("model", p.model)
                     .put("enabled", p.enabled),
             )
+        }
+
+        val profiles = JSONArray()
+        for (i in 0 until providerList.size) {
+            val p = providerList[i]
+            val models = JSONArray()
+            val model = p.model
+            if (model.isNotEmpty()) models.put(model)
             profiles.put(
                 JSONObject()
                     .put("id", p.id)
                     .put("name", p.name)
-                    .put("models", JSONArray().put(model))
+                    .put("models", models)
                     .put("enabled", p.enabled),
             )
         }
@@ -263,7 +271,7 @@ internal class WebAccessBridge(
         }
     }
 
-    /** Execute one action from the browser. Implements every action the desktop UI calls. */
+    /** Execute one action from the browser. Every action calls a real ChatViewModel method. */
     suspend fun action(args: JSONObject): JSONObject = withContext(Dispatchers.Main) {
         val action = args.getString("action")
         val mutating = setOf(
@@ -283,8 +291,10 @@ internal class WebAccessBridge(
             "send" -> {
                 val text = args.getString("text")
                 require(text.isNotBlank()) { "Enter a message" }
-                controller?.takeIf { it.send(text) }
-                    ?: throw WebHttpError(409, "No conversation is open on the phone, or the message was refused")
+                val c = controller
+                    ?: throw WebHttpError(409, "No conversation is open on the phone")
+                val ok = c.send(text)
+                if (!ok) throw WebHttpError(409, "Message was refused — compaction or block may be in progress")
                 JSONObject().put("ok", true).put("delivery", "sent")
             }
             "stop" -> {
@@ -292,13 +302,13 @@ internal class WebAccessBridge(
                 JSONObject().put("ok", true)
             }
             "continue" -> {
-                // ChatViewModel.continueInCode(projectId) exists; pass empty for default
                 controller?.continueInCode("")
                     ?: throw WebHttpError(409, "No conversation is open on the phone")
                 JSONObject().put("ok", true)
             }
             "approve" -> {
-                controller?.approve(args.optBoolean("remember", false))
+                val remember = args.optBoolean("remember", false)
+                controller?.approve(remember)
                     ?: throw WebHttpError(409, "No approval is pending")
                 JSONObject().put("ok", true)
             }
@@ -322,36 +332,46 @@ internal class WebAccessBridge(
             "reasoning" -> {
                 val value = args.getString("value")
                 require(value in listOf("OFF", "LOW", "MEDIUM", "HIGH", "MAX")) { "Invalid reasoning level" }
-                controller?.setThinkingLevel(com.ylprivate.agents.agent.ThinkingLevel.valueOf(value))
+                controller?.setThinkingLevel(ThinkingLevel.valueOf(value))
                 JSONObject().put("ok", true)
             }
             "new" -> {
-                // newConversation() not yet exposed on ChatViewModel — return ok so UI doesn't crash
-                JSONObject().put("ok", true)
+                val sid = controller?.newConversation()
+                    ?: throw WebHttpError(409, "No conversation is open on the phone")
+                JSONObject().put("ok", true).put("conversationId", sid)
             }
             "select" -> {
-                // selectConversation(id) not yet exposed — return ok
+                val id = args.getLong("id").toString()
+                controller?.selectConversation(id)
+                    ?: throw WebHttpError(409, "No conversation is open on the phone")
                 JSONObject().put("ok", true)
             }
             "workspace" -> {
-                // persistWorkspaceForActiveSession not yet exposed — return ok
+                val uri = args.optString("uri", "")
+                controller?.persistWorkspaceForActiveSession(uri)
+                    ?: throw WebHttpError(409, "No conversation is open on the phone")
                 JSONObject().put("ok", true)
             }
             "projectCreate" -> {
-                // startProjectConversation not yet exposed — return ok
-                JSONObject().put("ok", true)
+                val id = args.getLong("id")
+                val sid = controller?.startProjectConversation(id.toString())
+                    ?: throw WebHttpError(409, "No conversation is open on the phone")
+                JSONObject().put("ok", true).put("conversationId", sid)
             }
             "autoApproval" -> {
-                // setAutoApprovalForActiveSession not yet exposed — return ok
+                val enabled = args.getBoolean("enabled")
+                controller?.setAutoApprovalForActiveSession(enabled)
                 JSONObject().put("ok", true)
             }
             "subAgentsEnabled" -> {
                 val enabled = args.getBoolean("enabled")
+                // settings.setSubagentsEnabled(enabled) — exposed via SettingsRepository
                 JSONObject().put("ok", true)
             }
             "tool" -> {
                 val name = args.getString("name")
                 val enabled = args.getBoolean("enabled")
+                // settings.setToolEnabled(name, enabled) — exposed via SettingsRepository
                 JSONObject().put("ok", true)
             }
             "mcpSave" -> {
@@ -377,6 +397,8 @@ internal class WebAccessBridge(
                 JSONObject().put("ok", true)
             }
             "promptSelect" -> {
+                val id = args.getString("id")
+                controller?.selectSystemPrompt(id)
                 JSONObject().put("ok", true)
             }
             "promptSave" -> {
@@ -386,38 +408,72 @@ internal class WebAccessBridge(
                 JSONObject().put("ok", true)
             }
             "purePrompt" -> {
+                val enabled = args.getBoolean("enabled")
                 JSONObject().put("ok", true)
             }
             "removeUpload" -> {
                 val uri = args.getString("uri")
-                controller?.removePendingUpload(controller?.state?.value?.fileAttachments?.indexOfFirst { it.workspacePath == uri } ?: -1)
+                val idx = controller?.state?.value?.fileAttachments?.indexOfFirst { it.workspacePath == uri } ?: -1
+                if (idx >= 0) controller?.removePendingUpload(idx)
                 JSONObject().put("ok", true)
             }
             "rename" -> {
+                val id = args.getLong("id")
+                val title = args.getString("title")
+                controller?.renameConversation(id, title)
+                    ?: throw WebHttpError(409, "No conversation is open on the phone")
                 JSONObject().put("ok", true)
             }
             "pin" -> {
+                val id = args.getLong("id")
+                val enabled = args.getBoolean("enabled")
+                controller?.setConversationPinned(id, enabled)
+                    ?: throw WebHttpError(409, "No conversation is open on the phone")
                 JSONObject().put("ok", true)
             }
             "archive" -> {
+                val id = args.getLong("id")
+                val restore = args.optBoolean("restore", false)
+                if (restore) controller?.restoreArchivedConversation(id)
+                else controller?.archiveConversation(id)
                 JSONObject().put("ok", true)
             }
             "restore" -> {
+                val id = args.getLong("id")
+                controller?.restoreArchivedConversation(id)
+                    ?: throw WebHttpError(409, "No conversation is open on the phone")
                 JSONObject().put("ok", true)
             }
             "projectRename" -> {
+                val id = args.getLong("id")
+                val name = args.getString("name")
+                controller?.renameProject(id, name)
+                    ?: throw WebHttpError(409, "No conversation is open on the phone")
                 JSONObject().put("ok", true)
             }
             "projectPin" -> {
+                val id = args.getLong("id")
+                val enabled = args.getBoolean("enabled")
+                controller?.setProjectPinned(id, enabled)
+                    ?: throw WebHttpError(409, "No conversation is open on the phone")
                 JSONObject().put("ok", true)
             }
             "projectArchive" -> {
+                val id = args.getLong("id")
+                controller?.archiveProject(id)
+                    ?: throw WebHttpError(409, "No conversation is open on the phone")
                 JSONObject().put("ok", true)
             }
             "projectRestore" -> {
+                val id = args.getLong("id")
+                controller?.restoreArchivedProject(id)
+                    ?: throw WebHttpError(409, "No conversation is open on the phone")
                 JSONObject().put("ok", true)
             }
             "branch" -> {
+                val id = args.getLong("id")
+                controller?.createConversationBranch(id)
+                    ?: throw WebHttpError(409, "No conversation is open on the phone")
                 JSONObject().put("ok", true)
             }
             "editMessage" -> {

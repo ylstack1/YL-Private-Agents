@@ -2600,6 +2600,68 @@ class ChatViewModel(
         // Stored in settings; applied to the next run.
     }
 
+    /** Web Access: persist workspace selection for the active session. */
+    suspend fun persistWorkspaceForActiveSession(uri: String) {
+        val sid = sessionId ?: return
+        c.sessions.setSessionProject(sid, uri)
+    }
+
+    /** Web Access: rename a conversation. */
+    suspend fun renameConversation(id: Long, title: String) {
+        c.sessions.renameSession(id.toString(), title)
+        _state.update { it.copy(sessionTitle = title) }
+    }
+
+    /** Web Access: pin/unpin a conversation. */
+    suspend fun setConversationPinned(id: Long, enabled: Boolean) {
+        c.settings.setPinned(id.toString(), enabled)
+    }
+
+    /** Web Access: archive/unarchive a conversation. */
+    suspend fun archiveConversation(id: Long) {
+        c.settings.setSessionArchived(id.toString(), true)
+    }
+
+    /** Web Access: restore an archived conversation. */
+    suspend fun restoreArchivedConversation(id: Long) {
+        c.settings.setSessionArchived(id.toString(), false)
+    }
+
+    /** Web Access: rename a project. */
+    suspend fun renameProject(id: Long, name: String) {
+        c.sessions.renameProject(id.toString(), name)
+    }
+
+    /** Web Access: pin/unpin a project. */
+    suspend fun setProjectPinned(id: Long, enabled: Boolean) {
+        c.settings.setProjectPinned(id.toString(), enabled)
+    }
+
+    /** Web Access: archive/unarchive a project. */
+    suspend fun archiveProject(id: Long) {
+        c.settings.setProjectArchived(id.toString(), true)
+    }
+
+    /** Web Access: restore an archived project. */
+    suspend fun restoreArchivedProject(id: Long) {
+        c.settings.setProjectArchived(id.toString(), false)
+    }
+
+    /** Web Access: create a conversation branch. */
+    suspend fun createConversationBranch(id: Long) {
+        val sess = c.sessions.session(id.toString()) ?: return
+        val config = com.ylprivate.agents.data.ConversationConfig.decode(sess.conversationJson)
+        val newSid = c.sessions.createSession(
+            sess.title + " (branch)",
+            sess.projectId,
+            config
+        )
+        c.chatModels.initialize(newSid)
+        c.settings.setLastActiveSessionId(newSid)
+        val vm = ChatViewModel(c, newSid, config.kind)
+        c.activeChatViewModel = vm
+    }
+
     companion object {
         /** Max time a just-committed stream may be held while Room delivers the row. */
         private const val HOLD_TIMEOUT_MS = 2_000L
