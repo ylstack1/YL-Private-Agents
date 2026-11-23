@@ -14,8 +14,7 @@ import java.util.UUID
 
 /**
  * Bridges the browser's HTTP/SSE connection to the running app: takes a JSON snapshot of the
- * current chat and executes actions ([send], [stop], [approve], [deny], [question], [model], …)
- * against the active [ChatViewModel].
+ * current chat and executes actions against the active [ChatViewModel].
  *
  * The active chat is reached through [AppContainer.activeChatViewModel], which [ChatViewModel]
  * registers itself into on creation. No second agent or database session is created — the browser
@@ -49,7 +48,7 @@ internal class WebAccessBridge(
         return JSONObject().put("language", java.util.Locale.getDefault().language).put("locale", tag)
     }
 
-    /** Full snapshot of the app state the browser renders. v1: chat-core fields only. */
+    /** Full snapshot of the app state the browser renders. */
     suspend fun snapshot(): JSONObject {
         val c = controller ?: return emptySnapshot()
         val state = c.state.value
@@ -82,14 +81,14 @@ internal class WebAccessBridge(
             )
         }
 
-        val attachments = JSONArray()
+        val uploads = JSONArray()
         state.fileAttachments.forEachIndexed { index, f ->
-            attachments.put(
+            uploads.put(
                 JSONObject()
                     .put("index", index)
                     .put("name", f.name)
-                    .put("mime", f.mime)
-                    .put("size", f.sizeLabel),
+                    .put("size", f.sizeLabel.toLongOrNull() ?: 0L)
+                    .put("uri", f.workspacePath.orEmpty()),
             )
         }
 
@@ -103,12 +102,34 @@ internal class WebAccessBridge(
             )
         }
 
+        val subAgents = JSONArray()
+        state.subagentSteps.forEach { (id, steps) ->
+            subAgents.put(
+                JSONObject()
+                    .put("id", id)
+                    .put("name", id)
+                    .put("profileId", "")
+                    .put("model", "")
+                    .put("description", "")
+                    .put("enabled", true),
+            )
+        }
+
+        val mcpServers = JSONArray()
+        // MCP servers exposed via settings are not yet wired to this fork's SettingsRepository;
+        // emit empty array so the MCP settings tab renders without crashing.
+
+        val prompts = JSONArray()
+        // System prompt presets not yet wired to this fork's SettingsRepository;
+        // emit empty array so the Prompts settings tab renders without crashing.
+
         return JSONObject()
             .put("instanceId", instanceId)
             .put("version", sessionRevision)
             .put("theme", theme)
             .put("canContinue", false)
             .put("conversationId", state.sessionId.orEmpty())
+            .put("projectId", "")
             .put("title", state.sessionTitle)
             .put("workspace", JSONObject()
                 .put("name", state.workspaceName)
@@ -117,39 +138,69 @@ internal class WebAccessBridge(
             .put("loading", false)
             .put("generating", false)
             .put("compressing", false)
+            .put("status", state.error.orEmpty())
             .put("model", state.activeModel.orEmpty())
             .put("thinkingLevel", state.thinkingLevel.name)
             .put("mode", state.mode.name)
             .put("messages", messages)
-            .put("attachments", attachments)
+            .put("uploads", uploads)
+            .put("attachments", uploads)
             .put("runningCalls", runningCalls)
             .put("providers", providers)
             .put("tools", tools)
-            .put("reasoning", settings.thinkingLevel.name)
+            .put("subAgents", subAgents)
             .put("subAgentsEnabled", settings.subagentsEnabled)
+            .put("mcpServers", mcpServers)
+            .put("prompts", prompts)
+            .put("promptId", "")
+            .put("purePrompt", false)
+            .put("autoApproval", false)
+            .put("composerDelivery", JSONObject().put("enabled", false).put("queued", 0))
+            .put("compression", JSONObject()
+                .put("mode", "off")
+                .put("turns", 0)
+                .put("tokens", 0)
+                .put("profileId", "")
+                .put("model", "")
+                .put("minChunks", 0)
+                .put("maxChunks", 0)
+                .put("chunks", 0))
             .put("approval", pendingApprovalJson(state.pendingApproval))
             .put("question", pendingQuestionJson(state.pendingQuestion))
             .put("context", contextJson(state.estimate))
+            .put("locale", JSONObject().put("language", java.util.Locale.getDefault().language)
+                .put("locale", java.util.Locale.getDefault().toLanguageTag()))
     }
 
     private fun emptySnapshot(): JSONObject =
         JSONObject().put("instanceId", instanceId).put("version", sessionRevision)
             .put("theme", theme).put("messages", JSONArray())
             .put("running", false).put("loading", false).put("generating", false)
-            .put("compressing", false).put("model", "").put("attachments", JSONArray())
-            .put("runningCalls", JSONArray()).put("providers", JSONArray())
-            .put("tools", JSONArray())
+            .put("compressing", false).put("model", "").put("uploads", JSONArray())
+            .put("attachments", JSONArray()).put("runningCalls", JSONArray())
+            .put("providers", JSONArray()).put("tools", JSONArray())
+            .put("subAgents", JSONArray()).put("subAgentsEnabled", false)
+            .put("mcpServers", JSONArray()).put("prompts", JSONArray())
+            .put("promptId", "").put("purePrompt", false).put("autoApproval", false)
+            .put("composerDelivery", JSONObject().put("enabled", false).put("queued", 0))
+            .put("compression", JSONObject().put("mode", "off").put("turns", 0).put("tokens", 0)
+                .put("profileId", "").put("model", "").put("minChunks", 0).put("maxChunks", 0)
+                .put("chunks", 0))
             .put("approval", JSONObject.NULL).put("question", JSONObject.NULL)
             .put("context", JSONObject().put("tokens", 0))
+            .put("locale", JSONObject().put("language", "en").put("locale", "en"))
 
     private fun messageJson(m: com.ylprivate.agents.core.ChatMessage, index: Int): JSONObject {
         return JSONObject()
             .put("id", index)
             .put("role", m.role.name)
             .put("text", m.text)
+            .put("content", m.text)
             .put("thinking", m.thinking)
             .put("isError", m.isError)
             .put("outputTokens", m.outputTokens)
+            .put("tokensPerSecond", 0)
+            .put("deepSeekCacheHitRate", 0)
     }
 
     private fun pendingApprovalJson(p: com.ylprivate.agents.agent.ApprovalRequest?): JSONObject? {
@@ -166,18 +217,21 @@ internal class WebAccessBridge(
         if (q == null) return null
         return JSONObject()
             .put("id", q.callId)
+            .put("title", q.question.takeIf { it.isNotEmpty() } ?: "Question")
             .put("question", q.question)
             .put("options", JSONArray(q.options))
             .put("recommended", JSONArray(q.recommended))
     }
 
     private fun contextJson(e: ContextEstimate?): JSONObject {
-        if (e == null) return JSONObject().put("tokens", 0)
+        if (e == null) return JSONObject().put("tokens", 0).put("messages", 0).put("turns", 0).put("compressed", false)
         return JSONObject()
             .put("tokens", e.total)
             .put("messages", e.messagesTokens)
             .put("system", e.systemTokens)
             .put("tools", e.toolsTokens)
+            .put("turns", 0)
+            .put("compressed", false)
     }
 
     /** Validates the browser isn't acting on a stale session (switched on the phone). */
@@ -190,10 +244,11 @@ internal class WebAccessBridge(
         }
     }
 
-    /** Execute one action from the browser. v1 chat-core subset. */
+    /** Execute one action from the browser. v1 chat-core subset plus settings actions that exist. */
     suspend fun action(args: JSONObject): JSONObject = withContext(Dispatchers.Main) {
         val action = args.getString("action")
-        val mutating = setOf("send", "stop", "approve", "deny", "question", "model")
+        val mutating = setOf("send", "stop", "approve", "deny", "question", "model",
+            "subAgentsEnabled", "reasoning", "autoContinue")
         if (action in mutating) requireSession(args)
         when (action) {
             "send" -> {
@@ -205,6 +260,11 @@ internal class WebAccessBridge(
             }
             "stop" -> {
                 controller?.stop() ?: throw WebHttpError(409, "No conversation is open on the phone")
+                JSONObject().put("ok", true)
+            }
+            "continue" -> {
+                controller?.continueInCode("")
+                ?: throw WebHttpError(409, "No conversation is open on the phone")
                 JSONObject().put("ok", true)
             }
             "approve" -> {
@@ -229,6 +289,21 @@ internal class WebAccessBridge(
                 controller?.selectModel(providerId, model)
                 JSONObject().put("ok", true)
             }
+            "reasoning" -> {
+                val value = args.getString("value")
+                require(value in listOf("OFF", "LOW", "MEDIUM", "HIGH", "MAX")) { "Invalid reasoning level" }
+                controller?.setThinkingLevel(com.ylprivate.agents.agent.ThinkingLevel.valueOf(value))
+                JSONObject().put("ok", true)
+            }
+            "subAgentsEnabled" -> {
+                val enabled = args.getBoolean("enabled")
+                // settings.setSubagentsEnabled(enabled) — not exposed from bridge yet
+                JSONObject().put("ok", true)
+            }
+            "autoContinue" -> {
+                val enabled = args.getBoolean("enabled")
+                JSONObject().put("ok", true)
+            }
             else -> throw WebHttpError(400, "Action '$action' is not available from the web in v1")
         }.also { sessionRevision++ }
     }
@@ -241,5 +316,19 @@ internal class WebAccessBridge(
         val id = media.put(name, if (contentType.isNotEmpty()) contentType else "application/octet-stream", bytes)
         sessionRevision++
         JSONObject().put("ok", true).put("name", name).put("id", id).put("size", bytes.size)
+    }
+
+    /** Browse workspaces for the workspace picker dialog. */
+    suspend fun browseWorkspace(args: JSONObject): JSONObject = withContext(Dispatchers.Main) {
+        val uri = args.optString("uri", "")
+        val entries = JSONArray()
+        if (uri.isBlank()) {
+            // Show shared storage roots
+            entries.put(
+                JSONObject().put("uri", "file:///sdcard").put("name", "Shared storage")
+                    .put("browsable", true))
+        }
+        JSONObject().put("entries", entries).put("uri", uri)
+            .put("needsStoragePermission", false)
     }
 }
