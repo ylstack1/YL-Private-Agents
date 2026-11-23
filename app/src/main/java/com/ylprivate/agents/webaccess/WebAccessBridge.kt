@@ -4,6 +4,7 @@ import android.content.Context
 import com.ylprivate.agents.AppContainer
 import com.ylprivate.agents.R
 import com.ylprivate.agents.data.AppSettings
+import com.ylprivate.agents.core.Role
 import com.ylprivate.agents.ui.chat.ChatViewModel
 import com.ylprivate.agents.agent.ContextEstimate
 import com.ylprivate.agents.agent.ThinkingLevel
@@ -94,8 +95,15 @@ internal class WebAccessBridge(
         val state = c.state.value
 
         val messages = JSONArray()
+        val lastIdx = state.messages.lastIndex
         state.messages.forEachIndexed { index, m ->
-            messages.put(messageJson(m, index))
+            var text = m.text
+            // Merge streaming text into the last assistant message so the browser sees live token streaming
+            if (index == lastIdx && m.role == com.ylprivate.agents.core.Role.ASSISTANT &&
+                state.streamingText?.isNotEmpty() == true) {
+                text = m.text + state.streamingText
+            }
+            messages.put(messageJson(m.copy(text = text), index))
         }
 
         val providers = JSONArray()
@@ -225,6 +233,8 @@ internal class WebAccessBridge(
                 .put("chunks", 0))
             .put("conversations", conversations)
             .put("projects", projects)
+            .put("streamingText", state.streamingText.orEmpty())
+            .put("streamingMessageId", state.streamingMessageId.orEmpty())
             .put("approval", pendingApprovalJson(state.pendingApproval))
             .put("question", pendingQuestionJson(state.pendingQuestion))
             .put("context", contextJson(state.estimate))

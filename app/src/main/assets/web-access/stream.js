@@ -131,12 +131,26 @@ function createLiveMessages(element,rich) {
       // Reasoning finishes before the first body chunk; do not animate both phases together.
       updateSlot(row.thinking,message.thinking || '',streaming && !message.content,state.streamingAnimationMode,!!message.content);
       if(message.role==='tool') {
-        row.body.render=text=>`<details><summary>${esc(t('工具结果'))}</summary><pre>${esc(text)}</pre></details>`;
+        const toolText=message.content || '';
+        const hasDiff=/^[+\-@].*/m.test(toolText);
+        row.body.render=text=>`<details><summary>${esc(t('工具结果'))}</summary><pre class="${hasDiff?'diff-result':''}">${diffHighlight(text)}</pre></details>`;
       }
       updateSlot(row.body,message.content || '',streaming,state.streamingAnimationMode);
       if(element.children[index]!==row.article)element.insertBefore(row.article,element.children[index] || null);
     });
     for(const [id,row] of rows)if(!existing.has(id)){rich.release(row.article);slots.delete(row.body);slots.delete(row.thinking);row.article.remove();rows.delete(id);}
     scroll();
+    // Apply syntax highlighting to code blocks after render
+    if(window.Prism)Prism.highlightAll(element);
   }};
+}
+
+/** Diff-highlight tool results that look like unified diff output. */
+function diffHighlight(text){
+  return text.split('\n').map(line=>{
+    if(line.startsWith('+') && !line.startsWith('+++')) return `<span class="diff-added">${esc(line.slice(1))}</span>`;
+    if(line.startsWith('-') && !line.startsWith('---')) return `<span class="diff-removed">${esc(line.slice(1))}</span>`;
+    if(line.startsWith('@@')) return `<span class="diff-header">${esc(line)}</span>`;
+    return esc(line);
+  }).join('\n');
 }
