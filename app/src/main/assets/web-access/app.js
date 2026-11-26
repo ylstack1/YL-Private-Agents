@@ -69,9 +69,9 @@ async function sync() {
   if (polling) return;
   polling = true;
   try {
-    const requestToken = token;
     const next = await api('/api/state');
-    if (!token || token !== requestToken) return;
+    # api() handles 401 by calling showLogin() which sets connected=false
+    # If we reach here, authentication succeeded
     lastStateRequest=Date.now();acceptState(next); stateStream.start();
   } catch (e) {
     connected = false;
